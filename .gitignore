@@ -1,0 +1,14 @@
+# Bst local state
+.bst
+
+# Temporary check-out location for buildstream elements
+result
+
+# Python caches
+plugins/__pycache__
+
+# Buildstream open workspaces
+workspaces
+
+# python virtual environment for buildstream install
+venv

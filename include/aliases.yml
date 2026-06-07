@@ -1,0 +1,49 @@
+github: https://github.com/
+gitlab: https://gitlab.com/
+gnu-ftp: https://ftpmirror.gnu.org/
+gnu-git: https://git.savannah.gnu.org/git/
+gnome-git: https://gitlab.gnome.org/
+gnome-ftp: https://ftp.gnome.org/pub/GNOME/
+fdo-git: https://gitlab.freedesktop.org/
+fdo-ftp: https://www.freedesktop.org/software/
+sourceware: https://sourceware.org/git/
+kernel: https://git.kernel.org/pub/scm/
+gnupg: https://dev.gnupg.org/source/
+videolan: https://code.videolan.org/videolan/
+xiph: https://gitlab.xiph.org/xiph/
+chromium: https://chromium.googlesource.com/
+sourceforge: https://sourceforge.net/projects/
+sourceforge-git: https://git.code.sf.net/p/
+webkitgtk: https://webkitgtk.org/releases/
+purism: https://source.puri.sm/
+libburnia: https://dev.lovelyhq.com/libburnia/
+google: https://dl.google.com/
+efifs: https://github.com/pbatard/efifs/releases/download/v1.8/
+netfilter: https://git.netfilter.org/ # dumb http protocol
+ghostscript: https://git.ghostscript.com/ # dumb http protocol
+nvidia: https://download.nvidia.com/
+w1fi: https://w1.fi/
+pypi: https://files.pythonhosted.org/packages/
+cpan: https://cpan.metacpan.org/
+# The `cargo` plugin adds the / to the end on its own.
+# TODO: Add back the /, to follow the convention, once this is merged & tagged upstream:
+# https://github.com/apache/buildstream-plugins/pull/52
+cargo: https://static.crates.io/crates
+kitware: https://gitlab.kitware.com/
+coreboot: https://review.coreboot.org/
+debian: https://salsa.debian.org/
+pagure: https://pagure.io/
+poettering: https://git.0pointer.net/ # dumb http protocol
+hadrons: https://git.hadrons.org/git/
+bitmath: https://bitmath.org/git/ # dumb http protocol
+nettle: https://git.lysator.liu.se/nettle/
+openldap: https://git.openldap.org/
+linuxtv: https://git.linuxtv.org/
+tukaani: https://git.tukaani.org/
+ozlabs: https://git.ozlabs.org/
+libssh: https://git.libssh.org/projects/
+libreoffice: https://git.libreoffice.org/
+intra2net: https://www.intra2net.com/en/developer/
+rust: https://static.rust-lang.org/dist/
+
+https_files: https://

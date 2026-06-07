@@ -1,0 +1,4 @@
+projects:
+  meowmeowlinux:
+    pkgs/linux.bst:
+    - ref: d0acb5202d0e33d23cbe6994424587fbb05a5360
