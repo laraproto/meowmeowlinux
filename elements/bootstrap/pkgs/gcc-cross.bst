@@ -28,7 +28,7 @@ variables:
     --without-headers
     --enable-default-pie
     --enable-default-ssp
-    --with-local-prefix=%{prefix}
+    --prefix=%{prefix}
     --with-native-system-header-dir=%{includedir}
     --disable-nls
     --disable-shared
