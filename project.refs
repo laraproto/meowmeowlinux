@@ -1,0 +1,122 @@
+projects:
+  meowmeowlinux:
+    pkgs/linux.bst:
+    - ref: d0acb5202d0e33d23cbe6994424587fbb05a5360
+    bootstrap/pkgs/dwz.bst:
+    - ref: dwz-0.14-3-gb612e38de2a1a376362cc2ac0da3c0938b8e0bca
+    bootstrap/pkgs/gzip.bst:
+    - suffix: gzip/gzip-1.14.tar.xz
+      sha256sum: 01a7b881bd220bfdf615f97b8718f80bdfd3f6add385b993dcf6efd14e8c0ac6
+    bootstrap/pkgs/binutils.bst:
+    - suffix: binutils/binutils-2.46.1.tar.xz
+      sha256sum: e127a709cba24c76de8936cb7083dd768f28cd37eb010492e2f19b71eb1294e4
+    bootstrap/pkgs/gettext.bst:
+    - suffix: gettext/gettext-1.0.tar.xz
+      sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
+    bootstrap/pkgs/autoconf-archive.bst:
+    - suffix: autoconf-archive/autoconf-archive-2024.10.16.tar.xz
+      sha256sum: 7bcd5d001916f3a50ed7436f4f700e3d2b1bade3ed803219c592d62502a57363
+    bootstrap/pkgs/findutils.bst:
+    - suffix: findutils/findutils-4.10.0.tar.xz
+      sha256sum: 1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5
+    bootstrap/pkgs/make.bst:
+    - suffix: make/make-4.4.1.tar.gz
+      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+    bootstrap/pkgs/gmp.bst:
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    bootstrap/pkgs/elfutils.bst:
+    - ref: elfutils-0.195-0-g302252356da5475670ac5b10dadd091c59689425
+    bootstrap/pkgs/file.bst:
+    - ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
+    bootstrap/pkgs/ncurses.bst:
+    - suffix: ncurses/ncurses-6.6.tar.gz
+      sha256sum: 355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11
+    bootstrap/pkgs/gdb.bst:
+    - suffix: gdb/gdb-17.2.tar.xz
+      sha256sum: 1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c
+    bootstrap/pkgs/automake.bst:
+    - suffix: automake/automake-1.18.1.tar.xz
+      sha256sum: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887
+    bootstrap/pkgs/sed.bst:
+    - suffix: sed/sed-4.10.tar.xz
+      sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7
+    bootstrap/pkgs/tar.bst:
+    - suffix: tar/tar-1.35.tar.xz
+      sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
+    bootstrap/pkgs/cpio.bst:
+    - suffix: cpio/cpio-2.15.tar.gz
+      sha256sum: efa50ef983137eefc0a02fdb51509d624b5e3295c980aa127ceee4183455499e
+    bootstrap/pkgs/autoconf.bst:
+    - suffix: autoconf/autoconf-2.73.tar.xz
+      sha256sum: 9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
+    bootstrap/pkgs/libtool.bst:
+    - suffix: libtool/libtool-2.5.4.tar.xz
+      sha256sum: f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675
+    bootstrap/pkgs/bison.bst:
+    - suffix: bison/bison-3.8.2.tar.xz
+      sha256sum: 9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2
+    bootstrap/pkgs/glibc.bst:
+    - suffix: glibc/glibc-2.43.tar.xz
+      sha256sum: d9c86c6b5dbddb43a3e08270c5844fc5177d19442cf5b8df4be7c07cd5fa3831
+    bootstrap/pkgs/help2man.bst:
+    - suffix: help2man/help2man-1.49.3.tar.xz
+      sha256sum: 4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f
+    bootstrap/pkgs/grep.bst:
+    - suffix: grep/grep-3.12.tar.xz
+      sha256sum: 2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9
+    bootstrap/pkgs/debugedit.bst:
+    - ref: debugedit-5.3-5-g2fe958a76701d339053c93cbffe031896854bb2a
+    bootstrap/pkgs/coreutils.bst:
+    - suffix: coreutils/coreutils-9.11.tar.xz
+      sha256sum: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3
+    bootstrap/pkgs/gawk.bst:
+    - suffix: gawk/gawk-5.4.0.tar.xz
+      sha256sum: 3dd430f0cd3b4428c6c3f6afc021b9cd3c1f8c93f7a688dc268ca428a90b4ac1
+    bootstrap/pkgs/bash.bst:
+    - suffix: bash/bash-5.3.tar.gz
+      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    bootstrap/pkgs/flex.bst:
+    - ref: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
+    bootstrap/pkgs/pkg-config.bst:
+    - ref: pkgconf-2.5.1-0-g4fc570f91d9d8d843ab32d2198a5c064538d8ffd
+    bootstrap/pkgs/diffutils.bst:
+    - suffix: diffutils/diffutils-3.12.tar.xz
+      sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+    bootstrap/pkgs/zlib.bst:
+    - ref: v1.3.2-0-gda607da739fa6047df13e66a2af6b8bec7c2a498
+    bootstrap/pkgs/libstdcxx.bst:
+    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    pkgs/linux/headers.bst:
+    - ref: 73e7709d9919efeb8df2cedd7804734a3254a0bb
+    bootstrap/pkgs/m4.bst:
+    - suffix: m4/m4-1.4.21.tar.xz
+      sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
+    bootstrap/pkgs/binutils-cross.bst:
+    - suffix: binutils/binutils-2.46.1.tar.xz
+      sha256sum: e127a709cba24c76de8936cb7083dd768f28cd37eb010492e2f19b71eb1294e4
+    bootstrap/pkgs/xz.bst:
+    - ref: v5.8.3-1-gebb0e6789cefe3be71756881aa8f2009fda9938c
+    bootstrap/pkgs/gcc-cross.bst:
+    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    bootstrap/pkgs/gcc.bst:
+    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    bootstrap/pkgs/perl.bst:
+    - ref: v5.42.2-3-g9282141b0f3360f2552cdbb4f5a957032f0bd5f7
+    bootstrap/pkgs/python.bst:
+    - ref: v3.14.5-173-g49d78123b784c5db6e2b9c4789f39449b8213f58
+    bootstrap/pkgs/linux-api-headers.bst:
+    - ref: v7.0.12-104130-g73e7709d9919efeb8df2cedd7804734a3254a0bb
