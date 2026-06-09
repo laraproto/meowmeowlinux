@@ -1,0 +1,359 @@
+From 3d77f3f5c6d95e3f9f3548b5fa30164d2109463e Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Sat, 11 Jun 2022 16:57:24 -0400
+Subject: [PATCH] find-debuginfo: Stop depending on RPM_* environment variables
+To: debugedit@sourceware.org
+
+This should fix https://sourceware.org/bugzilla/show_bug.cgi?id=27637
+
+I've implemented this in such a way that it should remain backwards-compatible.
+In other words, it should just continue working in the RPM build environment as
+before with no changes, though I haven't tested this.
+
+After RPM transitions to the new way of invoking the script, the backwards
+compatibility should be simple to strip out
+
+Signed-off-by: Adrian Vovk <adrianvovk@gmail.com>
+---
+ scripts/find-debuginfo.in | 154 +++++++++++++++++++++++++-------------
+ 1 file changed, 102 insertions(+), 52 deletions(-)
+
+diff --git a/scripts/find-debuginfo.in b/scripts/find-debuginfo.in
+index b07a52f..9bc6232 100755
+--- a/scripts/find-debuginfo.in
++++ b/scripts/find-debuginfo.in
+@@ -22,7 +22,7 @@
+ help()
+ {
+   cat <<'EOF'
+-Usage: find-debuginfo [OPTION]... [builddir]
++Usage: find-debuginfo [OPTION]... builddir destdir nevra
+ automagically generates debug info and file lists
+ 
+ Options:
+@@ -39,7 +39,6 @@ Options:
+ [--unique-debug-suffix SUFFIX]
+ [--unique-debug-src-base BASE]
+ [[-l filelist]... [-p 'pattern'] -o debuginfo.list]
+-[builddir]
+ 
+ The -g flag says to use strip -g instead of full strip on DSOs or EXEs.
+ The --g-libs flag says to use strip -g instead of full strip ONLY on
+@@ -87,14 +86,22 @@ are unique between versions and releases of the same package.
+ If --unique-debug-suffix SUFFIX is given then the debug files created
+ for <FILE> will be named <FILE>-<SUFFIX>.debug.  This makes sure .debug
+ are unique between package version, release and architecture.
+-(Use --unique-debug-suffix "-%{VERSION}-%{RELEASE}.%{_arch}".)
++(Use --unique-debug-suffix "-%{VERSION}-%{RELEASE}.%{_arch}")
+ 
+-If --unique-debug-src-base BASE is given then the source directory
+-will be called /usr/debug/src/<BASE>.  This makes sure the debug source
+-dirs are unique between package version, release and achitecture (Use
+---unique-debug-src-base "%{name}-%{VERSION}-%{RELEASE}.%{_arch}")
++If --unique-debug-src-base BASE is given, then the source directory
++will be called /usr/src/debug/<BASE>.  This makes sure the debug source
++dirs are unique between package version, release and achitecture.  This
++option defaults to the nevra, unless RPM_BUILD_DIR is set, in which case
++it defaults to legacy RPM-specific behavior to maintain compatibility.
+ 
+-All file names in switches are relative to builddir ('.' if not given).
++All file names in switches are relative to builddir.
++(if unsure, use ".")
++
++All output files are placed into destdir.
++(Use $RPM_BUILD_ROOT or equivalent)
++
++The nevra should uniquely identify the current package and version.
++(Use %{name}-%{VERSION}-%{RELEASE}.%{_arch} or equivalent)
+ EOF
+ }
+ 
+@@ -138,6 +145,7 @@ build_id_seed=
+ unique_debug_suffix=
+ 
+ # Base given by --unique-debug-src-base
++unique_debug_src_base_legacy=undecided
+ unique_debug_src_base=
+ 
+ # Number of parallel jobs to spawn
+@@ -146,7 +154,9 @@ n_jobs=1
+ # exit early on --version or --help
+ done=false
+ 
+-BUILDDIR=.
++BUILDDIR=
++DESTDIR=
++NEVRA=
+ out=debugfiles.list
+ srcout=
+ nout=0
+@@ -179,6 +189,7 @@ while [ $# -gt 0 ]; do
+     ;;
+   --unique-debug-src-base)
+     unique_debug_src_base=$2
++    unique_debug_src_base_legacy=no
+     shift
+     ;;
+   --g-libs)
+@@ -249,6 +260,8 @@ while [ $# -gt 0 ]; do
+     ;;
+   *)
+     BUILDDIR=$1
++    DESTDIR=$2
++    NEVRA=$3
+     shift
+     break
+     ;;
+@@ -259,17 +272,52 @@ done
+ # version or help given
+ if [ "$done" = "true" ]; then exit 0; fi
+ 
+-# Currently this scripts depends on some RPM environment variables
+-# being set.  RPM_BUILD_ROOT as the installation root directory.
+-# RPM_BUILD_DIR as the top build dir (usually one above BUILDDIR).
+-# And RPM_PACKAGE_NAME, RPM_PACKAGE_VERSION, RPM_PACKAGE_RELEASE,
+-# RPM_ARCH to create an unique (dir) name. Warn if they aren't set.
+-for n in RPM_BUILD_ROOT RPM_BUILD_DIR RPM_PACKAGE_NAME; do
+-  if eval test -z \"\${$n-}\"; then
+-    echo >&2 "$n is not set"
++# Ensure that BUILDDIR, DESTDIR, and NEVRA are set, with fallbacks
++# into the legacy RPM_* environment variables
++if test -z "$BUILDDIR"; then
++  echo >&2 "ERROR: builddir was not provided"
++  exit 1
++fi
++if test -z "$DESTDIR"; then
++  # Check for legacy RPM_BUILD_ROOT env var
++  if test -n "$RPM_BUILD_ROOT"; then
++    DESTDIR="$RPM_BUILD_ROOT"
++    echo >&2 "WARNING: Using legacy RPM_BUILD_ROOT env var. Please pass destdir directly"
++  else
++    echo >&2 "ERROR: destdir was not provided"
+     exit 1
+   fi
+-done
++fi
++if test -z "$NEVRA"; then
++  # Check for legacy nevra env vars
++  using_rpm=true
++  for var in RPM_PACKAGE_NAME RPM_PACKAGE_VERSION RPM_PACKAGE_RELEASE RPM_ARCH; do
++    if test -z "${!var}"; then
++      using_rpm=false
++    fi
++  done
++  if [ "$using_rpm" = "true" ]; then
++    NEVRA="${RPM_PACKAGE_NAME}-${RPM_PACKAGE_VERSION}-${RPM_PACKAGE_RELEASE}.${RPM_ARCH}"
++    echo >&2 "WARNING: Using legacy RPM nevra env vars. Please pass nevra directly"
++  else
++    echo >&2 "ERROR: nevra was not provided"
++    exit 1
++  fi
++fi
++
++# Fall back to unique_debug_src_base's legacy behavior if RPM_BUILD_DIR is set
++if [ "$unique_debug_src_base_legacy" = "undecided" ]; then
++  if test -z "$RPM_BUILD_DIR"; then
++    unique_debug_src_base_legacy=no
++  else
++    unique_debug_src_base_legacy=yes
++  fi
++fi
++
++# Handle unique_debug_src_base's default
++if test -z "$unique_debug_src_base"; then
++  unique_debug_src_base="$NEVRA"
++fi
+ 
+ if test -n "$build_id_seed" -a "$no_recompute_build_id" = "true"; then
+   echo >&2 "*** ERROR: --build-id-seed (unique build-ids) and -n (do not recompute build-id) cannot be used together"
+@@ -302,7 +350,7 @@ ELFBINSFILE="$BUILDDIR/elfbins.list"
+ > "$LINKSFILE"
+ > "$ELFBINSFILE"
+ 
+-debugdir="${RPM_BUILD_ROOT}/usr/lib/debug"
++debugdir="${DESTDIR}/usr/lib/debug"
+ 
+ strip_to_debug()
+ {
+@@ -390,12 +438,12 @@ debug_link()
+   local l="/usr/lib/debug$2"
+   local t="$1"
+   echo >> "$LINKSFILE" "$l $t"
+-  link_relative "$t" "$l" "$RPM_BUILD_ROOT"
++  link_relative "$t" "$l" "$DESTDIR"
+ }
+ 
+ get_debugfn()
+ {
+-  dn=$(dirname "${1#$RPM_BUILD_ROOT}")
++  dn=$(dirname "${1#$DESTDIR}")
+   bn=$(basename "$1" .debug)${unique_debug_suffix}.debug
+   debugdn=${debugdir}${dn}
+   debugfn=${debugdn}/${bn}
+@@ -411,7 +459,7 @@ trap 'rm -rf "$temp"' EXIT
+ 
+ # Build a list of unstripped ELF files and their hardlinks
+ touch "$temp/primary"
+-find "$RPM_BUILD_ROOT" ! -path "${debugdir}/*.debug" -type f \
++find "$DESTDIR" ! -path "${debugdir}/*.debug" -type f \
+      		     \( -perm -0100 -or -perm -0010 -or -perm -0001 \) \
+ 		     -print | LC_ALL=C sort |
+ file -N -f - | sed -n -e 's/^\(.*\):[ 	]*.*ELF.*, not stripped.*/\1/p' |
+@@ -439,9 +487,10 @@ do_file()
+ 
+   echo "extracting debug info from $f"
+   # See also cpio SOURCEFILE copy. Directories must match up.
+-  debug_base_name="$RPM_BUILD_DIR"
+-  debug_dest_name="/usr/src/debug"
+-  if [ ! -z "$unique_debug_src_base" ]; then
++  if [ "$unique_debug_src_base_legacy" = "yes" ]; then
++    debug_base_name="$RPM_BUILD_DIR"
++    debug_dest_name="/usr/src/debug"
++  else
+     debug_base_name="$BUILDDIR"
+     debug_dest_name="/usr/src/debug/${unique_debug_src_base}"
+   fi
+@@ -505,7 +554,7 @@ do_file()
+     $skip_mini || add_minidebug "${debugfn}" "$f"
+   fi
+ 
+-  echo "./${f#$RPM_BUILD_ROOT}" >> "$ELFBINSFILE"
++  echo "./${f#$DESTDIR}" >> "$ELFBINSFILE"
+ 
+   # If this file has multiple links, make the corresponding .debug files
+   # all links to one file too.
+@@ -573,14 +622,14 @@ fi
+ 
+ # Invoke the DWARF Compressor utility.
+ if $run_dwz \
+-   && [ -d "${RPM_BUILD_ROOT}/usr/lib/debug" ]; then
+-  readarray dwz_files < <(cd "${RPM_BUILD_ROOT}/usr/lib/debug"; find -type f -name \*.debug | LC_ALL=C sort)
++   && [ -d "${DESTDIR}/usr/lib/debug" ]; then
++  readarray dwz_files < <(cd "${DESTDIR}/usr/lib/debug"; find -type f -name \*.debug | LC_ALL=C sort)
+   if [ ${#dwz_files[@]} -gt 0 ]; then
+-    size_before=$(du -sk ${RPM_BUILD_ROOT}/usr/lib/debug | cut -f1)
+-    dwz_multifile_name="${RPM_PACKAGE_NAME}-${RPM_PACKAGE_VERSION}-${RPM_PACKAGE_RELEASE}.${RPM_ARCH}"
++    size_before=$(du -sk ${DESTDIR}/usr/lib/debug | cut -f1)
++    dwz_multifile_name="$NEVRA"
+     dwz_multifile_suffix=
+     dwz_multifile_idx=0
+-    while [ -f "${RPM_BUILD_ROOT}/usr/lib/debug/.dwz/${dwz_multifile_name}${dwz_multifile_suffix}" ]; do
++    while [ -f "${DESTDIR}/usr/lib/debug/.dwz/${dwz_multifile_name}${dwz_multifile_suffix}" ]; do
+       let ++dwz_multifile_idx
+       dwz_multifile_suffix=".${dwz_multifile_idx}"
+     done
+@@ -588,37 +637,37 @@ if $run_dwz \
+     dwz_opts="-h -q -r"
+     [ ${#dwz_files[@]} -gt 1 ] && [ "$dwz_single_file_mode" = "false" ] \
+       && dwz_opts="${dwz_opts} -m .dwz/${dwz_multifile_name}"
+-    mkdir -p "${RPM_BUILD_ROOT}/usr/lib/debug/.dwz"
++    mkdir -p "${DESTDIR}/usr/lib/debug/.dwz"
+     [ -n "${dwz_low_mem_die_limit}" ] \
+       && dwz_opts="${dwz_opts} -l ${dwz_low_mem_die_limit}"
+     [ -n "${dwz_max_die_limit}" ] \
+       && dwz_opts="${dwz_opts} -L ${dwz_max_die_limit}"
+     if type dwz >/dev/null 2>&1; then
+-      ( cd "${RPM_BUILD_ROOT}/usr/lib/debug" && dwz $dwz_opts ${dwz_files[@]} )
++      ( cd "${DESTDIR}/usr/lib/debug" && dwz $dwz_opts ${dwz_files[@]} )
+     else
+       echo >&2 "*** ERROR: DWARF compression requested, but no dwz installed"
+       exit 2
+     fi
+-    size_after=$(du -sk ${RPM_BUILD_ROOT}/usr/lib/debug | cut -f1)
++    size_after=$(du -sk ${DESTDIR}/usr/lib/debug | cut -f1)
+     echo "original debug info size: ${size_before}kB, size after compression: ${size_after}kB"
+     # Remove .dwz directory if empty
+-    rmdir "${RPM_BUILD_ROOT}/usr/lib/debug/.dwz" 2>/dev/null
++    rmdir "${DESTDIR}/usr/lib/debug/.dwz" 2>/dev/null
+ 
+     # dwz invalidates .gnu_debuglink CRC32 in the main files.
+     cat "$ELFBINSFILE" |
+-    (cd "$RPM_BUILD_ROOT"; \
++    (cd "$DESTDIR"; \
+      tr '\n' '\0' | xargs -0 ${install_dir}/sepdebugcrcfix usr/lib/debug)
+   fi
+ fi
+ 
+ # For each symlink whose target has a .debug file,
+ # make a .debug symlink to that file.
+-find "$RPM_BUILD_ROOT" ! -path "${debugdir}/*" -type l -print |
++find "$DESTDIR" ! -path "${debugdir}/*" -type l -print |
+ while read f
+ do
+   t=$(readlink -m "$f").debug
+-  f=${f#$RPM_BUILD_ROOT}
+-  t=${t#$RPM_BUILD_ROOT}
++  f=${f#$DESTDIR}
++  t=${t#$DESTDIR}
+   if [ -f "$debugdir$t" ]; then
+     echo "symlinked /usr/lib/debug$t to /usr/lib/debug${f}.debug"
+     debug_link "/usr/lib/debug$t" "${f}.debug"
+@@ -627,33 +676,34 @@ done
+ 
+ if [ -s "$SOURCEFILE" ]; then
+   # See also debugedit invocation. Directories must match up.
+-  debug_base_name="$RPM_BUILD_DIR"
+-  debug_dest_name="/usr/src/debug"
+-  if [ ! -z "$unique_debug_src_base" ]; then
++  if [ "$unique_debug_src_base_legacy" = "yes" ]; then
++    debug_base_name="$RPM_BUILD_DIR"
++    debug_dest_name="/usr/src/debug"
++  else
+     debug_base_name="$BUILDDIR"
+     debug_dest_name="/usr/src/debug/${unique_debug_src_base}"
+   fi
+ 
+-  mkdir -p "${RPM_BUILD_ROOT}${debug_dest_name}"
++  mkdir -p "${DESTDIR}${debug_dest_name}"
+   # Filter out anything compiler generated which isn't a source file.
+   # e.g. <internal>, <built-in>, <__thread_local_inner macros>.
+   # Some compilers generate them as if they are part of the working
+   # directory (which is why we match against ^ or /).
+   LC_ALL=C sort -z -u "$SOURCEFILE" | grep -E -v -z '(^|/)<[a-z _-]+>$' |
+-  (cd "${debug_base_name}"; cpio -pd0mL "${RPM_BUILD_ROOT}${debug_dest_name}")
++  (cd "${debug_base_name}"; cpio -pd0mL "${DESTDIR}${debug_dest_name}")
+   # stupid cpio creates new directories in mode 0700,
+   # and non-standard modes may be inherented from original directories, fixup
+-  find "${RPM_BUILD_ROOT}${debug_dest_name}" -type d -print0 |
++  find "${DESTDIR}${debug_dest_name}" -type d -print0 |
+   xargs --no-run-if-empty -0 chmod 0755
+ fi
+ 
+-if [ -d "${RPM_BUILD_ROOT}/usr/lib" ] || [ -d "${RPM_BUILD_ROOT}/usr/src" ]; then
++if [ -d "${DESTDIR}/usr/lib" ] || [ -d "${DESTDIR}/usr/src" ]; then
+   ((nout > 0)) ||
+-  test ! -d "${RPM_BUILD_ROOT}/usr/lib" ||
+-  (cd "${RPM_BUILD_ROOT}/usr/lib"; find debug -type d) |
++  test ! -d "${DESTDIR}/usr/lib" ||
++  (cd "${DESTDIR}/usr/lib"; find debug -type d) |
+   sed 's,^,%dir /usr/lib/,' >> "$LISTFILE"
+ 
+-  (cd "${RPM_BUILD_ROOT}/usr"
++  (cd "${DESTDIR}/usr"
+    test ! -d lib/debug || find lib/debug ! -type d
+    test ! -d src/debug -o -n "$srcout" || find src/debug -mindepth 1 -maxdepth 1
+   ) | sed 's,^,/usr/,' >> "$LISTFILE"
+@@ -662,8 +712,8 @@ fi
+ if [ -n "$srcout" ]; then
+   srcout="$BUILDDIR/$srcout"
+   > "$srcout"
+-  if [ -d "${RPM_BUILD_ROOT}/usr/src/debug" ]; then
+-    (cd "${RPM_BUILD_ROOT}/usr"
++  if [ -d "${DESTDIR}/usr/src/debug" ]; then
++    (cd "${DESTDIR}/usr"
+      find src/debug -mindepth 1 -maxdepth 1
+     ) | sed 's,^,/usr/,' >> "$srcout"
+   fi
+@@ -735,7 +785,7 @@ if ((nout > 0)); then
+     done | \
+     sort -u | \
+     while read -r line; do
+-      test -d "${RPM_BUILD_ROOT}$line" && printf '%%dir %s\n' "$line"
++      test -d "${DESTDIR}$line" && printf '%%dir %s\n' "$line"
+     done
+   }
+   i=0
+-- 
+2.36.1
+
+
