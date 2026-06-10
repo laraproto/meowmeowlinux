@@ -1,48 +1,34 @@
 kind: autotools
 
 sources:
-- kind: gnu
-  name: gcc
-- kind: gnu
-  name: gmp
-  directory: gmp
-- kind: gnu
-  name: mpfr
-  directory: mpfr
-- kind: gnu
-  name: mpc
-  directory: mpc
+  - kind: gnu
+    name: gcc
+  - kind: gnu
+    name: gmp
+    directory: gmp
+  - kind: gnu
+    name: mpfr
+    directory: mpfr
+  - kind: gnu
+    name: mpc
+    directory: mpc
 
 build-depends:
-- bootstrap/tools/import-fdo.bst
-- bootstrap/pkgs/binutils-cross.bst
-- bootstrap/tools/sysroot-setup.bst
+  - bootstrap/tools/import-fdo.bst
+  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 variables:
   build-dir: build
   conf-root: '..'
   conf-local: >-
-    --target=%{bootstrap-triplet}
-    --with-sysroot=%{bootstrap-sysroot}
-    --with-glibc-version=2.43
-    --with-newlib
-    --without-headers
-    --enable-default-pie
-    --enable-default-ssp
-    --with-local-prefix=%{prefix}
-    --with-native-system-header-dir=%{includedir}
-    --disable-nls
-    --disable-shared
-    --disable-multilib
-    --disable-threads
-    --disable-libatomic
-    --disable-libgomp
-    --disable-libquadmath
-    --disable-libssp
-    --disable-libvtv
-    --disable-libstdcxx
-    --enable-deterministic-archives
-    --enable-linker-build-id
+    --target=%{bootstrap-triplet} --with-sysroot=%{bootstrap-sysroot}
+    --with-glibc-version=2.43 --with-newlib --without-headers
+    --enable-default-pie --enable-default-ssp --with-local-prefix=%{prefix}
+    --with-native-system-header-dir=%{includedir} --disable-nls --disable-shared
+    --disable-multilib --disable-threads --disable-libatomic --disable-libgomp
+    --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx
+    --enable-deterministic-archives --enable-linker-build-id
     --enable-languages=c,c++
 
 config:
@@ -63,9 +49,15 @@ config:
     - |
       mkdir -v %{build-dir}
       cd %{build-dir}
+      echo Build dir var is %{build-dir}
       %{autogen}
       %{configure}
+  build-commands:
+    - |
+      cd %{build-dir}
+      %{make}
   install-commands:
-     - |
-       cd %{build-dir}
-       %{make}
+    - |
+      cd %{build-dir}
+      %{make-install}
+      %{delete-libtool-archives}
