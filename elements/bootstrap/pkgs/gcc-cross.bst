@@ -1,5 +1,8 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/include/autotools-fix.yml
+
 sources:
   - kind: gnu
     name: gcc
@@ -19,8 +22,6 @@ build-depends:
   - bootstrap/tools/sysroot-setup.bst
 
 variables:
-  build-dir: build
-  conf-root: '..'
   conf-local: >-
     --target=%{bootstrap-triplet} --with-sysroot=%{bootstrap-sysroot}
     --with-glibc-version=2.43 --with-newlib --without-headers
@@ -47,18 +48,6 @@ config:
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
     - |
-      mkdir -v %{build-dir}
-      cd %{build-dir}
       %{autogen}
     - |
-      cd %{build-dir}
       %{configure}
-  build-commands:
-    - |
-      cd %{build-dir}
-      %{make}
-  install-commands:
-    - |
-      cd %{build-dir}
-      %{make-install}
-      %{delete-libtool-archives}

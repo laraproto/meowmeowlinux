@@ -1,26 +1,38 @@
 kind: autotools
 description: A temporary libstdc++ used to build a final bootstrap gcc
 
+(@):
+  - elements/bootstrap/include/autotools-fix.yml
+
 sources:
-- kind: gnu
-  name: gcc
+  - kind: gnu
+    name: gcc
 
 build-depends:
-- bootstrap/tools/import-fdo.bst
-- bootstrap/pkgs/gcc-cross.bst
-- bootstrap/pkgs/binutils-cross.bst
-- bootstrap/pkgs/glibc.bst
-- bootstrap/pkgs/linux-api-headers.bst
-- bootstrap/tools/sysroot-setup.bst
+  - bootstrap/tools/import-fdo.bst
+  - bootstrap/pkgs/gcc-cross.bst
+  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/pkgs/glibc.bst
+  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 variables:
-  build-dir: build
   conf-cmd: '%{build-root}/libstdc++-v3/configure'
   gcc-version: $(%{bootstrap-triplet}-gcc -dumpversion)
   conf-local: >-
-    --host=%{bootstrap-triplet}
-    --disable-multilib
-    --disable-nls
-    --disable-libstdcxx-threads
-    --disable-libstdcxx-pch
-    --with-gxx-include-dir=%{prefix}/%{bootstrap-triplet}/include/c++/%{gcc-version}
+    --host=%{bootstrap-triplet} --disable-multilib --disable-nls
+    --disable-libstdcxx-pch --disable-multilib
+    --with-gxx-include-dir=%{prefix}/%{bootstrap-triplet}/include/c++/%{gcc-version}}}
+
+config:
+  configure-commands:
+    - |
+      export CXXFLAGS="$CXXFLAGS -Wno-template-body"
+
+      %{autogen}
+      %{configure}
+  install-commands:
+    - |
+      ln -sv gcc %{install-root}%{bindir}/cc
+      %{make-install}
+      %{delete-libtool-archives}

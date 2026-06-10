@@ -1,0 +1,6 @@
+variables:
+  strip-binaries: ''
+  tools: '/tools'
+
+environment:
+  PATH: "%{tools}/bin:/bin"

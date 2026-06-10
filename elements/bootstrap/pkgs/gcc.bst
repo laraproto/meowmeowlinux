@@ -1,5 +1,8 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/include/autotools-fix.yml
+
 sources:
   - kind: gnu
     name: gcc
@@ -30,7 +33,6 @@ environment:
   RANLIB: '%{bootstrap-triplet}-ranlib'
 
 variables:
-  build-dir: build
   conf-local: >-
     --with-local-prefix=%{prefix} --with-native-system-header-dir=%{includedir}
     --disable-multilib --disable-bootstrap --disable-libgomp
@@ -51,17 +53,11 @@ config:
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
     - |
-      mkdir -v %{build-dir}
-      cd %{build-dir}
       %{autogen}
       %{configure}
-  build-commands:
-    - |
-      cd %{build-dir}
-      %{make}
   install-commands:
     - |
       ln -sv gcc %{install-root}%{bindir}/cc
-      cd %{build-dir}
+
       %{make-install}
       %{delete-libtool-archives}

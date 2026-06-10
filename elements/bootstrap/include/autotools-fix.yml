@@ -1,0 +1,18 @@
+(@):
+  - elements/bootstrap/include/common.yml
+
+variables:
+  build-dir: build
+  conf-root: "%{build-root}"
+
+  configure: |
+    mkdir -pv build
+    cd build
+
+    %{conf-cmd} %{conf-args}
+  make: |
+    cd build
+    make %{make-args}
+  make-install: |
+    cd build
+    make -j1 %{make-install-args}
