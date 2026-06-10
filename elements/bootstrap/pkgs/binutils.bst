@@ -24,8 +24,10 @@ environment:
 variables:
   build-dir: build
   conf-local: >-
-    --target=%{bootstrap-triplet} --build=$(../config.guess) --with-lib-path=%{libdir} --disable-nls --enable-new-dtags --disable-werror --with-sysroot=%{bootstrap-sysroot}
-    --disable-gprofng --enable-shared --with-headers=%{bootstrap-prefix}/include
+    --target=%{bootstrap-triplet} --build=$(../config.guess)
+    --with-lib-path=%{libdir} --disable-nls --enable-new-dtags --disable-werror
+    --with-sysroot=%{bootstrap-sysroot} --disable-gprofng --enable-shared
+    --with-headers=%{bootstrap-prefix}/include
 
 config:
   configure-commands:
@@ -41,8 +43,5 @@ config:
       make -C %{build-dir}/ld clean
       make -C %{build-dir}/ld LIB_PATH=/usr/lib
 
+      mkdir -pv %{install-root}/usr/bin
       cp -v %{build-dir}/ld/ld-new %{install-root}/usr/bin
-
-    # Delete .info files because they overlap binutils-cross and for whatever reason overlap-whitelist doesn't work
-    - |
-      rm -v %{install-root}/usr/share/info/{dir,*.info}
