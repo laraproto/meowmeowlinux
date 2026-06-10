@@ -1,27 +1,27 @@
 kind: autotools
 
 sources:
-- kind: gnu
-  name: gcc
-- kind: gnu
-  name: mpfr
-  directory: mpfr
-- kind: gnu
-  name: mpc
-  directory: mpc
+  - kind: gnu
+    name: gcc
+  - kind: gnu
+    name: mpfr
+    directory: mpfr
+  - kind: gnu
+    name: mpc
+    directory: mpc
 
 depends:
-- bootstrap/pkgs/gmp.bst
+  - bootstrap/pkgs/gmp.bst
 
 build-depends:
-- bootstrap/tools/import-fdo.bst
-- bootstrap/pkgs/gcc-cross.bst
-- bootstrap/pkgs/binutils-cross.bst
-- bootstrap/pkgs/binutils.bst
-- bootstrap/pkgs/glibc.bst
-- bootstrap/pkgs/libstdcxx.bst
-- bootstrap/pkgs/linux-api-headers.bst
-- bootstrap/tools/sysroot-setup.bst
+  - bootstrap/tools/import-fdo.bst
+  - bootstrap/pkgs/gcc-cross.bst
+  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/pkgs/binutils.bst
+  - bootstrap/pkgs/glibc.bst
+  - bootstrap/pkgs/libstdcxx.bst
+  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 environment:
   CC: '%{bootstrap-triplet}-gcc'
@@ -32,19 +32,13 @@ environment:
 variables:
   build-dir: build
   conf-local: >-
-    --with-local-prefix=%{prefix}
-    --with-native-system-header-dir=%{includedir}
-    --disable-multilib
-    --disable-bootstrap
-    --disable-libgomp
-    --disable-libstdxx-pch
-    --enable-deterministic-archives
-    --enable-linker-build-id
-    --enable-languages=c,c++
+    --with-local-prefix=%{prefix} --with-native-system-header-dir=%{includedir}
+    --disable-multilib --disable-bootstrap --disable-libgomp
+    --disable-libstdxx-pch --enable-deterministic-archives
+    --enable-linker-build-id --enable-languages=c,c++
 
 config:
   configure-commands:
-    (<):
     - |
       for file in gcc/config/{linux,i386/linux{,64}}.h; do
         cp -v $file{,.orig}
@@ -56,6 +50,18 @@ config:
         echo '#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
+    - |
+      mkdir -v %{build-dir}
+      cd %{build-dir}
+      %{autogen}
+      %{configure}
+  build-commands:
+    - |
+      cd %{build-dir}
+      %{make}
   install-commands:
-    (>):
-    - ln -sv gcc %{install-root}%{bindir}/cc
+    - |
+      ln -sv gcc %{install-root}%{bindir}/cc
+      cd %{build-dir}
+      %{make-install}
+      %{delete-libtool-archives}

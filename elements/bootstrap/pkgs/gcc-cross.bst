@@ -49,7 +49,6 @@ config:
     - |
       mkdir -v %{build-dir}
       cd %{build-dir}
-      echo Build dir var is %{build-dir}
       %{autogen}
       %{configure}
   build-commands:
