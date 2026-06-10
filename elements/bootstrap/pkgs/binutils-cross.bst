@@ -23,7 +23,6 @@ variables:
 config:
   install-commands:
     (>):
-<<<<<<< HEAD
     - ln -sv lib %{install-root}%{bootstrap-prefix}/lib64
     - rm -rf %{install-root}%{datadir}/info
     - rm -rf %{install-root}%{libdir}/bfd-plugins
