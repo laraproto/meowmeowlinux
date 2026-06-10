@@ -1,5 +1,8 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 sources:
 - kind: git_tag
   url: tukaani:xz.git

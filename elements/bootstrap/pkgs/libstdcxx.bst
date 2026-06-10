@@ -22,7 +22,7 @@ variables:
   conf-local: >-
     --host=%{bootstrap-triplet} --disable-multilib --disable-nls
     --disable-libstdcxx-pch --disable-multilib
-    --with-gxx-include-dir=%{prefix}/%{bootstrap-triplet}/include/c++/%{gcc-version}}}
+    --with-gxx-include-dir=%{bootstrap-prefix}/%{bootstrap-triplet}/include/c++/%{gcc-version}}}
 
 config:
   configure-commands:

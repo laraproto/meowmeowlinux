@@ -1,6 +1,9 @@
 kind: autotools
 description: Minimal build of GDB, for gdb-add-index
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 sources:
 - kind: gnu
   name: gdb

@@ -10,6 +10,9 @@ depends:
 build-depends:
 - bootstrap/tools/toolchain.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 variables:
   conf-local: --without-bash-malloc
 

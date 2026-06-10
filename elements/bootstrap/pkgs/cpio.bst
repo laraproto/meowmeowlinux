@@ -7,6 +7,9 @@ sources:
 build-depends:
 - bootstrap/tools/toolchain.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 variables:
   conf-local: --with-rmt=%{libexecdir}/rmt
 

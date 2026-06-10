@@ -9,6 +9,9 @@ depends:
 - bootstrap/pkgs/glibc.bst
 - bootstrap/pkgs/elfutils.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 runtime-depends:
 - bootstrap/pkgs/dwz.bst
 - bootstrap/pkgs/cpio.bst # Needed to copy sources into /usr/src

@@ -11,4 +11,4 @@ config:
   commands:
   - |
     mkdir -pv %{install-root}%{bootstrap-sysroot}
-    ln -sv %{prefix} %{install-root}%{bootstrap-sysroot}%{prefix}
+    ln -sv %{bootstrap-prefix} %{install-root}%{bootstrap-sysroot}%{prefix}

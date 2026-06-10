@@ -15,3 +15,6 @@ config:
   install-commands:
     (>):
     - ln -sv flex %{install-root}%{bindir}/lex
+
+(@):
+  - elements/bootstrap/include/common.yml

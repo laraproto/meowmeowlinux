@@ -6,3 +6,6 @@ sources:
 
 build-depends:
 - bootstrap/tools/toolchain.bst
+
+(@):
+  - elements/bootstrap/include/common.yml

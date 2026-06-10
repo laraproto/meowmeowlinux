@@ -18,6 +18,9 @@ environment:
   AR: "%{bootstrap-triplet}-ar"
   RANLIB: "%{bootstrap-triplet}-ranlib"
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 variables:
   build-dir: build
   conf-local: >-

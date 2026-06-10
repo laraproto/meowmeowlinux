@@ -7,6 +7,9 @@ sources:
 build-depends:
 - bootstrap/tools/toolchain.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 # Fix the yacc command
 config:
   install-commands:

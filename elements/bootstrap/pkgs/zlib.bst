@@ -1,6 +1,9 @@
 kind: autotools
 description: Contains various compression/decompression routines
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 sources:
 - kind: git_tag
   url: github:madler/zlib
@@ -15,6 +18,6 @@ build-depends:
 # zlib's configure is very picky...
 variables:
   conf-args: >-
-    --prefix=%{prefix}
+    --prefix=%{bootstrap-prefix}
     --libdir=%{libdir}
     --sharedlibdir=%{libdir}

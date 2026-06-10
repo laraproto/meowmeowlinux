@@ -34,7 +34,7 @@ environment:
 
 variables:
   conf-local: >-
-    --with-local-prefix=%{prefix} --with-native-system-header-dir=%{includedir}
+    --with-local-prefix=%{bootstrap-prefix} --with-native-system-header-dir=%{includedir}
     --disable-multilib --disable-bootstrap --disable-libgomp
     --disable-libstdxx-pch --enable-deterministic-archives
     --enable-linker-build-id --enable-languages=c,c++
@@ -45,7 +45,7 @@ config:
       for file in gcc/config/{linux,i386/linux{,64}}.h; do
         cp -v $file{,.orig}
         sed -e 's@/lib\(64\)\?\(32\)\?/ld@%{libdir}/ld@g' \
-            -e 's@/usr@%{prefix}@g' $file.orig > $file
+            -e 's@/usr@%{bootstrap-prefix}@g' $file.orig > $file
         echo '#undef STANDARD_STARTFILE_PREFIX_1' >> $file
         echo '#undef STANDARD_STARTFILE_PREFIX_2' >> $file
         echo '#define STANDARD_STARTFILE_PREFIX_1 "%{libdir}/"' >> $file

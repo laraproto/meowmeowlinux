@@ -1,5 +1,8 @@
 kind: manual
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 sources:
 - kind: git_tag
   url: github:perl/perl5.git
@@ -15,7 +18,7 @@ build-depends:
 
 config:
   configure-commands:
-  - bash Configure -des -Dprefix=%{prefix} -Dlibs=-lm -Uloclibpth -Ulocincpth -Duseshrplib
+  - bash Configure -des -Dprefix=%{bootstrap-prefix} -Dlibs=-lm -Uloclibpth -Ulocincpth -Duseshrplib
   build-commands:
   - make
   install-commands:

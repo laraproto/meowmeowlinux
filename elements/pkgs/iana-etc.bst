@@ -1,24 +1,22 @@
 kind: manual
-description: Linux kernel headers
-
-(@):
-  - elements/bootstrap/include/common.yml
+description: Linux kernel API headers
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: kernel:linux/kernel/git/stable/linux.git
   track: linux-rolling-stable
-# skip-release-monitoring
+  ref: ab2671f80c15924d140fab5f11d284504e6e5b7d6500bb7d79c4e4328ab92a57
 
 build-depends:
-- bootstrap/tools/import-fdo.bst
-- bootstrap/pkgs/binutils-cross.bst
-- bootstrap/pkgs/gcc-cross.bst
+- bootstrap/unadjusted.bst
 
 config:
-  configure-commands:
+  build-commands:
   - make mrproper
   - make headers
   install-commands:
+  - |
+    find usr/include -name '.*' -delete
+    rm -v usr/include/Makefile
   - mkdir -pv %{install-root}%{includedir}
   - cp -rv usr/include/* %{install-root}%{includedir}

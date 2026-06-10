@@ -13,5 +13,8 @@ depends:
 build-depends:
 - bootstrap/tools/toolchain.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 variables:
-  make-args: prefix=%{prefix}
+  make-args: prefix=%{bootstrap-prefix}

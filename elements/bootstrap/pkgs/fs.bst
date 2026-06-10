@@ -24,3 +24,6 @@ config:
 
     ln -sfv %{libdir}/libgcc_s.so{,.1} %{install-root}/usr/lib
     ln -sfv %{libdir}/libstdc++.{a,so{,.6}} %{install-root}/usr/lib
+
+(@):
+  - elements/bootstrap/include/common.yml

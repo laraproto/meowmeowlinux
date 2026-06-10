@@ -10,6 +10,9 @@ build-depends:
 - bootstrap/freedesktop-sdk.bst:components/texinfo.bst
 - bootstrap/tools/import-fdo.bst
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 variables:
   build-dir: build
   conf-local: >-
@@ -21,6 +24,6 @@ variables:
 config:
   install-commands:
     (>):
-    - ln -sv lib %{install-root}%{prefix}/lib64
+    - ln -sv lib %{install-root}%{bootstrap-prefix}/lib64
     - rm -rf %{install-root}%{datadir}/info
     - rm -rf %{install-root}%{libdir}/bfd-plugins
