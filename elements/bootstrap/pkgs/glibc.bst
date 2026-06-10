@@ -18,7 +18,7 @@ variables:
   build-dir: build
   conf-local: >-
     --host=%{bootstrap-triplet} --build=$(../scripts/config.guess)
-    --enable-kernel=5.4 --disable-nscd --disable-werror --enable-crypt
+    --enable-kernel=5.4 --disable-nscd --disable-werror --enable-crypt --with-headers=%{bootstrap-prefix}/include
   conf-root: ..
 
 config:

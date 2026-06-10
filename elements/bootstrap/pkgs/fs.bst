@@ -3,6 +3,9 @@ description: |
   This sets up a few symbolic links necessary to build the various final components
   that hard-code tool paths in their build system
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 build-depends:
 - bootstrap/tools/import-fdo.bst
 
@@ -24,6 +27,3 @@ config:
 
     ln -sfv %{libdir}/libgcc_s.so{,.1} %{install-root}/usr/lib
     ln -sfv %{libdir}/libstdc++.{a,so{,.6}} %{install-root}/usr/lib
-
-(@):
-  - elements/bootstrap/include/common.yml

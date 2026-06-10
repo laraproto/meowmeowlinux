@@ -19,4 +19,4 @@ variables:
 config:
   install-commands:
     (>):
-    - ln -sv bash %{install-root}%{bindir}/sh
+    - ln -sv bash %{install-root}/usr/bin/sh

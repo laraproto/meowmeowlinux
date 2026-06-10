@@ -1,6 +1,9 @@
 kind: stack
 description: List of packages to pull into bootstrap
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 depends:
 # GNU Triplet
 - bootstrap/pkgs/linux-api-headers.bst

@@ -24,8 +24,8 @@ environment:
 variables:
   build-dir: build
   conf-local: >-
-    --with-lib-path=%{libdir} --disable-nls --disable-werror --with-sysroot
-    --disable-gprofng --enable-shared
+    --target=%{bootstrap-triplet} --build=$(../config.guess) --with-lib-path=%{libdir} --disable-nls --enable-new-dtags --disable-werror --with-sysroot=%{bootstrap-sysroot}
+    --disable-gprofng --enable-shared --with-headers=%{bootstrap-prefix}/include
 
 config:
   configure-commands:
@@ -33,14 +33,16 @@ config:
       - |
         export CFLAGS="-DPATH_MAX=4096 $CFLAGS"
         sed '6031s/$add_dir//' -i ltmain.sh
+        sed 's/PATH_MAX/4096/' -i ld/ldmain.c
 
   install-commands:
     # Adjusted linker for post-bootstrap. Will be used between final glibc & final binutils
     - |
       make -C %{build-dir}/ld clean
       make -C %{build-dir}/ld LIB_PATH=/usr/lib
-      cp -v %{build-dir}/ld/ld-new %{install-root}%{bindir}
+
+      cp -v %{build-dir}/ld/ld-new %{install-root}/usr/bin
 
     # Delete .info files because they overlap binutils-cross and for whatever reason overlap-whitelist doesn't work
     - |
-      rm -v %{install-root}%{datadir}/info/{dir,*.info}
+      rm -v %{install-root}/usr/share/info/{dir,*.info}

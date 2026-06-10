@@ -24,4 +24,4 @@ config:
     - sed -i s/mawk// configure
   install-commands: # Link libncursesw.so -> libncurses.so and libcurses.so
     (>):
-    - ln -sv libncursesw.so %{install-root}%{libdir}/libncurses.so
+    - ln -sv libncursesw.so %{install-root}/usr/lib/libncurses.so

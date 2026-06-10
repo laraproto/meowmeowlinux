@@ -14,4 +14,4 @@ build-depends:
 config:
   install-commands:
     (>):
-    - sed -i 's@/bin/sh@%{bindir}/sh@' %{install-root}%{bindir}/yacc
+    - sed -i 's@/bin/sh@%/usr/bin/sh@' %{install-root}/usr/bin/yacc

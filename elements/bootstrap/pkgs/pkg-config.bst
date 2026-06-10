@@ -20,4 +20,4 @@ variables:
 config:
   install-commands:
     (>):
-    - ln -sv pkgconf %{install-root}%{bindir}/pkg-config
+    - ln -sv pkgconf %{install-root}/usr/bin/pkg-config

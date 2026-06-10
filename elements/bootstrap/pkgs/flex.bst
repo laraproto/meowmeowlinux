@@ -14,7 +14,7 @@ build-depends:
 config:
   install-commands:
     (>):
-    - ln -sv flex %{install-root}%{bindir}/lex
+    - ln -sv flex %{install-root}/usr/bin/lex
 
 (@):
   - elements/bootstrap/include/common.yml

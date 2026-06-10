@@ -58,7 +58,7 @@ config:
       %{configure}
   install-commands:
     - |
-      ln -sv gcc %{install-root}%{bindir}/cc
+      ln -sv gcc %{install-root}/usr/bin/cc
 
       %{make-install}
       %{delete-libtool-archives}

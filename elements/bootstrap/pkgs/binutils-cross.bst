@@ -24,5 +24,5 @@ config:
   install-commands:
     (>):
     - ln -sv lib %{install-root}%{bootstrap-prefix}/lib64
-    - rm -rf %{install-root}%{datadir}/info
-    - rm -rf %{install-root}%{libdir}/bfd-plugins
+    - rm -rf %{install-root}/usr/share/info
+    - rm -rf %{install-root}/usr/lib/bfd-plugins
