@@ -50,6 +50,9 @@ config:
       mkdir -v %{build-dir}
       cd %{build-dir}
       %{autogen}
+    - |
+      mkdir -v %{build-dir}
+      cd %{build-dir}
       %{configure}
   build-commands:
     - |
