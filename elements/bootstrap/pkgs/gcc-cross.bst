@@ -20,6 +20,7 @@ build-depends:
 
 variables:
   build-dir: build
+  conf-root: '..'
   conf-local: >-
     --target=%{bootstrap-triplet}
     --with-sysroot=%{bootstrap-sysroot}
@@ -48,7 +49,6 @@ config:
   # See: http://www.linuxfromscratch.org/lfs/view/stable-systemd/chapter05/gcc-pass1.html
   # I changed the first sed command to always point the dynamic linker to %{libdir}/ld-linux-...
   configure-commands:
-    (<):
     - |
       for file in gcc/config/{linux,i386/linux{,64}}.h; do
         cp -v $file{,.orig}
@@ -61,5 +61,11 @@ config:
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
     - |
-      mkdir -v build
-      cd build
+      mkdir -v %{build-dir}
+      cd %{build-dir}
+      %{autogen}
+      %{configure}
+  install-commands:
+     - |
+       cd %{build-dir}
+       %{make}
