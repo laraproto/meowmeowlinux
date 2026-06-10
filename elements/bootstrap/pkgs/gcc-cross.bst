@@ -28,7 +28,7 @@ variables:
     --without-headers
     --enable-default-pie
     --enable-default-ssp
-    --prefix=%{prefix}
+    --with-local-prefix=%{prefix}
     --with-native-system-header-dir=%{includedir}
     --disable-nls
     --disable-shared
@@ -60,3 +60,6 @@ config:
         echo '#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
+    - |
+      mkdir -v build
+      cd build
