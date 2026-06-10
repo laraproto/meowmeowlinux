@@ -27,8 +27,3 @@ config:
     - ln -sv lib %{install-root}%{bootstrap-prefix}/lib64
     - rm -rf %{install-root}%{datadir}/info
     - rm -rf %{install-root}%{libdir}/bfd-plugins
-=======
-      - ln -sv lib %{install-root}%{prefix}/lib64
-      - rm -rf %{install-root}%{datadir}/info
-      - rm -rf %{install-root}%{libdir}/bfd-plugins
->>>>>>> 2240b995ad7725bff83c5f06848a198750cdb7b1
