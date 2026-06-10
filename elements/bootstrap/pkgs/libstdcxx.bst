@@ -27,12 +27,7 @@ variables:
 config:
   configure-commands:
     - |
-      export CXXFLAGS="$CXXFLAGS -Wno-template-body"
-
       %{autogen}
-      %{configure}
-  install-commands:
     - |
-      ln -sv gcc %{install-root}%{bindir}/cc
-      %{make-install}
-      %{delete-libtool-archives}
+      export CXXFLAGS="$CXXFLAGS -Wno-template-body"
+      %{configure}
