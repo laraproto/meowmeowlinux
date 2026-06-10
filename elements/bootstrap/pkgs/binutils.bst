@@ -1,17 +1,20 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/include/autotools-fix.yml
+
 sources:
-- kind: gnu
-  name: binutils
+  - kind: gnu
+    name: binutils
 
 build-depends:
-- bootstrap/freedesktop-sdk.bst:components/texinfo.bst
-- bootstrap/tools/import-fdo.bst
-- bootstrap/pkgs/gcc-cross.bst
-- bootstrap/pkgs/binutils-cross.bst
-- bootstrap/pkgs/glibc.bst
-- bootstrap/pkgs/linux-api-headers.bst
-- bootstrap/tools/sysroot-setup.bst
+  - bootstrap/freedesktop-sdk.bst:components/texinfo.bst
+  - bootstrap/tools/import-fdo.bst
+  - bootstrap/pkgs/gcc-cross.bst
+  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/pkgs/glibc.bst
+  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 environment:
   CC: "%{bootstrap-triplet}-gcc"
@@ -21,18 +24,17 @@ environment:
 variables:
   build-dir: build
   conf-local: >-
-    --with-lib-path=%{libdir}
-    --disable-nls --disable-werror
-    --with-sysroot
-    --disable-gprofng
+    --with-lib-path=%{libdir} --disable-nls --disable-werror --with-sysroot
+    --disable-gprofng --enable-shared
 
-# TODO: Comment style
-# buildstream doesn't like the way we put comments when using ref-storage:inline.
-# So, once we switch back to ref-storage:project.refs, put the comments back where
-# they belong
 config:
-  install-commands:
+  configure-commands:
     (>):
+      - |
+        export CFLAGS="-DPATH_MAX=4096 $CFLAGS"
+        sed '6031s/$add_dir//' -i ltmain.sh
+
+  install-commands:
     # Adjusted linker for post-bootstrap. Will be used between final glibc & final binutils
     - |
       make -C %{build-dir}/ld clean
