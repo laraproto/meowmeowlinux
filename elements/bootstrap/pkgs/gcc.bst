@@ -54,6 +54,7 @@ config:
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
     - |
       %{autogen}
+    - |
       %{configure}
   install-commands:
     - |
