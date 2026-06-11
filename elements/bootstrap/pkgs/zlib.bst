@@ -10,7 +10,7 @@ sources:
   track: v1.3.2
 
 depends:
-- bootstrap/pkgs/stage1/glibc.bst
+- bootstrap/pkgs/glibc.bst
 
 build-depends:
 - bootstrap/tools/toolchain.bst

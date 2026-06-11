@@ -15,7 +15,7 @@ sources:
 # release-monitoring: 5277
 
 depends:
-- bootstrap/pkgs/stage1/glibc.bst
+- bootstrap/pkgs/glibc.bst
 
 build-depends:
 - bootstrap/pkgs/gettext.bst

@@ -20,11 +20,10 @@ sources:
 build-depends:
   - bootstrap/freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
   - bootstrap/pkgs/stage1/binutils.bst
-  - bootstrap/tools/sysroot-setup.bst
 
 variables:
   conf-local: >-
-    --target=%{triplet} --with-sysroot=%{bootstrap-sysroot}
+    --target=%{triplet}
     --with-glibc-version=2.43 --with-newlib --without-headers
     --enable-default-pie --enable-default-ssp
     --with-local-prefix=%{bootstrap-prefix}

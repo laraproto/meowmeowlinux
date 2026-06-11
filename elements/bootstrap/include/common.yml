@@ -1,10 +1,7 @@
 variables:
   strip-binaries: ""
   tools: "/tools"
-  prefix: "%{tools}"
-  sysconfdir: "%{tools}/etc"
-  localstatedir: "%{tools}/var"
 
 environment:
-  PATH: "%{tools}/bin:/bin"
-  LD_LIBRARY_PATH: "%{tools}/lib:/lib"
+  PATH: "%{tools}/bin:%{install-root}/usr/bin:/usr/bin"
+  LD_LIBRARY_PATH: "%{tools}/lib:%{install-root}/usr/lib:/usr/lib"

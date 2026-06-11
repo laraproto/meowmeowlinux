@@ -3,7 +3,6 @@ description: |
   Binutils needs to be the first thing built because gcc's configure script will look for it
 
 (@):
-  - elements/bootstrap/include/autotools-fix.yml
   - elements/bootstrap/include/cross.yml
 
 sources:
@@ -17,7 +16,7 @@ build-depends:
 variables:
   build-dir: build
   conf-local: >-
-    --with-sysroot=%{bootstrap-sysroot} --target=%{triplet}
+    --target=%{triplet} --with-sysroot=%{bootstrap-sysroot}
     --with-lib-path=%{libdir} --disable-nls --disable-werror --disable-plugins
 
 config:

@@ -1,2 +1,12 @@
 (@):
-  - elements/bootstrap/include/common.yml
+  - elements/bootstrap/include/autotools-fix.yml
+
+variables:
+  prefix: "%{tools}"
+  sysconfdir: "%{tools}/etc"
+  localstatedir: "%{tools}/var"
+
+config:
+  install-commands:
+    (>):
+      - mkdir -pv %{install-root}/tools

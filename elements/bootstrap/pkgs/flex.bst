@@ -6,7 +6,7 @@ sources:
 # release-monitoring: 819
 
 depends:
-- bootstrap/pkgs/stage1/glibc.bst
+- bootstrap/pkgs/glibc.bst
 
 build-depends:
 - bootstrap/tools/toolchain.bst

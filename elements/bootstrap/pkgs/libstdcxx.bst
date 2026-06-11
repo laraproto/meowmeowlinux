@@ -12,9 +12,8 @@ build-depends:
   - bootstrap/tools/import-fdo.bst
   - bootstrap/pkgs/stage1/gcc.bst
   - bootstrap/pkgs/stage1/binutils.bst
-  - bootstrap/pkgs/stage1/glibc.bst
-  - bootstrap/pkgs/stage1/linux-api-headers.bst
-  - bootstrap/tools/sysroot-setup.bst
+  - bootstrap/pkgs/glibc.bst
+  - bootstrap/pkgs/linux-headers.bst
 
 variables:
   conf-cmd: '%{build-root}/libstdc++-v3/configure'

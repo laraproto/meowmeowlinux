@@ -10,17 +10,22 @@ sources:
     path: patches/glibc
 
 build-depends:
-  - bootstrap/pkgs/stage1/linux-api-headers.bst
+  - filename: bootstrap/pkgs/linux-headers.bst
+    config:
+      location: "%{bootstrap-sysroot}"
   - bootstrap/pkgs/stage1/gcc.bst
   - bootstrap/pkgs/stage1/binutils.bst
-  - bootstrap/tools/sysroot-setup.bst
   - bootstrap/tools/import-fdo.bst
+  - bootstrap/tools/sysroot-setup.bst
+
+runtime-depends:
+  - bootstrap/pkgs/linux-headers.bst
 
 variables:
   build-dir: build
   conf-local: >-
-    --host=%{triplet} --build=$(../scripts/config.guess) --enable-kernel=5.10
-    --disable-nscd --disable-werror
+    --host=%{triplet} --prefix=/usr --build=$(../scripts/config.guess) --enable-kernel=5.10
+    --disable-nscd --disable-werror --enable-crypt --with-headers=%{bootstrap-sysroot}%{includedir}
 
 config:
   configure-commands:

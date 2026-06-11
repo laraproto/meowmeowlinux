@@ -21,10 +21,9 @@ build-depends:
   - bootstrap/pkgs/stage1/gcc.bst
   - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/pkgs/binutils.bst
-  - bootstrap/pkgs/stage1/glibc.bst
-  - bootstrap/pkgs/stage1/libstdcxx.bst
-  - bootstrap/pkgs/stage1/linux-api-headers.bst
-  - bootstrap/tools/sysroot-setup.bst
+  - bootstrap/pkgs/glibc.bst
+  - bootstrap/pkgs/libstdcxx.bst
+  - bootstrap/pkgs/linux-headers.bst
 
 environment:
   CC: '%{triplet}-gcc'
@@ -63,7 +62,6 @@ config:
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
     - sed '24 s/memory/memory.h/' -i libcody/cody.hh
     - sed '25 s/string/string.h/' -i libcody/cody.hh
-    - sed '26 s/vector/vector.h/' -i libcody/cody.hh
     - sed '28 s/cstddef/cstddef.h/' -i libcody/cody.hh
     - |
       %{autogen}

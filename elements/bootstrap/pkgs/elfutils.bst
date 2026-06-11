@@ -6,7 +6,7 @@ sources:
   track: elfutils-0.195
 
 depends:
-- bootstrap/pkgs/stage1/glibc.bst
+- bootstrap/pkgs/glibc.bst
 - bootstrap/pkgs/zlib.bst
 - bootstrap/pkgs/flex.bst
 
