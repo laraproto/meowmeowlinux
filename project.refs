@@ -124,3 +124,23 @@ projects:
     - ref: 66d786852379759d22c891d70ff9311d9f193fdc
     pkgs/iana-etc.bst:
     - ref: 4100d8c4e8653701972e68f8326be75ecb0aa08b374e57553b0d114c6b7acdf8
+    bootstrap/pkgs/stage1/gcc.bst:
+    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    bootstrap/pkgs/stage1/binutils.bst:
+    - suffix: binutils/binutils-2.46.1.tar.xz
+      sha256sum: e127a709cba24c76de8936cb7083dd768f28cd37eb010492e2f19b71eb1294e4
+    bootstrap/pkgs/stage1/glibc.bst:
+    - suffix: glibc/glibc-2.43.tar.xz
+      sha256sum: d9c86c6b5dbddb43a3e08270c5844fc5177d19442cf5b8df4be7c07cd5fa3831
+    bootstrap/pkgs/stage1/linux-api-headers.bst:
+    - ref: v7.0.12-104130-g73e7709d9919efeb8df2cedd7804734a3254a0bb
+    bootstrap/pkgs/stage1/libstdcxx.bst:
+    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79

@@ -16,16 +16,11 @@ build-depends:
   - bootstrap/pkgs/linux-api-headers.bst
   - bootstrap/tools/sysroot-setup.bst
 
-environment:
-  CC: "%{bootstrap-triplet}-gcc"
-  AR: "%{bootstrap-triplet}-ar"
-  RANLIB: "%{bootstrap-triplet}-ranlib"
-
 variables:
   build-dir: build
   conf-local: >-
-    --target=%{bootstrap-triplet} --build=$(../config.guess)
-    --with-lib-path=%{libdir} --disable-nls --enable-new-dtags --disable-werror
+    --target=%{triplet} --build=$(../config.guess) --with-lib-path=%{libdir}
+    --disable-nls --enable-new-dtags --disable-werror
     --with-sysroot=%{bootstrap-sysroot} --disable-gprofng --enable-shared
     --with-headers=%{bootstrap-prefix}/include
 

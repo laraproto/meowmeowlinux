@@ -2,6 +2,7 @@ kind: autotools
 
 (@):
   - elements/bootstrap/include/autotools-fix.yml
+  - elements/bootstrap/include/cross.yml
 
 sources:
   - kind: gnu
@@ -17,15 +18,16 @@ sources:
     directory: mpc
 
 build-depends:
-  - bootstrap/tools/import-fdo.bst
-  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+  - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/tools/sysroot-setup.bst
 
 variables:
   conf-local: >-
-    --target=%{bootstrap-triplet} --with-sysroot=%{bootstrap-sysroot}
+    --target=%{triplet} --with-sysroot=%{bootstrap-sysroot}
     --with-glibc-version=2.43 --with-newlib --without-headers
-    --enable-default-pie --enable-default-ssp --with-local-prefix=%{bootstrap-prefix}
+    --enable-default-pie --enable-default-ssp
+    --with-local-prefix=%{bootstrap-prefix}
     --with-native-system-header-dir=%{includedir} --disable-nls --disable-shared
     --disable-multilib --disable-threads --disable-libatomic --disable-libgomp
     --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx

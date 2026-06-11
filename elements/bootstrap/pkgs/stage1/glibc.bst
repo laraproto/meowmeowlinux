@@ -8,18 +8,17 @@ sources:
     name: glibc
 
 build-depends:
-  - bootstrap/tools/import-fdo.bst
-  - bootstrap/pkgs/gcc-cross.bst
-  - bootstrap/pkgs/binutils-cross.bst
-  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/pkgs/stage1/linux-api-headers.bst
+  - bootstrap/pkgs/stage1/gcc.bst
+  - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/tools/sysroot-setup.bst
+  - bootstrap/freedesktop-sdk.bst:bootstrap/bash.bst
 
 variables:
   build-dir: build
   conf-local: >-
-    --host=%{bootstrap-triplet} --build=$(../scripts/config.guess)
-    --enable-kernel=5.4 --disable-nscd --disable-werror --enable-crypt --with-headers=%{bootstrap-prefix}/include
-  conf-root: ..
+    --host=%{triplet} --build=$(../scripts/config.guess) --enable-kernel=5.10
+    --disable-nscd --disable-werror
 
 config:
   configure-commands:

@@ -26,16 +26,12 @@ build-depends:
   - bootstrap/pkgs/linux-api-headers.bst
   - bootstrap/tools/sysroot-setup.bst
 
-environment:
-  CC: '%{bootstrap-triplet}-gcc'
-  CXX: '%{bootstrap-triplet}-g++'
-  AR: '%{bootstrap-triplet}-ar'
-  RANLIB: '%{bootstrap-triplet}-ranlib'
-
 variables:
+  build-dir: build
   conf-local: >-
-    --with-local-prefix=%{bootstrap-prefix} --with-native-system-header-dir=%{includedir}
-    --disable-multilib --disable-bootstrap --disable-libgomp
+    --prefix=%{bootstrap-prefix}  --disable-multilib  --build=$(%{build-root}/config.guess)
+    --host=%{triplet} --target=%{triplet} --disable-libgomp --disable-nls
+    --disable-libatomic --disable-libsanitizer --disable-libssp --disable-libvtv
     --disable-libstdxx-pch --enable-deterministic-archives
     --enable-linker-build-id --enable-languages=c,c++
 

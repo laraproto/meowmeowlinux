@@ -10,19 +10,19 @@ sources:
 
 build-depends:
   - bootstrap/tools/import-fdo.bst
-  - bootstrap/pkgs/gcc-cross.bst
-  - bootstrap/pkgs/binutils-cross.bst
-  - bootstrap/pkgs/glibc.bst
-  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/pkgs/stage1/gcc.bst
+  - bootstrap/pkgs/stage1/binutils.bst
+  - bootstrap/pkgs/stage1/glibc.bst
+  - bootstrap/pkgs/stage1/linux-api-headers.bst
   - bootstrap/tools/sysroot-setup.bst
 
 variables:
   conf-cmd: '%{build-root}/libstdc++-v3/configure'
-  gcc-version: $(%{bootstrap-triplet}-gcc -dumpversion)
+  gcc-version: $(%{triplet}-gcc -dumpversion)
   conf-local: >-
-    --host=%{bootstrap-triplet} --disable-multilib --disable-nls
-    --disable-libstdcxx-pch --disable-multilib
-    --with-gxx-include-dir=%{bootstrap-prefix}/%{bootstrap-triplet}/include/c++/%{gcc-version}}}
+    --host=%{triplet} --disable-multilib --disable-nls --disable-libstdcxx-pch
+    --disable-multilib
+    --with-gxx-include-dir=%{bootstrap-prefix}/%{triplet}/include/c++/%{gcc-version}}}
 
 config:
   configure-commands:
