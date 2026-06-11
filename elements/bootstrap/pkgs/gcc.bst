@@ -24,6 +24,7 @@ build-depends:
   - bootstrap/pkgs/glibc.bst
   - bootstrap/pkgs/libstdcxx.bst
   - bootstrap/pkgs/linux-headers.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 environment:
   CC: '%{triplet}-gcc'

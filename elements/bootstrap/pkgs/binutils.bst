@@ -14,6 +14,7 @@ build-depends:
   - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/pkgs/glibc.bst
   - bootstrap/pkgs/linux-headers.bst
+  - bootstrap/tools/sysroot-setup.bst
 
 variables:
   build-dir: build
