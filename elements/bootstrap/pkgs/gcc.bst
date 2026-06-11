@@ -18,22 +18,35 @@ depends:
 
 build-depends:
   - bootstrap/tools/import-fdo.bst
-  - bootstrap/pkgs/gcc-cross.bst
-  - bootstrap/pkgs/binutils-cross.bst
+  - bootstrap/pkgs/stage1/gcc.bst
+  - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/pkgs/binutils.bst
-  - bootstrap/pkgs/glibc.bst
-  - bootstrap/pkgs/libstdcxx.bst
-  - bootstrap/pkgs/linux-api-headers.bst
+  - bootstrap/pkgs/stage1/glibc.bst
+  - bootstrap/pkgs/stage1/libstdcxx.bst
+  - bootstrap/pkgs/stage1/linux-api-headers.bst
   - bootstrap/tools/sysroot-setup.bst
+
+environment:
+  CC: '%{triplet}-gcc'
+  CXX: '%{triplet}-g++'
+  AR: '%{triplet}-ar'
+  RANLIB: '%{triplet}-ranlib'
 
 variables:
   build-dir: build
   conf-local: >-
-    --prefix=%{bootstrap-prefix}  --disable-multilib  --build=$(%{build-root}/config.guess)
-    --host=%{triplet} --target=%{triplet} --disable-libgomp --disable-nls
-    --disable-libatomic --disable-libsanitizer --disable-libssp --disable-libvtv
-    --disable-libstdxx-pch --enable-deterministic-archives
-    --enable-linker-build-id --enable-languages=c,c++
+    --with-local-prefix=%{prefix}
+    --with-native-system-header-dir=%{includedir}
+    --build=$(../scripts/config.guess)
+    --disable-multilib
+    --disable-bootstrap
+    --disable-libgomp
+    --disable-libstdxx-pch
+    --disable-libsanitizer
+    --enable-deterministic-archives
+    --enable-linker-build-id
+    --enable-languages=c,c++
+    LDFLAGS_FOR_TARGET=-L$PWD/%{triplet}/libgcc
 
 config:
   configure-commands:
@@ -48,6 +61,10 @@ config:
         echo '#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
       done
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
+    - sed '24 s/memory/memory.h/' -i libcody/cody.hh
+    - sed '25 s/string/string.h/' -i libcody/cody.hh
+    - sed '26 s/vector/vector.h/' -i libcody/cody.hh
+    - sed '28 s/cstddef/cstddef.h/' -i libcody/cody.hh
     - |
       %{autogen}
     - |

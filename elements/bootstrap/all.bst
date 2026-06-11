@@ -6,8 +6,8 @@ description: List of packages to pull into bootstrap
 
 depends:
 # GNU Triplet
-- bootstrap/pkgs/linux-api-headers.bst
-- bootstrap/pkgs/glibc.bst
+- bootstrap/pkgs/stage1/linux-api-headers.bst
+- bootstrap/pkgs/stage1/glibc.bst
 - bootstrap/pkgs/gcc.bst
 - bootstrap/pkgs/binutils.bst
 

@@ -22,8 +22,3 @@ config:
   install-commands:
     - mkdir -pv %{install-root}%{includedir}
     - cp -rv usr/include/* %{install-root}%{includedir}
-
-public:
-  bst:
-    overlap-whitelist:
-      - bootstrap/freedesktop-sdk.bst:bootstrap/linux-headers.bst

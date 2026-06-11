@@ -1,7 +1,2 @@
 (@):
   - elements/bootstrap/include/common.yml
-
-variables:
-  prefix: "%{tools}"
-  sysconfdir: "%{tools}/etc"
-  localstatedir: "%{tools}/var"

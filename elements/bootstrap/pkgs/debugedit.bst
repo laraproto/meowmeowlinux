@@ -6,7 +6,7 @@ sources:
   track: main
 
 depends:
-- bootstrap/pkgs/glibc.bst
+- bootstrap/pkgs/stage1/glibc.bst
 - bootstrap/pkgs/elfutils.bst
 
 (@):

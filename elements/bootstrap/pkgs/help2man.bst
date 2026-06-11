@@ -8,7 +8,7 @@ sources:
   name: help2man
 
 depends:
-- bootstrap/pkgs/glibc.bst
+- bootstrap/pkgs/stage1/glibc.bst
 
 build-depends:
 - bootstrap/tools/toolchain.bst

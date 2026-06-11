@@ -7,7 +7,7 @@ sources:
 # Track here: https://sourceware.org/git/?p=dwz.git;a=tags
 
 depends:
-- bootstrap/pkgs/glibc.bst
+- bootstrap/pkgs/stage1/glibc.bst
 - bootstrap/pkgs/elfutils.bst
 
 build-depends:

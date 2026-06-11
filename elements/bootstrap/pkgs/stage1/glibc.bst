@@ -1,18 +1,20 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/include/common.yml
+  - elements/bootstrap/include/autotools-fix.yml
 
 sources:
   - kind: gnu
     name: glibc
+  - kind: patch_queue
+    path: patches/glibc
 
 build-depends:
   - bootstrap/pkgs/stage1/linux-api-headers.bst
   - bootstrap/pkgs/stage1/gcc.bst
   - bootstrap/pkgs/stage1/binutils.bst
   - bootstrap/tools/sysroot-setup.bst
-  - bootstrap/freedesktop-sdk.bst:bootstrap/bash.bst
+  - bootstrap/tools/import-fdo.bst
 
 variables:
   build-dir: build
@@ -23,16 +25,13 @@ variables:
 config:
   configure-commands:
     - |
-      mkdir -v %{build-dir}
-      cd %{build-dir}
       %{autogen}
+    - |
       %{configure}
   build-commands:
     - |
-      cd %{build-dir}
       %{make}
   install-commands:
     - |
-      cd %{build-dir}
       %{make-install}
       %{delete-libtool-archives}
