@@ -8,3 +8,5 @@ projects:
     - ref: 697249dd2186863c662af93c3e2c875aaa8b6d71
     bootstrap/freedesktop-sdk.bst:
     - ref: freedesktop-sdk-25.08.12-100-g0df26aaf896b454e8fcab83dc46cba400234ed78
+    bootstrap/fdo.bst:
+    - ref: freedesktop-sdk-25.08.12-105-g12301e76ac351b540a2bc08468e5bc982fbe77a1

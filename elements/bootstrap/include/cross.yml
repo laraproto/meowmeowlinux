@@ -1,6 +1,3 @@
-(@):
-  - elements/bootstrap/include/autotools-fix.yml
-
 variables:
   prefix: "%{tools}"
   sysconfdir: "%{tools}/etc"
