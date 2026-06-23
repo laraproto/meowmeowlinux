@@ -8,6 +8,8 @@ build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
+  - bootstrap/fdo.bst:components/bison.bst
+  - bootstrap/fdo.bst:components/python3.bst
 
 sources:
   - kind: gnu
