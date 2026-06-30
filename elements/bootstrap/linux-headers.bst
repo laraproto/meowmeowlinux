@@ -1,5 +1,8 @@
 kind: manual
 
+(@):
+  - elements/bootstrap/include/common.yml
+
 build-depends:
   - bootstrap/base.bst
 
@@ -13,5 +16,5 @@ config:
     - make mrproper
     - make headers
   install-commands:
-    - mkdir -pv %{install-root}%{includedir}
-    - cp -rv usr/include/* %{install-root}%{includedir}
+    - mkdir -pv %{install-root}%{bootstrap}%{includedir}
+    - cp -rv usr/include/* %{install-root}%{bootstrap}%{includedir}

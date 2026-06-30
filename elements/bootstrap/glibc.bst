@@ -8,6 +8,7 @@ build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
+  - bootstrap/linux-headers.bst
   - bootstrap/fdo.bst:components/bison.bst
   - bootstrap/fdo.bst:components/python3.bst
 
@@ -17,7 +18,7 @@ sources:
 
 variables:
   conf-args: |
-    --prefix=/usr                      \
+    --prefix=%{bootstrap}              \
     --host=${triplet}                  \
     --build=$(../scripts/config.guess) \
     --disable-nscd                     \
@@ -30,4 +31,5 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      ln -sv ld-linux-x86-64.so.2 %{install-root}/lib64/ld-lsb-x86-64.so.3
+      mkdir -pv %{install-root}/%{bootstrap}/lib64
+      ln -sv ld-linux-x86-64.so.2 %{install-root}/%{bootstrap}/lib/ld-lsb-x86-64.so.3

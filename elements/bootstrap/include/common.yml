@@ -1,7 +1,10 @@
 variables:
   strip-binaries: ""
-  tools: "/tools"
+  tools: "%{bootstrap}/tools"
+  bootstrap: "/bootstrap"
+  prefix: "%{bootstrap}"
 
 environment:
-  PATH: "%{tools}/bin:%{install-root}/usr/bin:/usr/bin"
-  LD_LIBRARY_PATH: "%{tools}/lib:%{install-root}/usr/lib:/usr/lib"
+  _GCC_AUTOCONF_VERSION_CHECK: false
+  PATH: "%{bootstrap}/bin:%{tools}/bin:%{install-root}/usr/bin:/usr/bin"
+  LD_LIBRARY_PATH: "%{bootstrap}/lib:%{tools}/lib:%{install-root}/usr/lib:/usr/lib"

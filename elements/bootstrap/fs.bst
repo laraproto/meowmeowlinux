@@ -1,21 +1,12 @@
 kind: manual
 
-build-depends:
-  - bootstrap/base.bst
-
 config:
   install-commands:
     - |
-      mkdir -pv %{install-root}/usr/{lib,bin,share,include}
-
-      # Usr Merge
-      ln -s lib %{install-root}/usr/lib64
-      ln -s bin %{install-root}/usr/sbin
-
-      # /usr/local should be R/W
-      ln -s ../opt %{install-root}/usr/local
-
-      # /.. -> /usr/..
-      for i in bin lib sbin lib64; do
-        ln -sv usr/$i $LFS/$i
-      done
+      mkdir -p %{install-root}/%{bootstrap}/usr/{bin,lib,share,include}
+    - |
+      ln -s usr/lib %{install-root}/${bootstrap}/{lib,lib64}
+      ln -s usr/bin %{install-root}/${bootstrap}/{bin,sbin}
+    - |
+      ln -s bin %{install-root}/${bootstrap}/sbin
+      ln -s lib %{install-root}/${bootstrap}/lib64

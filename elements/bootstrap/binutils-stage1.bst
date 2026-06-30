@@ -13,7 +13,7 @@ sources:
 
 variables:
   conf-local: |
-    --prefix=%{install-root}/tools \
+    --prefix=%{install-root}/%{tools} \
     --with-sysroot=%{install-root} \
     --target=%{triplet}   \
     --disable-nls       \

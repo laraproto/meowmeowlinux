@@ -2,6 +2,7 @@ kind: autotools
 
 (@):
   - elements/bootstrap/include/autotools-build.yml
+  - elements/bootstrap/include/common.yml
   - elements/bootstrap/include/cross.yml
 
 build-depends:
@@ -25,7 +26,7 @@ sources:
 variables:
   build-dir: build
   conf-local: |
-    --prefix=%{install-root}/tools \
+    --prefix=%{install-root}/%{tools} \
     --target=%{triplet}   \
     --with-glibc-version=2.43 \
     --with-sysroot=$LFS       \
