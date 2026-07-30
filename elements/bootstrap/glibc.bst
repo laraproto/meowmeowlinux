@@ -9,16 +9,16 @@ build-depends:
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
   - bootstrap/linux-headers.bst
-  - bootstrap/fdo.bst:components/bison.bst
-  - bootstrap/fdo.bst:components/python3.bst
 
 sources:
   - kind: gnu
     name: glibc
+  - kind: patch
+    path: patches/glibc/glibc-2.43-upstream_fixes-1.patch
 
 variables:
   conf-args: |
-    --prefix=%{bootstrap}              \
+    --prefix=%{install-root}           \
     --host=${triplet}                  \
     --build=$(../scripts/config.guess) \
     --disable-nscd                     \
@@ -31,5 +31,6 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      mkdir -pv %{install-root}/%{bootstrap}/lib64
-      ln -sv ld-linux-x86-64.so.2 %{install-root}/%{bootstrap}/lib/ld-lsb-x86-64.so.3
+      mkdir -pv %{install-root}/%{libdir}
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3

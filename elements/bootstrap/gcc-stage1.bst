@@ -12,7 +12,6 @@ build-depends:
 sources:
   - kind: gnu
     name: gcc
-
   - kind: gnu
     name: mpfr
     directory: mpfr
@@ -27,24 +26,23 @@ variables:
   build-dir: build
   conf-local: |
     --prefix=%{install-root}/%{tools} \
-    --target=%{triplet}   \
-    --with-glibc-version=2.43 \
-    --with-sysroot=$LFS       \
-    --with-newlib             \
-    --without-headers         \
-    --enable-default-pie      \
-    --enable-default-ssp      \
-    --disable-fixincludes     \
-    --disable-nls             \
-    --disable-shared          \
-    --disable-multilib        \
-    --disable-threads         \
-    --disable-libatomic       \
-    --disable-libgomp         \
-    --disable-libquadmath     \
-    --disable-libssp          \
-    --disable-libvtv          \
-    --disable-libstdcxx       \
+    --target=%{triplet}               \
+    --with-glibc-version=2.43         \
+    --with-newlib                     \
+    --without-headers                 \
+    --enable-default-pie              \
+    --enable-default-ssp              \
+    --disable-fixincludes             \
+    --disable-nls                     \
+    --disable-shared                  \
+    --disable-multilib                \
+    --disable-threads                 \
+    --disable-libatomic               \
+    --disable-libgomp                 \
+    --disable-libquadmath             \
+    --disable-libssp                  \
+    --disable-libvtv                  \
+    --disable-libstdcxx               \
     --enable-languages=c,c++
 
 config:

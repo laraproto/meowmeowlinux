@@ -14,10 +14,10 @@ sources:
 variables:
   conf-local: |
     --prefix=%{install-root}/%{tools} \
-    --with-sysroot=%{install-root} \
-    --target=%{triplet}   \
-    --disable-nls       \
-    --enable-gprofng=no \
-    --disable-werror    \
-    --enable-new-dtags  \
+    --with-sysroot=%{install-root}    \
+    --target=%{triplet}               \
+    --disable-nls                     \
+    --enable-gprofng=no               \
+    --disable-werror                  \
+    --enable-new-dtags                \
     --enable-default-hash-style=gnu
