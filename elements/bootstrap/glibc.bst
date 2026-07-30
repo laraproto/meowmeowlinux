@@ -2,7 +2,7 @@ kind: autotools
 
 (@):
   - elements/bootstrap/include/autotools-build.yml
-  - elements/bootstrap/include/cross.yml
+  - elements/bootstrap/include/common.yml
 
 build-depends:
   - bootstrap/base.bst
@@ -17,12 +17,14 @@ sources:
     path: patches/glibc/glibc-2.43-upstream_fixes-1.patch
 
 variables:
+  build-dir: build
   conf-args: |
-    --prefix=%{install-root}           \
-    --host=${triplet}                  \
-    --build=$(../scripts/config.guess) \
-    --disable-nscd                     \
-    --enable-kernel=6.6
+    --prefix=%{prefix}                  \
+    --host=%{triplet}                   \
+    --build=$(../scripts/config.guess)  \
+    --disable-nscd                      \
+    --enable-kernel=6.6                 \
+    --with-sysroot=/
 
 config:
   install-commands:
@@ -32,5 +34,5 @@ config:
       %{delete-libtool-archives}
     - |
       mkdir -pv %{install-root}/%{libdir}
-      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}
-      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir} | true
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3 | true

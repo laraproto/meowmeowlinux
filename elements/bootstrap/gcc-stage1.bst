@@ -25,7 +25,7 @@ sources:
 variables:
   build-dir: build
   conf-local: |
-    --prefix=%{install-root}/%{tools} \
+    --prefix=%{tools} \
     --target=%{triplet}               \
     --with-glibc-version=2.43         \
     --with-newlib                     \
