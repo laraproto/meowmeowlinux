@@ -18,13 +18,20 @@ sources:
 
 variables:
   build-dir: build
-  conf-args: |
-    --prefix=%{prefix}                  \
+  conf-local: |
     --host=%{triplet}                   \
     --build=$(../scripts/config.guess)  \
     --disable-nscd                      \
     --enable-kernel=6.6                 \
-    --with-sysroot=/
+    --with-headers=/usr/include         \
+    libc_cv_slibdir=/usr/lib
+
+  configure: |
+    echo "rootsbindir=/usr/bin" > configparms
+    mkdir -pv build
+    cd build
+
+    %{conf-cmd} %{conf-args}
 
 config:
   install-commands:
@@ -36,3 +43,6 @@ config:
       mkdir -pv %{install-root}/%{libdir}
       ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir} | true
       ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3 | true
+    - |
+      mv -v %{install-root}/usr/sbin/* %{install-root}/usr/bin/
+      rmdir %{install-root}/usr/sbin

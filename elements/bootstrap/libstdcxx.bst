@@ -17,9 +17,8 @@ sources:
 
 variables:
   conf-cmd: "%{build-root}/libstdc++-v3/configure"
-  conf-args: |
+  conf-local: |
     --host=%{triplet} -build=$(../config.guess) \
-    --prefix=%{install-root}/usr                \
     --disable-multilib --disable-nls            \
     --disable-libstdcxx-pch --disable-bootstrap \
     --with-gxx-include-dir=/bootstrap/tools/%{triplet}/include/c++/16.1.0
