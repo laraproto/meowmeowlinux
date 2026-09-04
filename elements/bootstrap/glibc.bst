@@ -14,7 +14,7 @@ sources:
   - kind: gnu
     name: glibc
   - kind: patch
-    path: patches/glibc/glibc-2.43-upstream_fixes-1.patch
+    path: patches/glibc/glibc-2.44-upstream_fixes-1.patch
 
 variables:
   build-dir: build

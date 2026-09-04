@@ -159,8 +159,8 @@ projects:
     - suffix: gmp/gmp-6.3.0.tar.xz
       sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
     bootstrap/glibc.bst:
-    - suffix: glibc/glibc-2.43.tar.xz
-      sha256sum: d9c86c6b5dbddb43a3e08270c5844fc5177d19442cf5b8df4be7c07cd5fa3831
+    - suffix: glibc/glibc-2.44.tar.xz
+      sha256sum: 37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667
     bootstrap/libstdcxx.bst:
     - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
       sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79

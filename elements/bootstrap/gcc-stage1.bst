@@ -27,7 +27,7 @@ variables:
   conf-local: |
     --prefix=%{tools} \
     --target=%{triplet}               \
-    --with-glibc-version=2.43         \
+    --with-glibc-version=2.44         \
     --with-newlib                     \
     --without-headers                 \
     --enable-default-pie              \
