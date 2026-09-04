@@ -1,12 +1,12 @@
 projects:
   meowmeowlinux:
     plugins/bst-plugins.bst:
-    - ref: 489e7915f93d3e6b233463552b6b33e47919a7e1be2afdf9efebece7d336c201
+    - ref: 158f9dfe7936f5e7758af3ccc689fda8a9a0673538f0b14100874d6d83b1300a
     plugins/bst-plugins-community.bst:
-    - ref: 85c2bae9d3a1eb3121c9674f68ef6e87211fddb9c930f3e5057b9a1e66eb41d9
+    - ref: 28ccf91c48044ea2889b2dc2a5b5644e5e625479d87a8feb7214a4d1bfd6179a
     carbonos-bootstrap.bst:
     - ref: 697249dd2186863c662af93c3e2c875aaa8b6d71
     bootstrap/freedesktop-sdk.bst:
     - ref: freedesktop-sdk-25.08.12-100-g0df26aaf896b454e8fcab83dc46cba400234ed78
     bootstrap/fdo.bst:
-    - ref: freedesktop-sdk-25.08.12-105-g12301e76ac351b540a2bc08468e5bc982fbe77a1
+    - ref: freedesktop-sdk-26.08.0-0-gdb97cce32cecadc7a3e98f06d557ebfa6ba9ad46
