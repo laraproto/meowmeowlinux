@@ -150,8 +150,8 @@ projects:
     - suffix: binutils/binutils-2.46.1.tar.xz
       sha256sum: e127a709cba24c76de8936cb7083dd768f28cd37eb010492e2f19b71eb1294e4
     bootstrap/gcc-stage1.bst:
-    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
-      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
+      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
     - suffix: mpfr/mpfr-4.2.2.tar.xz
       sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
     - suffix: mpc/mpc-1.4.1.tar.xz
@@ -162,7 +162,7 @@ projects:
     - suffix: glibc/glibc-2.44.tar.xz
       sha256sum: 37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667
     bootstrap/libstdcxx.bst:
-    - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
-      sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
+    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
+      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
     bootstrap/linux-headers.bst:
     - ref: v7.1.8-107452-ge2466b32e02a49318b99520c40b397062c65c84c

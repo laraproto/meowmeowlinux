@@ -1,9 +1,13 @@
 variables:
   strip-binaries: ""
-  tools: "/tools"
-  prefix: "/usr"
+  prefix: "%{bootstrap-prefix}"
+  sysconfdir: "%{bootstrap-sysconfdir}"
+  localstatedir: "%{bootstrap-localstatedir}"
 
 environment:
   _GCC_AUTOCONF_VERSION_CHECK: false
-  PATH: "%{tools}/bin:%{install-root}/usr/bin:/usr/bin"
-  LD_LIBRARY_PATH: "%{tools}/lib:%{install-root}/usr/lib:/usr/lib"
+  PATH: "%{bootstrap-prefix}/bin:%{install-root}/usr/bin:/usr/bin"
+  LD_LIBRARY_PATH: "%{bootstrap-prefix}/lib:%{install-root}/usr/lib:/usr/lib"
+
+build-depends:
+  - bootstrap/sysroot.bst

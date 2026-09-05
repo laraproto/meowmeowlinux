@@ -5,6 +5,8 @@ kind: manual
 
 build-depends:
   - bootstrap/base.bst
+  - bootstrap/binutils-stage1.bst
+  - bootstrap/gcc-stage1.bst
 
 sources:
   - kind: git_tag

@@ -1,9 +1,2 @@
 variables:
-  prefix: "%{tools}"
-  sysconfdir: "%{tools}/etc"
-  localstatedir: "%{tools}/var"
-
-config:
-  install-commands:
-    (>):
-      - mkdir -pv %{install-root}/tools
+  prefix: "%{bootstrap-prefix}"

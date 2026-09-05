@@ -13,11 +13,18 @@ sources:
 
 variables:
   conf-local: |
-    --prefix=%{tools}          \
-    --with-sysroot=%{tools}    \
-    --target=%{triplet}        \
-    --disable-nls              \
-    --enable-gprofng=no        \
-    --disable-werror           \
-    --enable-new-dtags         \
+    --prefix=%{bootstrap-prefix}           \
+    --with-sysroot=%{bootstrap-sysroot}    \
+    --target=%{triplet}                    \
+    --disable-nls                          \
+    --enable-gprofng=no                    \
+    --disable-werror                       \
+    --enable-new-dtags                     \
     --enable-default-hash-style=gnu
+
+config:
+  install-commands:
+    (>):
+    - ln -sv lib %{install-root}%{prefix}/lib64
+    - rm -rf %{install-root}%{datadir}/info
+    - rm -rf %{install-root}%{libdir}/bfd-plugins

@@ -23,11 +23,11 @@ variables:
     --build=$(../scripts/config.guess)  \
     --disable-nscd                      \
     --enable-kernel=6.6                 \
-    --with-headers=/usr/include         \
-    libc_cv_slibdir=/usr/lib
+    --with-headers=%{includedir}         \
+    libc_cv_slibdir=%{libdir}
 
   configure: |
-    echo "rootsbindir=/usr/bin" > configparms
+    echo "rootsbindir=/usr/sbin" > configparms
     mkdir -pv build
     cd build
 
@@ -44,5 +44,5 @@ config:
       ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir} | true
       ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3 | true
     - |
-      mv -v %{install-root}/usr/sbin/* %{install-root}/usr/bin/
+      mv -v %{install-root}/usr/sbin/* %{install-root}/tools/bin/
       rmdir %{install-root}/usr/sbin
