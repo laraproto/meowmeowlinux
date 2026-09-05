@@ -11,6 +11,7 @@ build-depends:
   - bootstrap/linux-headers.bst
   - bootstrap/gcc-stage1.bst
   - bootstrap/glibc.bst
+  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu

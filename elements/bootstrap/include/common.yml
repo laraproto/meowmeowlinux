@@ -10,4 +10,5 @@ environment:
   LD_LIBRARY_PATH: "%{bootstrap-prefix}/lib:%{install-root}/usr/lib:/usr/lib"
 
 build-depends:
-  - bootstrap/sysroot.bst
+  (<):
+    - bootstrap/sysroot.bst
