@@ -25,6 +25,8 @@ variables:
   build-dir: build
   conf-local: >-
     --prefix=%{bootstrap-prefix}
+    --with-sysroot=%{bootstrap-sysroot}
+    --with-lib-path=%{libdir}
     --build=$(%{build-root}/config.guess)
     --host=%{triplet}
     --disable-nls
