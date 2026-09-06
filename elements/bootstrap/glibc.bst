@@ -9,6 +9,7 @@ build-depends:
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
   - bootstrap/linux-headers.bst
+  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu

@@ -6,6 +6,7 @@ kind: autotools
 
 build-depends:
   - bootstrap/base.bst
+  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu

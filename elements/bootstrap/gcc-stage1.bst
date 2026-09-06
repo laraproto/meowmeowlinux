@@ -8,6 +8,7 @@ kind: autotools
 build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
+  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu

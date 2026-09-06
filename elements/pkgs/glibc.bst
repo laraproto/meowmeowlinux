@@ -3,8 +3,7 @@ kind: autotools
 sources:
   - kind: git_repo
     url: sourceware:glibc.git
-    track: release/2.43/master
-    ref: glibc-2.43-27-g4070d808bea1c077eb7e7d52b52b91cae98205d5
+    track: release/2.44/master
   - kind: patch_queue
     path: patches/glibc
   - kind: local
