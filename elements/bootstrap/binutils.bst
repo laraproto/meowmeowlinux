@@ -1,8 +1,7 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/include/autotools-build.yml
-  - elements/bootstrap/include/cross.yml
+  - elements/bootstrap/include/common.yml
 
 build-depends:
   - bootstrap/base.bst
@@ -10,7 +9,6 @@ build-depends:
   - bootstrap/binutils-stage1.bst
   - bootstrap/glibc.bst
   - bootstrap/linux-headers.bst
-  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu
@@ -24,8 +22,6 @@ environment:
 variables:
   build-dir: build
   conf-local: >-
-    --prefix=%{bootstrap-prefix}
-    --with-sysroot=%{bootstrap-sysroot}
     --with-lib-path=%{libdir}
     --build=$(%{build-root}/config.guess)
     --host=%{triplet}

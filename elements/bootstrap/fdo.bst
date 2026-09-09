@@ -4,7 +4,7 @@ sources:
   - kind: git_tag
     url: gitlab:freedesktop-sdk/freedesktop-sdk.git
     checkout-submodules: false
-    track: freedesktop-sdk-26.08.0
+    track: freedesktop-sdk-26.08*
 
 config:
   options:

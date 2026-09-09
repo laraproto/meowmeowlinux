@@ -1,14 +1,11 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/include/autotools-build.yml
-  - elements/bootstrap/include/common.yml
   - elements/bootstrap/include/cross.yml
 
 build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
-  - bootstrap/sysroot.bst
 
 sources:
   - kind: gnu
@@ -26,9 +23,7 @@ sources:
 variables:
   build-dir: build
   conf-local: >-
-    --with-sysroot=%{bootstrap-sysroot}
-    --with-local-prefix=%{bootstrap-prefix}
-    --with-native-system-header-dir=%{includedir}
+    --with-sysroot=%{sysroot}
     --target=%{triplet}
     --with-glibc-version=2.44
     --with-newlib
@@ -69,4 +64,4 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      cat ./gcc/{limitx,glimits,limity}.h > %{install-root}/$(%{triplet}-gcc -print-file-name=include)/limits.h
+      cat ./gcc/{limitx,glimits,limity}.h > $(%{install-root}%{bindir}/%{triplet}-gcc -print-file-name=include)/limits.h

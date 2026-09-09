@@ -1,15 +1,15 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/include/autotools-build.yml
   - elements/bootstrap/include/common.yml
 
 build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
-  - bootstrap/linux-headers.bst
-  - bootstrap/sysroot.bst
+  - filename: bootstrap/linux-headers.bst
+    config:
+      location: "%{sysroot}"
 
 sources:
   - kind: gnu
@@ -19,16 +19,21 @@ sources:
 
 variables:
   build-dir: build
-  conf-local: |
-    --host=%{triplet}                   \
-    --build=$(../scripts/config.guess)  \
-    --disable-nscd                      \
-    --enable-kernel=6.6                 \
-    --with-headers=%{includedir}         \
+  conf-local: >-
+    --host=%{triplet}
+    --build=$(%{build-root}/scripts/config.guess)
+    --disable-nscd
+    --enable-kernel=6.6
+    --with-headers=%{sysroot}%{includedir}:/tools/include
     libc_cv_slibdir=%{libdir}
 
   configure: |
-    echo "rootsbindir=/usr/sbin" > configparms
+    echo slibdir=%{libdir} >configparms
+    echo complocaledir=%{libdir}/locale >> configparms
+    echo gconvdir=%{libdir}/gconv >> configparms
+    echo rootsbindir=%{sbindir} >> configparms
+    echo sbindir=%{sbindir} >> configparms
+
     mkdir -pv build
     cd build
 
@@ -41,9 +46,4 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      mkdir -pv %{install-root}/%{libdir}
-      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir} | true
-      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3 | true
-    - |
-      mv -v %{install-root}/usr/sbin/* %{install-root}/tools/bin/
-      rmdir %{install-root}/usr/sbin
+      rm -r "%{install-root}%{libexecdir}/getconf"

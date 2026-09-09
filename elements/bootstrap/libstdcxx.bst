@@ -1,17 +1,18 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/include/autotools-build.yml
-  - elements/bootstrap/include/common.yml
   - elements/bootstrap/include/cross.yml
 
 build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
-  - bootstrap/linux-headers.bst
+  - filename:
+      - bootstrap/linux-headers.bst
+      - bootstrap/glibc.bst
+    config:
+      location: "%{sysroot}"
   - bootstrap/gcc-stage1.bst
-  - bootstrap/glibc.bst
-  - bootstrap/sysroot.bst
+
 
 sources:
   - kind: gnu
@@ -20,9 +21,11 @@ sources:
 variables:
   conf-cmd: "%{build-root}/libstdc++-v3/configure"
   gcc-version: $(%{triplet}-gcc -dumpversion)
-  conf-local: |
-    --host=%{triplet} --build=$(../config.guess) \
-    CXX=%{triplet}-gcc                           \
-    --disable-multilib --disable-nls             \
-    --disable-libstdcxx-pch                      \
-    --with-gxx-include-dir=/bootstrap/tools/%{triplet}/include/c++/%{gcc-version}
+  conf-local: >-
+    --host=%{triplet} --build=$(%{build-root}/config.guess)
+    CXX=%{triplet}-gcc
+    CPPFLAGS=-I%{sysroot}/usr/include
+    --disable-multilib --disable-nls
+    --disable-libstdcxx-pch
+    --with-headers=%{sysroot}/usr/include:%{includedir}
+    --with-gxx-include-dir=%{bootstrap-prefix}/%{triplet}/include/c++/%{gcc-version}

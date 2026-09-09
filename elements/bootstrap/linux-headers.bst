@@ -7,7 +7,6 @@ build-depends:
   - bootstrap/base.bst
   - bootstrap/binutils-stage1.bst
   - bootstrap/gcc-stage1.bst
-  - bootstrap/sysroot.bst
 
 sources:
   - kind: git_tag
@@ -21,3 +20,9 @@ config:
   install-commands:
     - mkdir -pv %{install-root}%{includedir}
     - cp -rv usr/include/* %{install-root}%{includedir}
+
+public:
+  bst:
+    split-rules:
+      devel:
+      - /**

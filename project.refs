@@ -165,7 +165,7 @@ projects:
     - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
       sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
     bootstrap/linux-headers.bst:
-    - ref: v7.1.8-107452-ge2466b32e02a49318b99520c40b397062c65c84c
+    - ref: v7.0.12-104130-g73e7709d9919efeb8df2cedd7804734a3254a0bb
     bootstrap/m4.bst:
     - suffix: m4/m4-1.4.21.tar.xz
       sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
