@@ -46,4 +46,8 @@ config:
     - |
       %{delete-libtool-archives}
     - |
+      mkdir -pv %{install-root}/%{libdir}
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir} | true
+      ln -sv ../lib/ld-linux-x86-64.so.2 %{install-root}/%{libdir}/ld-lsb-x86-64.so.3 | true
+    - |
       rm -r "%{install-root}%{libexecdir}/getconf"
