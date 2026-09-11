@@ -174,3 +174,12 @@ projects:
       sha256sum: 154ab23b60070e8f27013c22977f1129425d67d1e8acd6e13010e617811e4cff
     bootstrap/ncurses.bst:
     - ref: 355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11
+    bootstrap/bash.bst:
+    - suffix: bash/bash-5.3.tar.gz
+      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    bootstrap/coreutils.bst:
+    - suffix: coreutils/coreutils-9.11.tar.xz
+      sha256sum: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3
+    bootstrap/diffutils.bst:
+    - suffix: diffutils/diffutils-3.12.tar.xz
+      sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
