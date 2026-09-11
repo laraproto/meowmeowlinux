@@ -183,3 +183,6 @@ projects:
     bootstrap/diffutils.bst:
     - suffix: diffutils/diffutils-3.12.tar.xz
       sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+    bootstrap/findutils.bst:
+    - suffix: findutils/findutils-4.11.0.tar.xz
+      sha256sum: bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
