@@ -1,0 +1,6 @@
+(@):
+  - elements/bootstrap/include/common.yml
+
+environment:
+  CFLAGS: "-B/sysroot/usr/lib/ -L/sysroot/usr/lib"
+  LDFLAGS: "-B/sysroot/usr/lib/ -L/sysroot/usr/lib"

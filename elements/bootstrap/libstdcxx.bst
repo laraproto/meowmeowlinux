@@ -2,6 +2,7 @@ kind: autotools
 
 (@):
   - elements/bootstrap/include/cross.yml
+  - elements/bootstrap/include/sysroot.yml
 
 build-depends:
   - bootstrap/base.bst
@@ -29,6 +30,12 @@ variables:
     --with-headers=%{sysroot}/usr/include:%{includedir}
     --with-gxx-include-dir=%{bootstrap-prefix}/%{triplet}/include/c++/%{gcc-version}
 
-environment:
-  CFLAGS: "-B/sysroot/usr/lib/"
-  LDFLAGS: "-B/sysroot/usr/lib/"
+config:
+  install-commands:
+    - |
+      %{make-install}
+    - |
+      %{delete-libtool-archives}
+    - |
+      mkdir %{install-root}/sysroot -pv
+      mv %{install-root}/usr %{install-root}/sysroot/usr -v
