@@ -13,7 +13,6 @@ build-depends:
       location: "%{sysroot}"
   - bootstrap/gcc-stage1.bst
 
-
 sources:
   - kind: gnu
     name: gcc
@@ -29,3 +28,7 @@ variables:
     --disable-libstdcxx-pch
     --with-headers=%{sysroot}/usr/include:%{includedir}
     --with-gxx-include-dir=%{bootstrap-prefix}/%{triplet}/include/c++/%{gcc-version}
+
+environment:
+  CFLAGS: "-B/sysroot/usr/lib/"
+  LDFLAGS: "-B/sysroot/usr/lib/"
