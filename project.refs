@@ -186,3 +186,10 @@ projects:
     bootstrap/findutils.bst:
     - suffix: findutils/findutils-4.11.0.tar.xz
       sha256sum: bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
+    bootstrap/file.bst:
+    - ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
+    bootstrap/file-stage1.bst:
+    - ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
+    bootstrap/gawk.bst:
+    - suffix: gawk/gawk-5.4.1.tar.xz
+      sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
