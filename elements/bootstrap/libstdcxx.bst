@@ -20,7 +20,6 @@ sources:
 
 variables:
   conf-cmd: "%{build-root}/libstdc++-v3/configure"
-  gcc-version: $(%{triplet}-gcc -dumpversion)
   conf-local: >-
     --host=%{triplet} --build=$(%{build-root}/config.guess)
     CXX=%{triplet}-gcc

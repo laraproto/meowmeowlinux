@@ -2,6 +2,7 @@ variables:
   strip-binaries: ""
   sysroot: "%{bootstrap-sysroot}"
   prefix: "/usr"
+  gcc-version: 16.2.0 #$(%{triplet}-gcc -dumpversion)
 
 environment:
   _GCC_AUTOCONF_VERSION_CHECK: false
