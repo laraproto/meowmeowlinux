@@ -193,3 +193,9 @@ projects:
     bootstrap/gawk.bst:
     - suffix: gawk/gawk-5.4.1.tar.xz
       sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+    bootstrap/make.bst:
+    - suffix: make/make-4.4.1.tar.gz
+      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+    bootstrap/binutils-stage2.bst:
+    - suffix: binutils/binutils-2.47.tar.xz
+      sha256sum: 154ab23b60070e8f27013c22977f1129425d67d1e8acd6e13010e617811e4cff
