@@ -1,5 +1,0 @@
-(@):
-- elements/bootstrap/include/common.yml
-
-variables:
-  prefix: "%{bootstrap-prefix}"

@@ -1,3 +1,0 @@
-kind: stack
-
-depends:
