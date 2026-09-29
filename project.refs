@@ -223,3 +223,6 @@ projects:
       sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
     - suffix: gmp/gmp-6.3.0.tar.xz
       sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    bootstrap/stage1/bash.bst:
+    - suffix: bash/bash-5.3.tar.gz
+      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba

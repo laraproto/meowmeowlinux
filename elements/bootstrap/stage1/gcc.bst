@@ -18,18 +18,11 @@ sources:
 
 variables:
   conf-local: >-
-    --with-newlib
-    --without-headers
-    --enable-default-pie
-    --disable-fixincludes 
-    --disable-shared 
     --disable-multilib
-    --disable-libsanitizer 
-    --disable-nls
-    --enable-default-ssp
+    --disable-bootstrap
     --disable-libssp
-    --disable-libatomic
-    --disable-libgomp
-    --disable-libquadmath
-    --disable-libvtv
+    --enable-default-pie
+    --enable-default-ssp
+    --enable-linker-build-id
+    --enable-shared
     --enable-languages=c,c++
