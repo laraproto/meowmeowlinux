@@ -5,3 +5,4 @@ depends:
   - bootstrap/stage1/binutils.bst
   - bootstrap/stage1/glibc.bst
   - bootstrap/stage1/bash.bst
+  - bootstrap/stage1/gawk.bst

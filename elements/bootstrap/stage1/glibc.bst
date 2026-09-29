@@ -1,6 +1,6 @@
 kind: autotools
 
-depends:
+build-depends:
   - bootstrap/stage1/base.bst
 
 sources:

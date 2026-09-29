@@ -226,3 +226,6 @@ projects:
     bootstrap/stage1/bash.bst:
     - suffix: bash/bash-5.3.tar.gz
       sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    bootstrap/stage1/gawk.bst:
+    - suffix: gawk/gawk-5.4.1.tar.xz
+      sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
