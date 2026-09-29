@@ -10,3 +10,12 @@ sources:
 variables:
   conf-local: |
     --without-bash-malloc
+
+config:
+  install-commands:
+    - |
+      %{make-install}
+    - |
+      %{delete-libtool-archives}
+    - |
+      ln -s bash %{install-root}/usr/bin/sh
