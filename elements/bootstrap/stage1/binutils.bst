@@ -14,10 +14,10 @@ variables:
     --disable-werror
     --enable-new-dtags
     --enable-default-hash-style=gnu
+    --without-debuginfod
 
 config:
   install-commands:
     (>):
-      - ln -sv lib %{install-root}%{prefix}/lib64
       - rm -rf %{install-root}%{datadir}/info
       - rm -rf %{install-root}%{libdir}/bfd-plugins

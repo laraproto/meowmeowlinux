@@ -229,3 +229,54 @@ projects:
     bootstrap/stage1/gawk.bst:
     - suffix: gawk/gawk-5.4.1.tar.xz
       sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+    bootstrap/stage2/bash.bst:
+    - suffix: bash/bash-5.3.tar.gz
+      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    bootstrap/stage2/gcc.bst:
+    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
+      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    bootstrap/stage1/ncurses.bst:
+    - ref: 0096bd402c4a9c8f39bd7ed266e1b8920327e4d8
+    bootstrap/stage1/coreutils.bst:
+    - suffix: coreutils/coreutils-9.12.tar.xz
+      sha256sum: a480198559733e9b3da999e90543ac6f888a2caa544d8d664c5a1f17e528e210
+    bootstrap/stage1/sed.bst:
+    - suffix: sed/sed-4.10.tar.xz
+      sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7
+    bootstrap/stage1/acl.bst:
+    - ref: e661131456d2708a01c614a0f400e11d7d1bfaeb6f3e74b75bb980b72f0161a3
+    bootstrap/stage1/attr.bst:
+    - ref: 6c8a2148a7b85043b68492bce43316b0e2e214fc4e628c7ede078e76e216330b
+    bootstrap/stage1/zstd.bst:
+    - ref: f8745da6ff1ad1e7bab384bd1f9d742439278e99
+    bootstrap/stage1/grep.bst:
+    - suffix: grep/grep-3.12.tar.xz
+      sha256sum: 2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9
+    bootstrap/stage1/pcre2.bst:
+    - ref: 6f9d7c1373262c541324a16a358785b33ef116cf
+    bootstrap/stage1/linux-headers.bst:
+    - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
+    bootstrap/stage1/readline.bst:
+    - suffix: readline/readline-8.3.tar.gz
+      sha256sum: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
+    bootstrap/stage1/make.bst:
+    - suffix: make/make-4.4.1.tar.gz
+      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+    bootstrap/stage1/diffutils.bst:
+    - suffix: diffutils/diffutils-3.12.tar.xz
+      sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+    bootstrap/stage1/mpfr.bst:
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    bootstrap/stage1/gmp.bst:
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    bootstrap/stage1/tar.bst:
+    - suffix: tar/tar-1.35.tar.xz
+      sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16

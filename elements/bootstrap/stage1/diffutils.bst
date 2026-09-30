@@ -3,10 +3,10 @@ kind: autotools
 build-depends:
   - bootstrap/stage1/base.bst
 
-depends:
-  - bootstrap/stage1/mpfr.bst
-  - bootstrap/stage1/gmp.bst
-
 sources:
   - kind: gnu
-    name: gawk
+    name: diffutils
+
+variables:
+  conf-local: >-
+    gl_cv_func_strcasecmp_works=yes

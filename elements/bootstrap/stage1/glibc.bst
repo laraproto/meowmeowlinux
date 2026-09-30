@@ -34,3 +34,6 @@ config:
       %{make-install}
     - |
       %{delete-libtool-archives}
+    - |
+      mkdir -pv %{install-root}/usr/lib64
+      ln -sv /usr/lib/ld-linux-x86-64.so.2 %{install-root}/usr/lib64/ld-linux-x86-64.so.2
