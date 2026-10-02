@@ -1,8 +1,13 @@
 kind: autotools
 
-build-depends:
-  - bootstrap/stage1/base.bst
+(@):
+  - elements/bootstrap/stage1/common.yml
 
+build-depends:
+  - bootstrap/stage1/linux-headers.bst
+  - bootstrap/stage1/fdo.bst:public-stacks/buildsystem-autotools.bst
+  - bootstrap/stage1/fdo.bst:components/bison.bst
+  - bootstrap/stage1/fdo.bst:components/python3.bst
 sources:
   - kind: gnu
     name: glibc
@@ -35,5 +40,7 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      mkdir -pv %{install-root}/usr/lib64
-      ln -sv /usr/lib/ld-linux-x86-64.so.2 %{install-root}/usr/lib64/ld-linux-x86-64.so.2
+      mkdir -pv %{install-root}/tools/lib64
+      ln -sv /tools/lib/ld-linux-x86-64.so.2 %{install-root}/tools/lib64/ld-linux-x86-64.so.2
+      rm -rfv %{install-root}/var
+      rm -rfv %{install-root}/etc

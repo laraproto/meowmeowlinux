@@ -5,14 +5,7 @@ kind: autotools
 
 sources:
   - kind: gnu
-    name: sed
+    name: help2man
 
 build-depends:
   - bootstrap/stage1/base.bst
-  - bootstrap/stage1/help2man.bst
-
-depends:
-  - bootstrap/stage1/attr.bst
-
-variables:
-  conf-local: --without-selinux

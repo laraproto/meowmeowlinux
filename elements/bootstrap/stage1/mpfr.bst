@@ -1,5 +1,8 @@
 # This is temporary until gawk gets fixed upstream.
 
+(@):
+  - elements/bootstrap/stage1/common.yml
+
 kind: autotools
 
 build-depends:

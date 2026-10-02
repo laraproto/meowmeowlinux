@@ -1,5 +1,8 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/stage1/common.yml
+
 sources:
   - kind: gnu
     name: grep

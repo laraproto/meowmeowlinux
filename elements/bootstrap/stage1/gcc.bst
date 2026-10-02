@@ -1,7 +1,14 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/stage1/common.yml
+
 build-depends:
   - bootstrap/stage1/base.bst
+
+depends:
+  - bootstrap/stage1/attr.bst
+  - bootstrap/stage1/zstd.bst
 
 sources:
   - kind: gnu

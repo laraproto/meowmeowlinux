@@ -89,7 +89,7 @@ projects:
     - suffix: gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
       sha256sum: 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
     pkgs/linux/headers.bst:
-    - ref: 73e7709d9919efeb8df2cedd7804734a3254a0bb
+    - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
     bootstrap/pkgs/m4.bst:
     - suffix: m4/m4-1.4.21.tar.xz
       sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
@@ -280,3 +280,8 @@ projects:
     bootstrap/stage1/tar.bst:
     - suffix: tar/tar-1.35.tar.xz
       sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
+    pkgs/systemd.bst:
+    - ref: 8cc40e0c5e9234bf45084751ac53b1fbfe70b492
+    bootstrap/stage1/help2man.bst:
+    - suffix: help2man/help2man-1.49.3.tar.xz
+      sha256sum: 4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f

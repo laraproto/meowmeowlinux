@@ -1,5 +1,8 @@
 kind: make
 
+(@):
+  - elements/bootstrap/stage1/common.yml
+
 sources:
   - kind: git
     url: github:facebook/zstd

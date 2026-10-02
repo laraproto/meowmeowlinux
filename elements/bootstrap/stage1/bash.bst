@@ -1,5 +1,8 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/stage1/common.yml
+
 build-depends:
   - bootstrap/stage1/base.bst
 
@@ -18,4 +21,4 @@ config:
     - |
       %{delete-libtool-archives}
     - |
-      ln -s bash %{install-root}/usr/bin/sh
+      ln -s bash %{install-root}/tools/bin/sh

@@ -7,7 +7,7 @@ sources:
     track: linux-rolling-stable
 
 build-depends:
-  - bootstrap/unadjusted.bst
+  - bootstrap/stage1/stage1.bst
 
 config:
   build-commands:
