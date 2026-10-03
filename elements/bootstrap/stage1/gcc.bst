@@ -33,3 +33,9 @@ variables:
     --enable-linker-build-id
     --enable-shared
     --enable-languages=c,c++
+
+config:
+  install-commands:
+    (>):
+      - |
+        ln -sv gcc /tools/bin/cc

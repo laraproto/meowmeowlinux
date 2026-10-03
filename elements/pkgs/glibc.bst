@@ -1,26 +1,21 @@
 kind: autotools
 
+(@):
+  - elements/bootstrap/use.yml
+
 sources:
-  - kind: git_repo
-    url: sourceware:glibc.git
-    track: release/2.44/master
+  - kind: gnu
+    name: glibc
   - kind: patch_queue
     path: patches/glibc
-  - kind: local
-    path: files/ld.so.conf
-    directory: meowmeow
 
 depends:
   - pkgs/linux/headers.bst
 
-build-depends:
-  - bootstrap/unadjusted.bst
-
 variables:
-  build-dir: build
   cflags-fortify-source: ""
   conf-local: >-
-    --enable-kernel=5.0.0
+    --enable-kernel=7.0
     --with-headers=%{includedir}
     --enable-stackguard-randomization
     --enable-stack-protector=strong
@@ -28,9 +23,6 @@ variables:
     --enable-cet
     --disable-werror
     --disable-nscd
-
-environment:
-  CC: gcc -ffile-prefix-map=/tools=%{prefix}
 
 config:
   configure-commands:
@@ -55,8 +47,6 @@ config:
       - rm -v %{install-root}%{sysconfdir}/ld.so.cache
       # Remove timezone commands provided by tzdata
       - rm -v %{install-root}%{bindir}/{tzselect,zdump,zic}
-      # Install ld.so.conf
-      - cp -v meowmeow/ld.so.conf %{install-root}%{sysconfdir}/ld.so.conf
 
 public:
   bst:

@@ -21,4 +21,7 @@ config:
     - |
       %{delete-libtool-archives}
     - |
+      mkdir %{install-root}/bin
+      ln -s /tools/bin/bash %{install-root}/bin/sh
+      ln -s /tools/bin/bash %{install-root}/bin/bash
       ln -s bash %{install-root}/tools/bin/sh

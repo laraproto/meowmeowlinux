@@ -20,6 +20,10 @@ variables:
     --with-termlib
     --without-ada
     --disable-stripping
+    --disable-root-access
+    --disable-root-environ
+    --disable-setuid-environ
+    --enable-widec
     AWK=gawk
 
 config:

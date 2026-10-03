@@ -1,13 +1,17 @@
 kind: manual
 description: Linux kernel API headers
 
+(@):
+  - elements/bootstrap/use.yml
+
+build-depends:
+  - bootstrap/linker.bst
+  - bootstrap/stage1/stage1.bst
+
 sources:
   - kind: git_repo
     url: kernel:linux/kernel/git/stable/linux.git
     track: linux-rolling-stable
-
-build-depends:
-  - bootstrap/stage1/stage1.bst
 
 config:
   build-commands:

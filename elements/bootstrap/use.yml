@@ -1,0 +1,6 @@
+build-depends:
+  - bootstrap/stage1/stage1.bst
+
+environment:
+  PATH: "/usr/bin:/tools/bin"
+  LD_LIBRARY_PATH: "/usr/lib:/tools/lib"
