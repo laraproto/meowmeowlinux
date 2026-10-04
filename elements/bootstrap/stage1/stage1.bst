@@ -20,7 +20,10 @@ depends:
   - bootstrap/stage1/diffutils.bst
   - bootstrap/stage1/findutils.bst
   - bootstrap/stage1/autoconf.bst
+  - bootstrap/stage1/automake.bst
   - bootstrap/stage1/bison.bst
   # - bootstrap/stage1/python.bst
   - bootstrap/stage1/m4.bst
   - bootstrap/stage1/tar.bst
+  - bootstrap/stage1/texinfo.bst
+  - bootstrap/stage1/libtool.bst

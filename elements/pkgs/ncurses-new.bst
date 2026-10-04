@@ -1,3 +1,5 @@
+# Eventually swap this with the main ncurses
+# Just really expensive world rebuild
 kind: autotools
 
 (@):
@@ -22,3 +24,7 @@ variables:
     --disable-setuid-environ
     --with-cxx-binding
     --with-cxx-shared
+    --with-shared
+    --without-ada
+    --without-normal
+    --without-debug

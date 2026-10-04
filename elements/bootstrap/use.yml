@@ -1,5 +1,5 @@
 build-depends:
-  - bootstrap/stage1/stage1.bst
+    - bootstrap/stage1/stage1.bst
 
 environment:
   PATH: "/usr/bin:/tools/bin"

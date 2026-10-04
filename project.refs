@@ -212,3 +212,70 @@ projects:
       sha256sum: 9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
     bootstrap/stage1/perl.bst:
     - ref: 505cf43912e9480495c344c70260452e32aa2a73c546a026b3f100053b23ce91
+    bootstrap/stage1/texinfo.bst:
+    - suffix: texinfo/texinfo-7.3.tar.xz
+      sha256sum: 51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e
+    bootstrap/stage1/libunistring.bst:
+    - suffix: libunistring/libunistring-1.4.2.tar.xz
+      sha256sum: 5b46e74377ed7409c5b75e7a96f95377b095623b689d8522620927964a41499c
+    bootstrap/stage1/automake.bst:
+    - suffix: automake/automake-1.19.tar.xz
+      sha256sum: e3e2c2e3abf37898138db5b6c1d1dc35c9160c5978be7947d2c741705251d445
+    bootstrap/stage1/libtool.bst:
+    - suffix: libtool/libtool-2.6.2.tar.xz
+      sha256sum: 2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e
+    pkgs/python.bst:
+    - ref: 8e6e75d9102e39bed2a2b279203a396741180f12
+    bootstrap/stage1/gzip.bst:
+    - suffix: gzip/gzip-1.15.tar.xz
+      sha256sum: 9aa0cc780dec156b8282844833b342ab7cb08c25d2cd9a1869cdd0df31deff48
+    pkgs/zlib.bst:
+    - ref: 12731092979c6d07f42da27da673a9f6c7b13586
+    pkgs/gcc.bst:
+    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
+      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    pkgs/gmp.bst:
+    - suffix: gmp/gmp-6.3.0.tar.xz
+      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+    pkgs/mpfr.bst:
+    - suffix: mpfr/mpfr-4.2.2.tar.xz
+      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+    pkgs/mpc.bst:
+    - suffix: mpc/mpc-1.4.1.tar.xz
+      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+    pkgs/bash.bst:
+    - suffix: bash/bash-5.3.tar.gz
+      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    bootstrap/stage1/expat.bst:
+    - ref: R_2_8_5-98-ga824e920f3d3d77930d7897c80b6925a6733aebc
+    pkgs/zstd.bst:
+    - ref: f8745da6ff1ad1e7bab384bd1f9d742439278e99
+    pkgs/gawk.bst:
+    - suffix: gawk/gawk-5.4.1.tar.xz
+      sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+    pkgs/readline.bst:
+    - suffix: readline/readline-8.3.tar.gz
+      sha256sum: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
+    pkgs/ncurses-new.bst:
+    - ref: 0096bd402c4a9c8f39bd7ed266e1b8920327e4d8
+    pkgs/libxcrypt.bst:
+    - ref: 71513a31c01a428bccd5367a32fd95f115d6dac50fb5b60c779d5c7942aec071
+    pkgs/coreutils.bst:
+    - suffix: coreutils/coreutils-9.12.tar.xz
+      sha256sum: a480198559733e9b3da999e90543ac6f888a2caa544d8d664c5a1f17e528e210
+    pkgs/attr.bst:
+    - ref: 6c8a2148a7b85043b68492bce43316b0e2e214fc4e628c7ede078e76e216330b
+    pkgs/pcre2.bst:
+    - ref: 6f9d7c1373262c541324a16a358785b33ef116cf
+    pkgs/grep.bst:
+    - suffix: grep/grep-3.12.tar.xz
+      sha256sum: 2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9
+    pkgs/sed.bst:
+    - suffix: sed/sed-4.10.tar.xz
+      sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7

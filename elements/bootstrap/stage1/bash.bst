@@ -6,6 +6,9 @@ kind: autotools
 build-depends:
   - bootstrap/stage1/base.bst
 
+runtime-depends:
+  - bootstrap/stage1/ncurses.bst
+
 sources:
   - kind: gnu
     name: bash

@@ -38,4 +38,4 @@ config:
   install-commands:
     (>):
       - |
-        ln -sv gcc /tools/bin/cc
+        ln -sv gcc %{install-root}/tools/bin/cc

@@ -1,7 +1,11 @@
 kind: manual
 
-(@):
-  - elements/bootstrap/use.yml
+build-depends:
+  - bootstrap/stage1/independent.bst
+
+environment:
+  PATH: "/usr/bin:/tools/bin"
+  LD_LIBRARY_PATH: "/usr/lib:/tools/lib"
 
 config:
   install-commands:

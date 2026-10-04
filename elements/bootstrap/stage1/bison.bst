@@ -6,6 +6,7 @@ kind: autotools
 build-depends:
   - bootstrap/stage1/independent.bst
   - bootstrap/stage1/perl.bst
+  - bootstrap/stage1/texinfo.bst
 
 depends:
   - bootstrap/stage1/m4.bst

@@ -6,14 +6,16 @@ kind: make
 build-depends:
   - bootstrap/stage1/independent.bst
 
+depends:
+  - bootstrap/linker.bst # Perl seems to reset LDFLAGS.
+
 sources:
   - kind: tar
     url: cpan:src/5.0/perl-5.44.0.tar.xz
 
 config:
   configure-commands:
-    - |
-      sh Configure -des
+    - sh Configure -des
              -D prefix=/tools
              -D vendorprefix=/tools
              -D useshrplib

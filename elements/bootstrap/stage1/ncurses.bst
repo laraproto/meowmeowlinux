@@ -15,15 +15,14 @@ build-depends:
 
 variables:
   conf-local: --with-shared
-    --without-normal
-    --without-debug
     --with-termlib
-    --without-ada
     --disable-stripping
     --disable-root-access
     --disable-root-environ
     --disable-setuid-environ
     --enable-widec
+    --with-cxx-binding
+    --with-cxx-shared
     AWK=gawk
 
 config:

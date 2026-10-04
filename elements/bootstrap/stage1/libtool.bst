@@ -1,6 +1,6 @@
 kind: autotools
 
-(@): 
+(@):
   - elements/bootstrap/stage1/common.yml
 
 build-depends:
@@ -8,8 +8,8 @@ build-depends:
   - bootstrap/stage1/m4.bst
 
 depends:
-  - bootstrap/stage1/perl.bst
+  - bootstrap/env.bst
 
 sources:
   - kind: gnu
-    name: autoconf
+    name: libtool

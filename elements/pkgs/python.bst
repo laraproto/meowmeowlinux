@@ -1,11 +1,15 @@
 kind: autotools
 
 (@): 
-  - elements/bootstrap/use.yml
+  - elements/bootstrap/stage1/common.yml
 
 build-depends:
-  - bootstrap/stage1/stage1.bst
-  - bootstrap/linker.bst
+  - bootstrap/stage1/independent.bst
+  - bootstrap/stage1/findutils.bst
+
+depends:
+  - bootstrap/stage1/expat.bst
+  - pkgs/ncurses.bst
 
 sources:
 - kind: git_repo
@@ -17,5 +21,5 @@ sources:
   url: github:python/cpython.git
 
 variables:
-  conf-local: --enable-shared  --without-static-libpython --without-ensurepip --with-system-expat --enable-optimizations 
+  conf-local: --enable-shared  --without-static-libpython --without-ensurepip --with-system-expat --enable-optimizations CFLAGS="-Wno-error=stringop-truncation"
 
