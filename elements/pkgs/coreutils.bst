@@ -15,7 +15,6 @@ build-depends:
   - bootstrap/stage1/grep.bst
   - bootstrap/stage1/make.bst
   - pkgs/gawk.bst
-  - pkgs/zstd.bst # TODO: Runtime dep of gcc
   - pkgs/gcc.bst
   - pkgs/bash.bst
 

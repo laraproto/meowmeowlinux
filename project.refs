@@ -279,3 +279,6 @@ projects:
     pkgs/sed.bst:
     - suffix: sed/sed-4.10.tar.xz
       sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7
+    pkgs/make.bst:
+    - suffix: make/make-4.4.1.tar.gz
+      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3

@@ -9,7 +9,7 @@ build-depends:
   - pkgs/fs.bst
 
 depends:
-  - pkgs/ncurses-new.bst
+  - pkgs/ncurses.bst
 
 sources:
   - kind: gnu

@@ -1,10 +1,10 @@
 kind: stack
 
 depends:
+  - pkgs/gcc.bst
   - pkgs/bash.bst
-  - pkgs/fs.bst
   - pkgs/coreutils.bst
-  - pkgs/ncurses.bst
-  - pkgs/bash.bst
-  - pkgs/gawk.bst
   - pkgs/sed.bst
+  - pkgs/grep.bst
+  - pkgs/gawk.bst
+  - pkgs/make.bst

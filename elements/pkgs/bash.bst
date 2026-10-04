@@ -6,7 +6,6 @@ kind: autotools
 build-depends:
   - bootstrap/stage1/bash.bst
   - bootstrap/stage1/make.bst
-  - bootstrap/stage1/ncurses.bst
   - bootstrap/stage1/glibc.bst
   - bootstrap/stage1/coreutils.bst
   - bootstrap/stage1/sed.bst
@@ -15,6 +14,9 @@ build-depends:
   - pkgs/gcc.bst
   - pkgs/zstd.bst
   - pkgs/gawk.bst
+
+depends:
+  - pkgs/ncurses.bst
 
 sources:
   - kind: gnu

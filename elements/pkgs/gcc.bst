@@ -12,6 +12,9 @@ depends:
   - pkgs/mpc.bst
   - pkgs/fs.bst
 
+runtime-depends:
+  - pkgs/zstd.bst
+
 sources:
   - kind: gnu
     name: gcc

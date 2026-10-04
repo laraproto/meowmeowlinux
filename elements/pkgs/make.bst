@@ -4,16 +4,15 @@ kind: autotools
   - elements/bootstrap/use.yml
 
 build-depends:
-  - groups/minimum.bst
-  - bootstrap/stage1/grep.bst
-  - bootstrap/stage1/glibc.bst
   - bootstrap/stage1/make.bst
+  - bootstrap/stage1/glibc.bst
   - pkgs/gcc.bst
-  
-depends:
-  - pkgs/pcre2.bst
+  - pkgs/bash.bst
+  - pkgs/coreutils.bst
+  - pkgs/sed.bst
+  - pkgs/grep.bst
+  - pkgs/gawk.bst
 
 sources:
   - kind: gnu
-    name: grep
-
+    name: make
