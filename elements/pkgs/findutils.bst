@@ -1,10 +1,7 @@
 kind: autotools
 
-(@):
-  - elements/bootstrap/stage1/common.yml
-
-build-depends:
-  - bootstrap/stage1/base.bst
+build-depends: 
+  - groups/autotools.bst
 
 sources:
   - kind: gnu
@@ -12,3 +9,4 @@ sources:
 
 variables:
   conf-local: --without-selinux
+

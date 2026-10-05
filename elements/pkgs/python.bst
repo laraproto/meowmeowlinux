@@ -1,3 +1,5 @@
+# This should be moved to bootstrap/stage1/python.bst
+
 kind: autotools
 
 (@): 
@@ -23,3 +25,10 @@ sources:
 variables:
   conf-local: --enable-shared  --without-static-libpython --without-ensurepip --with-system-expat --enable-optimizations CFLAGS="-Wno-error=stringop-truncation"
 
+# TODO: Next world rebuild
+#config:
+#  install-commands:
+#    (>):
+#      - |
+#        ln -sv python3 %{install-root}/usr/bin/python
+      

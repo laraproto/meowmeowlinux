@@ -282,3 +282,78 @@ projects:
     pkgs/make.bst:
     - suffix: make/make-4.4.1.tar.gz
       sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+    pkgs/cmake.bst:
+    - ref: v4.4.4-0-g2e0b3aec14fe2e3e555faac4698e281749aae4b5
+    bootstrap/stage1/cmake.bst:
+    - ref: v4.4.4-0-g2e0b3aec14fe2e3e555faac4698e281749aae4b5
+    bootstrap/stage1/llvm.bst:
+    - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
+    bootstrap/stage1/ninja.bst:
+    - ref: 3441b633c2fe2c494e958780ba0f4227b1327634
+    bootstrap/stage1/rust.bst:
+    - ref: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+    bootstrap/stage1/libidn2.bst:
+    - ref: f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a
+      suffix: libidn/libidn-1.44.tar.gz
+      sha256sum: 499608bab3a65650a0ea52888c13a8deebe3f71408e319acd9ec52e02eb13959
+    pkgs/perl.bst:
+    - ref: 505cf43912e9480495c344c70260452e32aa2a73c546a026b3f100053b23ce91
+    pkgs/findutils.bst:
+    - suffix: findutils/findutils-4.11.0.tar.xz
+      sha256sum: bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
+    pkgs/libidn2.bst:
+    - ref: f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a
+    pkgs/openssl.bst:
+    - ref: af1775b60dfa141a4ad762585052cabeb9f37e9e
+    pkgs/autoconf.bst:
+    - suffix: autoconf/autoconf-2.73.tar.xz
+      sha256sum: 9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
+    pkgs/m4.bst:
+    - suffix: m4/m4-1.4.21.tar.xz
+      sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
+    bootstrap/stage1/openssl.bst:
+    - ref: af1775b60dfa141a4ad762585052cabeb9f37e9e
+    bootstrap/stage1/openssl3.bst:
+    - ref: c8bd5a57108599ac650bbae77fcabe3109dab2e8
+    pkgs/openssl3.bst:
+    - ref: c8bd5a57108599ac650bbae77fcabe3109dab2e8
+    pkgs/ninja.bst:
+    - ref: v1.13.2-0-g3441b633c2fe2c494e958780ba0f4227b1327634
+    pkgs/meson.bst:
+    - ref: 70598bb7825f0f804fb31ec2795de5e79e7692a0
+    pkgs/libtool.bst:
+    - suffix: libtool/libtool-2.6.2.tar.xz
+      sha256sum: 2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e
+    pkgs/python-new.bst:
+    - ref: 8e6e75d9102e39bed2a2b279203a396741180f12
+    pkgs/automake.bst:
+    - suffix: automake/automake-1.19.tar.xz
+      sha256sum: e3e2c2e3abf37898138db5b6c1d1dc35c9160c5978be7947d2c741705251d445
+    bootstrap/stage1/git.bst:
+    - ref: a018953688f1b10bddf91bff8747068f5f4746a4
+    bootstrap/stage1/zlib.bst:
+    - ref: 12731092979c6d07f42da27da673a9f6c7b13586
+    bootstrap/stage1/curl.bst:
+    - ref: 01346829096c61b372692f6dc43ffa778c6caccd
+    bootstrap/stage1/python-build.bst:
+    - ref: 89cccef40df9011f03bec18cf52c53d1096ed6ee
+    pkgs/python-build.bst:
+    - ref: 89cccef40df9011f03bec18cf52c53d1096ed6ee
+    bootstrap/stage1/libpsl.bst:
+    - ref: 93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be
+    bootstrap/stage1/pkg-config.bst:
+    - ref: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
+    bootstrap/stage1/glib.bst:
+    - ref: 436d47a723da97fbe67057f6b51dcf49a244fd4a
+    bootstrap/stage1/meson.bst:
+    - ref: 70598bb7825f0f804fb31ec2795de5e79e7692a0
+    bootstrap/stage1/python-pyproject-hooks.bst:
+    - ref: 184c9f56a87ede1276a5b33f5024204adb792cd2
+    bootstrap/stage1/python-installer.bst:
+    - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768
+    bootstrap/stage1/python-flit.bst:
+    - ref: 75b1c909d587c1ff5e0fd5f3df1046f74ee249d4
+    bootstrap/stage1/python-packaging.bst:
+    - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
+    bootstrap/stage1/python-setuptools.bst:
+    - ref: 72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87
