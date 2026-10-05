@@ -16,10 +16,9 @@ build-depends:
   - bootstrap/stage1/automake.bst
   - bootstrap/stage1/m4.bst
   - bootstrap/stage1/libtool.bst
-  - bootstrap/stage1/libpsl.bst
 
 depends:
-  - bootstrap/stage1/openssl.bst
+  - bootstrap/stage1/openssl3.bst
 
 variables:
-  conf-local: --with-openssl
+  conf-local: --with-openssl --without-libpsl
