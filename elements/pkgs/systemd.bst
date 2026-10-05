@@ -7,5 +7,5 @@ sources:
     exclude:
       - "*rc*"
 
-#build-depends:
-# meson compiler
+build-depends:
+  - pkgs/meson.bst

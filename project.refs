@@ -352,8 +352,18 @@ projects:
     bootstrap/stage1/python-installer.bst:
     - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768
     bootstrap/stage1/python-flit.bst:
-    - ref: 75b1c909d587c1ff5e0fd5f3df1046f74ee249d4
+    - ref: 1c8141722066ffe1497e511982feeea0f091ddb6
     bootstrap/stage1/python-packaging.bst:
     - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
     bootstrap/stage1/python-setuptools.bst:
     - ref: 72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87
+    pkgs/python-setuptools.bst:
+    - ref: 72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87
+    pkgs/python-pyproject-hooks.bst:
+    - ref: 184c9f56a87ede1276a5b33f5024204adb792cd2
+    pkgs/python-flit-core.bst:
+    - ref: 1c8141722066ffe1497e511982feeea0f091ddb6
+    pkgs/python-packaging.bst:
+    - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
+    pkgs/python-installer.bst:
+    - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768

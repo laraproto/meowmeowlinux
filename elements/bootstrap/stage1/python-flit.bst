@@ -6,7 +6,7 @@ kind: pyproject
 sources:
   - kind: git_repo
     url: github:pypa/flit
-    track: "*.*.*"
+    track: "3.*.*"
 
 build-depends:
   - bootstrap/stage1/independent.bst
@@ -19,3 +19,5 @@ build-depends:
 depends:
   - pkgs/python.bst
 
+variables:
+  command-subdir: flit_core
