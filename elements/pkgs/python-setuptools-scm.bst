@@ -1,5 +1,8 @@
 kind: pyproject
 
+(@):
+  - elements/bootstrap/use.yml
+
 sources:
   - kind: git_repo
     url: github:pypa/setuptools-scm
@@ -7,6 +10,7 @@ sources:
 
 build-depends:
   - groups/python-module.bst
+  - bootstrap/stage1/git.bst
 
 depends:
   - pkgs/python-vcs-versioning.bst

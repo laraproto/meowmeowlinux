@@ -442,5 +442,8 @@ projects:
     - ref: b27f5973c4e24cdbca08f8c003e431e220f52a40
     pkgs/llvm.bst:
     - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
-    bootstrap/stage1/tcl.bst:
-    - ref: 14f9af32b1767ff718477a8f974ad03c34341097e6b43f4ce54644ee974e268e
+    pkgs/rust.bst:
+    - ref: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+    bootstrap/stage1/gettext.bst:
+    - suffix: gettext/gettext-1.0.tar.xz
+      sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7

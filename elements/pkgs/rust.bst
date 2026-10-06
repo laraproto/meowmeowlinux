@@ -1,7 +1,7 @@
 kind: manual
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/use.yml
 
 sources:
   - kind: git_repo
@@ -9,13 +9,13 @@ sources:
     track: stable
 
 build-depends:
-  - bootstrap/stage1/independent.bst
+  - bootstrap/stage1/glibc.bst
   - bootstrap/stage1/git.bst
-  - bootstrap/env.bst
+  - groups/minimum.bst
 
 depends:
-  - bootstrap/stage1/llvm.bst
-  - pkgs/python.bst # TODO: rename to bootstrap/stage1/python.bst when pkgs/python.bst is moved
+  - pkgs/llvm.bst
+  - pkgs/python-new.bst # TODO: rename to python.bst when python-new.bst is moved
 
 config:
   configure-commands:

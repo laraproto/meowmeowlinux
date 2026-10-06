@@ -1,4 +1,4 @@
-kind: meson
+kind: manual
 
 (@):
   - elements/bootstrap/stage1/common.yml
@@ -20,23 +20,27 @@ build-depends:
   - bootstrap/stage1/diffutils.bst
   - bootstrap/stage1/m4.bst
   - bootstrap/stage1/expat.bst
-  - bootstrap/stage1/meson.bst
+  - bootstrap/stage1/tar.bst
+  - bootstrap/stage1/gettext.bst
 
 depends:
   - bootstrap/stage1/openssl3.bst
   - bootstrap/stage1/zlib.bst
   - bootstrap/stage1/curl.bst
   - bootstrap/stage1/perl.bst
+  - bootstrap/stage1/pcre2.bst
 
-variables:
-  meson-local: >-
-    -D tests=false
-    -D benchmarks=disabled
-
-    -D git_gui=disabled
-    -D gitk=disabled
-
-    -D coccinelle=disabled
+config:
+  configure-commands:
+    - |
+      autoreconf
+      ./configure --prefix=%{prefix} --without-tcltk
+  build-commands:
+    - | 
+      make all
+  install-commands:
+    - |
+      make DESTDIR="%{install-root}" install
 
 environment:
   LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
