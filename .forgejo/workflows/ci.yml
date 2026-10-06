@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: docker
+    
+    steps:
+      - name: Install Buildstream
+        run: |
+          apt update -y
+          apt install pip bubblewrap lzip -y
+
+          pip install buildstream --break-system-packages
+          pip install dulwich requests tomlkit --break-system-packages                            
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build
+        run: |
+          bst build targets/base.bst
