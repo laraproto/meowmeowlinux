@@ -291,7 +291,7 @@ projects:
     bootstrap/stage1/ninja.bst:
     - ref: 3441b633c2fe2c494e958780ba0f4227b1327634
     bootstrap/stage1/rust.bst:
-    - ref: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+    - ref: 891c6366d7100feda0bca4c03ce63f3c9ac827cbebbc283e7433061d42c6a376
     bootstrap/stage1/libidn2.bst:
     - ref: f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a
       suffix: libidn/libidn-1.44.tar.gz
@@ -367,3 +367,80 @@ projects:
     - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
     pkgs/python-installer.bst:
     - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768
+    pkgs/diffutils.bst:
+    - suffix: diffutils/diffutils-3.12.tar.xz
+      sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+    pkgs/gperf.bst:
+    - suffix: gperf/gperf-3.3.tar.gz
+      sha256sum: fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8
+    pkgs/jinja2.bst:
+    - ref: 15206881c006c79667fe5154fe80c01c65410679
+    pkgs/python-jinja2.bst:
+    - ref: 15206881c006c79667fe5154fe80c01c65410679
+    pkgs/bzip2.bst:
+    - ref: 6a8690fc8d26c815e798c588f796eabe9d684cf0
+    pkgs/python-markupsafe.bst:
+    - ref: ece26078ec168ebac69f02877238e68d4b376c91
+    pkgs/python-pefile.bst:
+    - ref: 4b3b1e2e568a88d4f1897d694d684f23d9e270c4
+    pkgs/linux-pam.bst:
+    - ref: 28fce1fd55b003fec90f34e5bc785e9439b216f2
+    pkgs/curl.bst:
+    - ref: 01346829096c61b372692f6dc43ffa778c6caccd
+    pkgs/lz4.bst:
+    - ref: ebb370ca83af193212df4dcbadcc5d87bc0de2f0
+    pkgs/xz.bst:
+    - ref: d3e650e63c110e830fd5391e7f8b45df0b91d3da
+    pkgs/python-elfutils.bst:
+    - ref: 52ce435186022bd6b32012a998931fe86c985ec8
+    pkgs/libpsl.bst:
+    - ref: 1eaf1803591d6327987029621e121cade7193720
+    pkgs/gettext.bst:
+    - suffix: gettext/gettext-1.0.tar.xz
+      sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
+    pkgs/gzip.bst:
+    - suffix: gzip/gzip-1.15.tar.xz
+      sha256sum: 9aa0cc780dec156b8282844833b342ab7cb08c25d2cd9a1869cdd0df31deff48
+    pkgs/util-linux.bst:
+    - ref: d76cbf8f13e65ff657344f7f6a90042cf755ba59
+    pkgs/bison.bst:
+    - suffix: bison/bison-3.8.2.tar.xz
+      sha256sum: 9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2
+    pkgs/libunistring.bst:
+    - suffix: libunistring/libunistring-1.4.2.tar.xz
+      sha256sum: 5b46e74377ed7409c5b75e7a96f95377b095623b689d8522620927964a41499c
+    pkgs/texinfo.bst:
+    - suffix: texinfo/texinfo-7.3.tar.xz
+      sha256sum: 51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e
+    pkgs/gtk-doc.bst:
+    - ref: 1e7f700db7882b7e25e8957c7b8f5dede5b4b81a
+    pkgs/python-parameterized.bst:
+    - ref: 8719c41604c41a0ee372511ea87d2ecbb3215f8d
+    pkgs/python-pygments.bst:
+    - ref: a43b45dcf081b6010c6ab4428f149f7f6d2499c4
+    pkgs/python-hatchling.bst:
+    - ref: c4abc454f908bb4fc2a92452a82cb33dac14abf3
+    bootstrap/stage1/python-hatchling.bst:
+    - ref: c4abc454f908bb4fc2a92452a82cb33dac14abf3
+    pkgs/python-pathspec.bst:
+    - ref: ecf71a99ca739479d450b9830f43416ea0c519c7
+    pkgs/python-trove-classifiers.bst:
+    - ref: bc832553ebe6114e7682f09bc59bda6552da37cd
+    pkgs/python-pluggy.bst:
+    - ref: fd08ab5f811a9b2fa9124ae8cbbd393221151e2c
+    pkgs/python-tomlkit.bst:
+    - ref: 1bd7e3bc5bcc957d359a6c4d8e420163f32ac009
+    pkgs/python-poetry.bst:
+    - ref: 94b6e35b9091991887aa54feeb3771a86d3bd692
+    pkgs/python-calver.bst:
+    - ref: 36c6977d6e2d9b9912c2afb83b4e36bb1289dbdd
+    pkgs/python-setuptools-scm.bst:
+    - ref: b27f5973c4e24cdbca08f8c003e431e220f52a40
+    pkgs/python-poetry-core.bst:
+    - ref: b52c25c451bbaed9f309d45fc6e6e35c704e55bf
+    pkgs/python-vcs-versioning.bst:
+    - ref: b27f5973c4e24cdbca08f8c003e431e220f52a40
+    pkgs/llvm.bst:
+    - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
+    bootstrap/stage1/tcl.bst:
+    - ref: 14f9af32b1767ff718477a8f974ad03c34341097e6b43f4ce54644ee974e268e

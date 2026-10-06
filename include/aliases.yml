@@ -14,6 +14,7 @@ videolan: https://code.videolan.org/videolan/
 xiph: https://gitlab.xiph.org/xiph/
 chromium: https://chromium.googlesource.com/
 sourceforge: https://sourceforge.net/projects/
+sourceforge-dl: https://downloads.sourceforge.net/
 sourceforge-git: https://git.code.sf.net/p/
 webkitgtk: https://webkitgtk.org/releases/
 purism: https://source.puri.sm/
@@ -48,5 +49,3 @@ intra2net: https://www.intra2net.com/en/developer/
 rust: https://static.rust-lang.org/dist/
 invisible-mirror: https://invisible-mirror.net/archives/
 pkgconfig: https://pkgconfig.freedesktop.org/releases/
-
-https_files: https://
