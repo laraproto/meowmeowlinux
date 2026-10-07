@@ -6,12 +6,13 @@ kind: pyproject
 sources:
   - kind: git_repo
     url: github:pypa/setuptools-scm
-    track: vcs-versioning-v*.*.*
+    track: release/main
 
 build-depends:
   - groups/python-module.bst
   - pkgs/glibc.bst
   - pkgs/bash.bst
+  - pkgs/grep.bst
   - bootstrap/stage1/git.bst
 
 variables:

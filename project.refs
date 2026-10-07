@@ -435,11 +435,11 @@ projects:
     pkgs/python-calver.bst:
     - ref: 36c6977d6e2d9b9912c2afb83b4e36bb1289dbdd
     pkgs/python-setuptools-scm.bst:
-    - ref: b27f5973c4e24cdbca08f8c003e431e220f52a40
+    - ref: setuptools-scm-v10.3.4-0-gb27f5973c4e24cdbca08f8c003e431e220f52a40
     pkgs/python-poetry-core.bst:
     - ref: b52c25c451bbaed9f309d45fc6e6e35c704e55bf
     pkgs/python-vcs-versioning.bst:
-    - ref: b27f5973c4e24cdbca08f8c003e431e220f52a40
+    - ref: vcs-versioning-v2.5.0-0-gb27f5973c4e24cdbca08f8c003e431e220f52a40
     pkgs/llvm.bst:
     - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
     pkgs/rust.bst:
@@ -447,3 +447,5 @@ projects:
     bootstrap/stage1/gettext.bst:
     - suffix: gettext/gettext-1.0.tar.xz
       sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
+    pkgs/glib.bst:
+    - ref: e05063ccc6c8f222465a1080927f4c14349f3de6

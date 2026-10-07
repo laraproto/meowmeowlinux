@@ -10,3 +10,6 @@ build-depends:
 
 depends:
   - pkgs/python-setuptools-scm.bst
+
+environment:
+  SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLUGGY: "2"
