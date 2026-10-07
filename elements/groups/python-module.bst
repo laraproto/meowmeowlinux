@@ -7,6 +7,6 @@ depends:
   - pkgs/python-flit-core.bst
   - pkgs/python-packaging.bst 
   - pkgs/python-installer.bst
-  - pkgs/python-new.bst
+  - pkgs/python.bst
   - groups/minimum.bst
   - pkgs/zlib.bst

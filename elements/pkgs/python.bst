@@ -1,16 +1,12 @@
-# This should be moved to bootstrap/stage1/python.bst
-
 kind: autotools
 
-(@): 
-  - elements/bootstrap/stage1/common.yml
-
 build-depends:
-  - bootstrap/stage1/independent.bst
-  - bootstrap/stage1/findutils.bst
+  - groups/autotools.bst
+  - pkgs/findutils.bst
+  - pkgs/gmp.bst
 
 depends:
-  - bootstrap/stage1/expat.bst
+  - pkgs/expat.bst
   - pkgs/ncurses.bst
 
 sources:
@@ -23,12 +19,12 @@ sources:
   url: github:python/cpython.git
 
 variables:
-  conf-local: --enable-shared  --without-static-libpython --without-ensurepip --with-system-expat --enable-optimizations CFLAGS="-Wno-error=stringop-truncation"
+  conf-local: --enable-shared --without-static-libpython --with-system-expat --enable-optimizations CFLAGS="-Wno-error=stringop-truncation"
 
-# TODO: Next world rebuild
-#config:
-#  install-commands:
-#    (>):
-#      - |
-#        ln -sv python3 %{install-root}/usr/bin/python
+config:
+  install-commands:
+    (>):
+      - |
+        ln -sv python3 %{install-root}/usr/bin/python
+        ln -sv pip3 %{install-root}/usr/bin/pip
       

@@ -10,7 +10,7 @@ sources:
 build-depends:
   - pkgs/cmake.bst
   - groups/autotools.bst
-  - pkgs/python-new.bst
+  - pkgs/python.bst
 
 variables:
   cmake-local: -S llvm

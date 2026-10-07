@@ -19,5 +19,4 @@ build-depends:
   - bootstrap/stage1/fdo.bst:components/python3-flit-core.bst
 
 depends:
-  - pkgs/python.bst
-
+  - bootstrap/stage1/python.bst

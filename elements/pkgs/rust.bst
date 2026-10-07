@@ -15,7 +15,7 @@ build-depends:
 
 depends:
   - pkgs/llvm.bst
-  - pkgs/python-new.bst # TODO: rename to python.bst when python-new.bst is moved
+  - pkgs/python.bst
 
 config:
   configure-commands:

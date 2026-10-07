@@ -10,7 +10,7 @@ sources:
     path: patches/glibc
 
 build-depends:
-  - pkgs/python.bst
+  - bootstrap/stage1/python.bst
   - bootstrap/stage1/bison.bst
   - bootstrap/stage1/independent.bst
   - bootstrap/linker.bst

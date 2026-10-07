@@ -10,7 +10,7 @@ build-depends:
 
 runtime-depends:
   - pkgs/readline.bst
-  # - pkgs/mpfr.bst # TODO: Next World Rebuild
+  - pkgs/mpfr.bst
 
 sources:
   - kind: gnu

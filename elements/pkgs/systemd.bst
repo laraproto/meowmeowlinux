@@ -16,7 +16,7 @@ build-depends:
   - pkgs/python-jinja2.bst
   - pkgs/python-pefile.bst
   - pkgs/python-elfutils.bst
-  - pkgs/python-new.bst
+  - pkgs/python.bst
 
 depends:
   - pkgs/zstd.bst

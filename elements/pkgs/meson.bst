@@ -15,7 +15,7 @@ build-depends:
   - pkgs/python-installer.bst
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst
   - pkgs/ninja.bst
   - groups/minimum.bst
   - pkgs/zlib.bst

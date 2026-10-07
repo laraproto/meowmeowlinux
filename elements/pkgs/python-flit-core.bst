@@ -17,7 +17,7 @@ build-depends:
   - bootstrap/stage1/python-build.bst
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst
   - pkgs/zlib.bst
 
 variables:

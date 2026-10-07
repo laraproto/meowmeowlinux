@@ -19,5 +19,5 @@ build-depends:
   - bootstrap/stage1/python-packaging.bst
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst
 

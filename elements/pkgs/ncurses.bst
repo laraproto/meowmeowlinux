@@ -1,5 +1,3 @@
-# Eventually swap this with the main ncurses
-# Just really expensive world rebuild
 kind: autotools
 
 (@):

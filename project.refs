@@ -1,58 +1,5 @@
 projects:
   meowmeowlinux:
-    pkgs/linux.bst:
-    - ref: d0acb5202d0e33d23cbe6994424587fbb05a5360
-    bootstrap/pkgs/dwz.bst:
-    - ref: dwz-0.14-3-gb612e38de2a1a376362cc2ac0da3c0938b8e0bca
-    bootstrap/pkgs/gzip.bst:
-    - suffix: gzip/gzip-1.14.tar.xz
-      sha256sum: 01a7b881bd220bfdf615f97b8718f80bdfd3f6add385b993dcf6efd14e8c0ac6
-    bootstrap/pkgs/binutils.bst:
-    - suffix: binutils/binutils-2.46.1.tar.xz
-      sha256sum: e127a709cba24c76de8936cb7083dd768f28cd37eb010492e2f19b71eb1294e4
-    bootstrap/pkgs/gettext.bst:
-    - suffix: gettext/gettext-1.0.tar.xz
-      sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
-    bootstrap/pkgs/autoconf-archive.bst:
-    - suffix: autoconf-archive/autoconf-archive-2024.10.16.tar.xz
-      sha256sum: 7bcd5d001916f3a50ed7436f4f700e3d2b1bade3ed803219c592d62502a57363
-    bootstrap/pkgs/findutils.bst:
-    - suffix: findutils/findutils-4.10.0.tar.xz
-      sha256sum: 1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5
-    bootstrap/pkgs/make.bst:
-    - suffix: make/make-4.4.1.tar.gz
-      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
-    bootstrap/pkgs/gmp.bst:
-    - suffix: gmp/gmp-6.3.0.tar.xz
-      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
-    bootstrap/pkgs/elfutils.bst:
-    - ref: elfutils-0.195-0-g302252356da5475670ac5b10dadd091c59689425
-    bootstrap/pkgs/file.bst:
-    - ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
-    bootstrap/pkgs/ncurses.bst:
-    - suffix: ncurses/ncurses-6.6.tar.gz
-      sha256sum: 355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11
-    bootstrap/pkgs/gdb.bst:
-    - suffix: gdb/gdb-17.2.tar.xz
-      sha256sum: 1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c
-    bootstrap/pkgs/automake.bst:
-    - suffix: automake/automake-1.18.1.tar.xz
-      sha256sum: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887
-    bootstrap/pkgs/sed.bst:
-    - suffix: sed/sed-4.10.tar.xz
-      sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7
-    bootstrap/pkgs/tar.bst:
-    - suffix: tar/tar-1.35.tar.xz
-      sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
-    bootstrap/pkgs/cpio.bst:
-    - suffix: cpio/cpio-2.15.tar.gz
-      sha256sum: efa50ef983137eefc0a02fdb51509d624b5e3295c980aa127ceee4183455499e
-    bootstrap/pkgs/autoconf.bst:
-    - suffix: autoconf/autoconf-2.73.tar.xz
-      sha256sum: 9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
-    bootstrap/pkgs/libtool.bst:
-    - suffix: libtool/libtool-2.5.4.tar.xz
-      sha256sum: f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675
     pkgs/linux/headers.bst:
     - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
     pkgs/man-pages.bst:
@@ -61,54 +8,6 @@ projects:
     - ref: 4100d8c4e8653701972e68f8326be75ecb0aa08b374e57553b0d114c6b7acdf8
     bootstrap/pkgs/linux-headers.bst:
     - ref: v7.0.12-104130-g73e7709d9919efeb8df2cedd7804734a3254a0bb
-    bootstrap/glibc.bst:
-    - suffix: glibc/glibc-2.44.tar.xz
-      sha256sum: 37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667
-    bootstrap/libstdcxx.bst:
-    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
-      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
-    bootstrap/linux-headers.bst:
-    - ref: v7.0.12-104130-g73e7709d9919efeb8df2cedd7804734a3254a0bb
-    bootstrap/m4.bst:
-    - suffix: m4/m4-1.4.21.tar.xz
-      sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
-    bootstrap/binutils.bst:
-    - suffix: binutils/binutils-2.47.tar.xz
-      sha256sum: 154ab23b60070e8f27013c22977f1129425d67d1e8acd6e13010e617811e4cff
-    bootstrap/ncurses.bst:
-    - ref: 355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11
-    bootstrap/bash.bst:
-    - suffix: bash/bash-5.3.tar.gz
-      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
-    bootstrap/coreutils.bst:
-    - suffix: coreutils/coreutils-9.11.tar.xz
-      sha256sum: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3
-    bootstrap/diffutils.bst:
-    - suffix: diffutils/diffutils-3.12.tar.xz
-      sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
-    bootstrap/findutils.bst:
-    - suffix: findutils/findutils-4.11.0.tar.xz
-      sha256sum: bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
-    bootstrap/file.bst:
-    - ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
-    bootstrap/gawk.bst:
-    - suffix: gawk/gawk-5.4.1.tar.xz
-      sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
-    bootstrap/make.bst:
-    - suffix: make/make-4.4.1.tar.gz
-      sha256sum: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
-    bootstrap/binutils-stage2.bst:
-    - suffix: binutils/binutils-2.47.tar.xz
-      sha256sum: 154ab23b60070e8f27013c22977f1129425d67d1e8acd6e13010e617811e4cff
-    bootstrap/gcc-stage2.bst:
-    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
-      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
-    - suffix: mpfr/mpfr-4.2.2.tar.xz
-      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
-    - suffix: mpc/mpc-1.4.1.tar.xz
-      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
-    - suffix: gmp/gmp-6.3.0.tar.xz
-      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
     bootstrap/stage1/glibc.bst:
     - suffix: glibc/glibc-2.44.tar.xz
       sha256sum: 37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667
@@ -130,18 +29,6 @@ projects:
     bootstrap/stage1/gawk.bst:
     - suffix: gawk/gawk-5.4.1.tar.xz
       sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
-    bootstrap/stage2/bash.bst:
-    - suffix: bash/bash-5.3.tar.gz
-      sha256sum: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
-    bootstrap/stage2/gcc.bst:
-    - suffix: gcc/gcc-16.2.0/gcc-16.2.0.tar.xz
-      sha256sum: e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e
-    - suffix: mpfr/mpfr-4.2.2.tar.xz
-      sha256sum: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
-    - suffix: mpc/mpc-1.4.1.tar.xz
-      sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
-    - suffix: gmp/gmp-6.3.0.tar.xz
-      sha256sum: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
     bootstrap/stage1/ncurses.bst:
     - ref: 0096bd402c4a9c8f39bd7ed266e1b8920327e4d8
     bootstrap/stage1/coreutils.bst:
@@ -324,8 +211,6 @@ projects:
     pkgs/libtool.bst:
     - suffix: libtool/libtool-2.6.2.tar.xz
       sha256sum: 2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e
-    pkgs/python-new.bst:
-    - ref: 8e6e75d9102e39bed2a2b279203a396741180f12
     pkgs/automake.bst:
     - suffix: automake/automake-1.19.tar.xz
       sha256sum: e3e2c2e3abf37898138db5b6c1d1dc35c9160c5978be7947d2c741705251d445
@@ -459,7 +344,5 @@ projects:
     pkgs/tar.bst:
     - suffix: tar/tar-1.35.tar.xz
       sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
-    bootstrap/stage1/gvdb.bst:
-    - ref: c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab
     bootstrap/stage1/flex.bst:
     - ref: ab49343b08c933e32de8de78132649f9560a3727

@@ -18,4 +18,4 @@ build-depends:
   - groups/minimum.bst
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst

@@ -18,4 +18,4 @@ build-depends:
   - pkgs/zlib.bst
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst
