@@ -11,7 +11,7 @@ sources:
     - 1.*.*rc*
 
 depends:
-  - pkgs/python-new.bst
+  - pkgs/python.bst
   - bootstrap/stage1/python-build.bst
   - bootstrap/stage1/python-pyproject-hooks.bst
   - bootstrap/stage1/python-packaging.bst
@@ -22,3 +22,18 @@ depends:
   - bootstrap/stage1/independent.bst
   - bootstrap/stage1/zlib.bst
   - bootstrap/linker.bst
+
+# Hack until world rebuild
+config:
+  configure-commands:
+      - |
+        mkdir -pv %{install-root}/tools/bin
+        ln -sv /tools/bin/python3 %{install-root}/tools/bin/python
+
+  install-commands:
+    (>):
+      - |
+        rm %{install-root}/tools/bin/python
+
+environment:
+  PATH: "%{install-root}/tools/bin:/tools/bin:/usr/bin"

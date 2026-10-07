@@ -78,7 +78,7 @@ class GnuSource(Source):
         if self.name is None:
             raise SourceError(f"{self}: Missing name")
         self.dirname = node.get_str("dirname", self.name)
-        self.orig_mirror = node.get_str("mirror", "https://ftpmirror.gnu.org/gnu/")
+        self.orig_mirror = node.get_str("mirror", "https://www.mirror.aarnet.edu.au/gnu/")
         self.mirror = self.translate_url(self.orig_mirror)
 
     def preflight(self):

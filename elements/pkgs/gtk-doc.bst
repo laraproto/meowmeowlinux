@@ -10,3 +10,6 @@ depends:
   - pkgs/meson.bst
   - pkgs/python-parameterized.bst
   - pkgs/python-pygments.bst
+  - pkgs/python-pygments.bst
+  - pkgs/pkg-config.bst
+  - pkgs/libtool.bst

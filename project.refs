@@ -344,7 +344,8 @@ projects:
     bootstrap/stage1/pkg-config.bst:
     - ref: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
     bootstrap/stage1/glib.bst:
-    - ref: 436d47a723da97fbe67057f6b51dcf49a244fd4a
+    - ref: e05063ccc6c8f222465a1080927f4c14349f3de6
+    - ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
     bootstrap/stage1/meson.bst:
     - ref: 70598bb7825f0f804fb31ec2795de5e79e7692a0
     bootstrap/stage1/python-pyproject-hooks.bst:
@@ -449,3 +450,16 @@ projects:
       sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
     pkgs/glib.bst:
     - ref: e05063ccc6c8f222465a1080927f4c14349f3de6
+    pkgs/flex.bst:
+    - suffix: m4/m4-1.4.21.tar.xz
+      sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
+      ref: ab49343b08c933e32de8de78132649f9560a3727
+    pkgs/pkg-config.bst:
+    - ref: edf8e6f0ea77ede073f07bff0d2ae1fc7a38103b
+    pkgs/tar.bst:
+    - suffix: tar/tar-1.35.tar.xz
+      sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
+    bootstrap/stage1/gvdb.bst:
+    - ref: c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab
+    bootstrap/stage1/flex.bst:
+    - ref: ab49343b08c933e32de8de78132649f9560a3727
