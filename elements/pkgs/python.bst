@@ -8,6 +8,7 @@ build-depends:
 depends:
   - pkgs/expat.bst
   - pkgs/ncurses.bst
+  - pkgs/libffi.bst
 
 sources:
 - kind: git_repo

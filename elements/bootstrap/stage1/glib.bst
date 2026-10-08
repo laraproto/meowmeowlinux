@@ -23,7 +23,15 @@ build-depends:
 depends:
   - bootstrap/stage1/zlib.bst
   - bootstrap/stage1/pcre2.bst
+  - bootstrap/stage1/libffi.bst
+
+variables:
+  meson-local: -Dselinux=disabled
 
 environment:
-  ZLIB_LIBS: /tools/lib
+  ZLIB_LIBS: ""
   ZLIB_CFLAGS: ""
+  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
+  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
+
+

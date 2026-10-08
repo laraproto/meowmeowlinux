@@ -11,9 +11,11 @@ build-depends:
   - pkgs/m4.bst
   - pkgs/libtool.bst
   - pkgs/openssl3.bst
+  - pkgs/pkgconf.bst
 
 depends:
   - pkgs/libpsl.bst
+  - pkgs/zstd.bst
 
 variables:
   conf-local: --with-openssl

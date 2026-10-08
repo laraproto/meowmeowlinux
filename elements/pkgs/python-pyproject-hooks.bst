@@ -19,3 +19,6 @@ build-depends:
 
 depends:
   - pkgs/python.bst
+
+environment:
+  PYTHONPATH: "/usr/lib/python3.14/site-packages:/tools/lib/python3.14/site-packages"

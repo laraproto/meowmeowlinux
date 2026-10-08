@@ -14,10 +14,18 @@ build-depends:
   - pkgs/automake.bst
   - pkgs/m4.bst
   - pkgs/gettext.bst
-  - pkgs/meson.bst
   - pkgs/libtool.bst
   - pkgs/tar.bst
   - pkgs/gzip.bst
   - pkgs/findutils.bst
   - pkgs/bison.bst
   - bootstrap/stage1/flex.bst
+  - bootstrap/stage1/glibc.bst
+  - pkgs/texinfo.bst
+  - pkgs/help2man.bst
+
+config:
+  install-commands:
+    (>):
+      - |
+        rm %{install-root}/usr/share/info/dir

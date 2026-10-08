@@ -12,6 +12,7 @@ build-depends:
 depends:
   - bootstrap/stage1/expat.bst
   - pkgs/ncurses.bst
+  - bootstrap/stage1/zlib.bst
 
 sources:
 - kind: git_repo
@@ -29,5 +30,5 @@ config:
   install-commands:
     (>):
       - |
-        ln -sv python3 %{install-root}/usr/bin/python
-        ln -sv pip3 %{install-root}/usr/bin/pip
+        ln -sv python3 %{install-root}/tools/bin/python
+        ln -sv pip3 %{install-root}/tools/bin/pip

@@ -21,3 +21,6 @@ depends:
 
 variables:
   command-subdir: flit_core
+
+environment:
+  PYTHONPATH: "/usr/lib/python3.14/site-packages:/tools/lib/python3.14/site-packages"

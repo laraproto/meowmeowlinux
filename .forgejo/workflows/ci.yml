@@ -16,6 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Build
+      - name: Build Minimal
         run: |
-          bst build targets/base.bst
+          bst build groups/minimum.bst
+
+#      - name: Build Base Target
+#        run: |
+#          bst build targets/base.bst

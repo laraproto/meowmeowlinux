@@ -280,7 +280,7 @@ projects:
     pkgs/python-elfutils.bst:
     - ref: 52ce435186022bd6b32012a998931fe86c985ec8
     pkgs/libpsl.bst:
-    - ref: 1eaf1803591d6327987029621e121cade7193720
+    - ref: 93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be
     pkgs/gettext.bst:
     - suffix: gettext/gettext-1.0.tar.xz
       sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
@@ -335,6 +335,7 @@ projects:
       sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
     pkgs/glib.bst:
     - ref: e05063ccc6c8f222465a1080927f4c14349f3de6
+    - ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
     pkgs/flex.bst:
     - suffix: m4/m4-1.4.21.tar.xz
       sha256sum: f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66
@@ -345,4 +346,36 @@ projects:
     - suffix: tar/tar-1.35.tar.xz
       sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16
     bootstrap/stage1/flex.bst:
-    - ref: ab49343b08c933e32de8de78132649f9560a3727
+    - ref: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
+    pkgs/help2man.bst:
+    - suffix: help2man/help2man-1.49.3.tar.xz
+      sha256sum: 4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f
+    bootstrap/stage1/python-markupsafe.bst:
+    - ref: ece26078ec168ebac69f02877238e68d4b376c91
+    bootstrap/stage1/python-jinja2.bst:
+    - ref: 15206881c006c79667fe5154fe80c01c65410679
+    bootstrap/stage1/systemd.bst:
+    - ref: 8cc40e0c5e9234bf45084751ac53b1fbfe70b492
+    bootstrap/stage1/gperf.bst:
+    - suffix: gperf/gperf-3.3.tar.gz
+      sha256sum: fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8
+    bootstrap/stage1/python-pefile.bst:
+    - ref: 4b3b1e2e568a88d4f1897d694d684f23d9e270c4
+    bootstrap/stage1/libselinux.bst:
+    - ref: 2233a23a4d4f1bf29054037babec13f30d038e65
+    bootstrap/stage1/libsepol.bst:
+    - ref: 2233a23a4d4f1bf29054037babec13f30d038e65
+    bootstrap/stage1/libffi.bst:
+    - ref: 12ffd1f9dc56fcea79d2f742f424301ae668d663
+    pkgs/libffi.bst:
+    - ref: 12ffd1f9dc56fcea79d2f742f424301ae668d663
+    pkgs/pkgconf.bst:
+    - ref: 0c9e506b64124d8727b68d8af0ed73739e66e2ba
+    pkgs/libxslt.bst:
+    - ref: 35323d6a15f6e63c9919ddbc0abe64c90a0dd88a
+    pkgs/libxml2.bst:
+    - ref: 98087fd181d9070724f3fbc65c7377db03038eb92bd882374daff44940138821
+    pkgs/itstool.bst:
+    - ref: f1c6544dcd83a73a5ccea9e0c48cf9a47e006190
+    pkgs/lxml.bst:
+    - ref: f9e4999ef79e1caa369f84cece0bdaf19a1ef550

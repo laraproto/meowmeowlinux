@@ -5,11 +5,14 @@ sources:
     url: gnome-git:GNOME/gtk-doc
     track: 1.*.*
 
-depends:
+build-depends:
   - groups/autotools.bst
   - pkgs/meson.bst
+  - pkgs/pkgconf.bst
+  - pkgs/libtool.bst
+
+depends:
   - pkgs/python-parameterized.bst
   - pkgs/python-pygments.bst
-  - pkgs/python-pygments.bst
-  - pkgs/pkg-config.bst
-  - pkgs/libtool.bst
+  - pkgs/libxslt.bst
+  - pkgs/itstool.bst

@@ -11,6 +11,7 @@ sources:
 build-depends:
   - bootstrap/stage1/glibc.bst
   - bootstrap/stage1/git.bst
+  - pkgs/curl.bst
   - groups/minimum.bst
 
 depends:
