@@ -5,7 +5,7 @@ gnu-git: https://git.savannah.gnu.org/git/
 nongnu: https://download.savannah.nongnu.org/releases/
 gnome-git: https://gitlab.gnome.org/
 gnome-ftp: https://ftp.gnome.org/pub/GNOME/
-gnome-download: https://download.gnome.org/sources/
+gnome-dl: https://download.gnome.org/sources/
 fdo-git: https://gitlab.freedesktop.org/
 fdo-ftp: https://www.freedesktop.org/software/
 sourceware: https://sourceware.org/git/
@@ -50,3 +50,5 @@ intra2net: https://www.intra2net.com/en/developer/
 rust: https://static.rust-lang.org/dist/
 invisible-mirror: https://invisible-mirror.net/archives/
 pkgconfig: https://pkgconfig.freedesktop.org/releases/
+sourcehut: https://git.sr.ht/
+kde: https://invent.kde.org/

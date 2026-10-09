@@ -4,9 +4,10 @@ kind: manual
   - elements/bootstrap/use.yml
 
 sources:
-  - kind: git_repo
-    url: github:rust-lang/rust
-    track: stable
+  - kind: tar
+    url: rust:rustc-1.99.0-src.tar.xz
+  - kind: local
+    path: files/rust-config.toml
 
 build-depends:
   - bootstrap/stage1/glibc.bst
@@ -21,6 +22,7 @@ depends:
 config:
   configure-commands:
     - |
+      mv rust-config.toml config.toml
       ./configure --enable-full-tools --set install.prefix=%{prefix} --set install.sysconfdir=%{sysconfdir}
   build-commands:
     - |

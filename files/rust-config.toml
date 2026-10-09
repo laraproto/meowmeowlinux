@@ -1,0 +1,10 @@
+[llvm]
+download-ci-llvm = false
+link-shared = true
+targets = "X86"
+
+[rust]
+channel = "stable"
+
+[install]
+prefix = "%{prefix}"

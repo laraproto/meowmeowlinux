@@ -2,6 +2,8 @@ projects:
   meowmeowlinux:
     pkgs/linux/headers.bst:
     - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
+    pkgs/linux/kernel.bst:
+    - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
     pkgs/man-pages.bst:
     - ref: 66d786852379759d22c891d70ff9311d9f193fdc
     pkgs/iana-etc.bst:
@@ -329,7 +331,7 @@ projects:
     pkgs/llvm.bst:
     - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
     pkgs/rust.bst:
-    - ref: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+    - ref: cc41916a8c84f5d9ec4f55561b44e39f43b647b133f8a6f51be9ea13c83f7036
     bootstrap/stage1/gettext.bst:
     - suffix: gettext/gettext-1.0.tar.xz
       sha256sum: 71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7
@@ -379,3 +381,24 @@ projects:
     - ref: f1c6544dcd83a73a5ccea9e0c48cf9a47e006190
     pkgs/lxml.bst:
     - ref: f9e4999ef79e1caa369f84cece0bdaf19a1ef550
+    pkgs/bc.bst:
+    - suffix: bc/bc-1.08.2.tar.gz
+      sha256sum: ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86
+    pkgs/elfutils.bst:
+    - ref: 62563002d86d182bbf6a9689983629aaa075f505
+    pkgs/depmod.bst:
+    - ref: 13330c958deef15c227a9c83d8ba72106152fd7f
+    pkgs/scdoc.bst:
+    - ref: 24be30ef17d5ca0162f11b35258c8fa2413d556a
+    pkgs/kde/extra-cmake-modules.bst:
+    - ref: 68483132b87f4d7b953aec94ef51d1234d41f937
+    pkgs/libpng.bst:
+    - ref: d80dd2a38a37f803cb9b6ac7b14bd6e74ddc3b654780a8380bdf93523fdb4389
+    pkgs/brotli.bst:
+    - ref: 028fb5a23661f123017c060daa546b55cf4bde29
+    pkgs/librsvg.bst:
+    - ref: 073326620abe168bb8be07d9c52595a5d19d1ecb
+    pkgs/freetype2.bst:
+    - ref: 36bc4f1cc413335368ee656c42afca65c5a3987e8768cc28cf11ba775e785a5f
+    pkgs/libssh.bst:
+    - ref: 07430deb9b97b751ec5ea5a7fc307f40bf042e0a
