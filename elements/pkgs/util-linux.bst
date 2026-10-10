@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 
 (@):
   - elements/bootstrap/use.yml
@@ -21,3 +21,9 @@ build-depends:
   - pkgs/gzip.bst
   - pkgs/findutils.bst
   - bootstrap/stage1/userdb.bst
+  - pkgs/meson.bst
+  - pkgs/python-sphinx.bst
+
+variables:
+  # Permissions appear broken inside of a buildstream sandbox
+  meson-local: -D build-wall=disabled

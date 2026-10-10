@@ -28,10 +28,7 @@ nvidia: https://download.nvidia.com/
 w1fi: https://w1.fi/
 pypi: https://files.pythonhosted.org/packages/
 cpan: https://cpan.metacpan.org/
-# The `cargo` plugin adds the / to the end on its own.
-# TODO: Add back the /, to follow the convention, once this is merged & tagged upstream:
-# https://github.com/apache/buildstream-plugins/pull/52
-cargo: https://static.crates.io/crates
+cargo: https://static.crates.io/crates/
 kitware: https://gitlab.kitware.com/
 coreboot: https://review.coreboot.org/
 debian: https://salsa.debian.org/
@@ -52,3 +49,5 @@ invisible-mirror: https://invisible-mirror.net/archives/
 pkgconfig: https://pkgconfig.freedesktop.org/releases/
 sourcehut: https://git.sr.ht/
 kde: https://invent.kde.org/
+oberhumer: https://www.oberhumer.com/opensource/
+unicode: https://unicode.org/Public/
