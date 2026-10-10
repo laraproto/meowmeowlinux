@@ -9,8 +9,22 @@ sources:
     track: main
   - kind: local
     path: files/hooks
+    directory: hooks
   - kind: cargo2
     url: "cargo:"
+    git-mirrors:
+      https://github.com/: "github:"
+    ref:
+      - kind: git
+        commit: 63e35726037c08a25543105cf8f3faf19ff1465a
+        repo: github:taxrosdev/treeup
+        name: treeup
+        version: 0.1.0
+      - kind: git
+        commit: 63e35726037c08a25543105cf8f3faf19ff1465a
+        repo: github:taxrosdev/treeup
+        name: treeup-core
+        version: 0.1.0
 
 build-depends:
   - bootstrap/stage1/rust.bst
@@ -31,7 +45,7 @@ config:
       mv ./target/release/alus-initramfs %{install-root}/usr/bin/alus-initramfs
     - |
       mkdir -pv %{install-root}/usr/share/alus/
-      mv -pv hooks %{install-root}/usr/share/alus/hooks
+      mv -v hooks %{install-root}/usr/share/alus/hooks
 
 environment:
   LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"

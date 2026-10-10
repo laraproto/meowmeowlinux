@@ -1181,7 +1181,7 @@ class CargoSource(Source):
                         self,
                         crate.get_str("name"),
                         crate.get_str("version"),
-                        crate.get_str("repo"),
+                        self.mirrored_git_url(crate.get_str("repo")),
                         crate.get_str("commit"),
                         {
                             k: v.as_str()
