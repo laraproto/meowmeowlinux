@@ -1,0 +1,6 @@
+Description = "Updating bootloader config"
+Exec = "/usr/share/alus/hooks/systemd-boot.sh"
+
+[Permissions]
+"usr" = "ro"
+"boot" = "rw"

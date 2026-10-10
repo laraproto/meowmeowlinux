@@ -9,7 +9,8 @@ sources:
     track: main
   - kind: local
     path: files/hooks
-  # TODO: cargo deps 
+  - kind: cargo2
+    url: "cargo:"
 
 build-depends:
   - bootstrap/stage1/rust.bst
