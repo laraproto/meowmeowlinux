@@ -36,7 +36,7 @@ config:
     - make
   install-commands:
     - |
-      make DESTDIR=%{install-root} modules_install
+      make DESTDIR=%{install-root}/usr modules_install
     - |
       mkdir %{install-root}/boot
       cp linux-config %{install-root}/boot/config
