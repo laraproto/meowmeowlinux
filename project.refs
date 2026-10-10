@@ -1417,3 +1417,28 @@ projects:
         name: zmij
         version: 1.0.23
         sha: 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
+    pkgs/dracut.bst:
+    - ref: 5d2bda46f4e75e85445ee4d3bd3f68bf966287b9
+    pkgs/kmod.bst:
+    - ref: 13330c958deef15c227a9c83d8ba72106152fd7f
+    pkgs/cpio.bst:
+    - ref: 900bab656ff24db5e3099941fb909c79c07962ed
+      suffix: cpio/cpio-2.15.tar.gz
+      sha256sum: efa50ef983137eefc0a02fdb51509d624b5e3295c980aa127ceee4183455499e
+    - ref: 9ad2a83e9c8de70d83dbe956c144be51f66a9abb
+    - ref: 29d705ead11382c8d608dcc254394439cb43b9b8
+    pkgs/mkosi.bst:
+    - ref: ecf7f5702bb2052b7a69cab3fe7d37bc3b9ad77b
+    pkgs/rsync.bst:
+    - ref: 04355d27b7386d7de0e6bd5e79c556223210f700
+    pkgs/acl.bst:
+    - ref: e661131456d2708a01c614a0f400e11d7d1bfaeb6f3e74b75bb980b72f0161a3
+    pkgs/wget.bst:
+    - suffix: wget/wget-1.25.0.tar.gz
+      sha256sum: 766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784
+    pkgs/git.bst:
+    - ref: a018953688f1b10bddf91bff8747068f5f4746a4
+    pkgs/xxhash.bst:
+    - ref: c87183a77d67f7d37e3d2d1b7eaac5e7c695e4f0
+    pkgs/python-cmark-gfm.bst:
+    - ref: 587a12bb54d95ac37241377e6ddc93ea0e45439b
