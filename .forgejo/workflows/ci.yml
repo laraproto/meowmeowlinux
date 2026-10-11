@@ -1,8 +1,12 @@
 on: [push]
 
 jobs:
-  test:
+  build:
     runs-on: docker
+
+    container:
+      volumes:
+        - /cache:/root/.cache/buildstream
     
     steps:
       - name: Setup Cache
@@ -19,8 +23,8 @@ jobs:
                   retry-limit: 4
                   retry-delay: 500
                   request-timeout: 300
-              auth:
-                access-token: ~/.config/buildstream.token
+                auth:
+                  access-token: ~/.config/buildstream.token
 
           source-caches:
             override-project-caches: true
@@ -35,7 +39,7 @@ jobs:
                 auth:
                   access-token: ~/.config/buildstream.token
           EOF
-          echo $BUILDSTREAM_TOKEN > ~/.config/buildstream.token
+          echo ${{ secrets.BUILDSTREAM_TOKEN }} > ~/.config/buildstream.token
 
       - name: Install Buildstream
         run: |
