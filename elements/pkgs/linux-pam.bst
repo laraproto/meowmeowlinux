@@ -8,3 +8,6 @@ sources:
 build-depends:
   - pkgs/meson.bst
   - groups/autotools.bst
+  - pkgs/bison.bst
+  - pkgs/flex.bst
+  - pkgs/pkgconf.bst
