@@ -1,7 +1,7 @@
 projects:
   meowmeowlinux:
     pkgs/linux/headers.bst:
-    - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
+    - ref: b249e6325837e718852515bbd5de8c9573a0dc13
     pkgs/linux/kernel.bst:
     - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
     pkgs/man-pages.bst:
@@ -51,7 +51,7 @@ projects:
     bootstrap/stage1/pcre2.bst:
     - ref: 6f9d7c1373262c541324a16a358785b33ef116cf
     bootstrap/stage1/linux-headers.bst:
-    - ref: 2d4586e63389e6ac5bc42625789b73051085efcc
+    - ref: b249e6325837e718852515bbd5de8c9573a0dc13
     bootstrap/stage1/readline.bst:
     - suffix: readline/readline-8.3.tar.gz
       sha256sum: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
