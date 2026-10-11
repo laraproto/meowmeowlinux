@@ -2,11 +2,13 @@ kind: autotools
 
 sources:
   - kind: git_repo
-    url: github:dracutdevs/dracut
-    track: master
+    url: github:dracut-ng/dracut
+    track: "[0-9]*"
 
 build-depends:
   - groups/autotools.bst
+  - pkgs/systemd.bst
+  - pkgs/asciidoctor.bst
   - pkgs/pkgconf.bst
 
 depends:

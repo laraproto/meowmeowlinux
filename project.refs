@@ -2490,7 +2490,7 @@ projects:
         version: 1.0.23
         sha: 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
     pkgs/dracut.bst:
-    - ref: 5d2bda46f4e75e85445ee4d3bd3f68bf966287b9
+    - ref: fe9fd498b6fb85c141b13c8067268e3c04110426
     pkgs/kmod.bst:
     - ref: 13330c958deef15c227a9c83d8ba72106152fd7f
     pkgs/cpio.bst:
@@ -2784,3 +2784,9 @@ projects:
     - ref: 98ff4f44bac6ec3e1e62ee2a4316ae0e3d15badb015d753cc0268a20db52f165
     pkgs/wayland.bst:
     - ref: 87cc8a8728a923fc57938faa81ba0e74f34ecdc7
+    pkgs/ruby.bst:
+    - ref: 911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d
+    pkgs/libyaml.bst:
+    - ref: 9aa92d0e2d9a78e9b6e8f79e36bdfb2b784f7e57
+    pkgs/asciidoctor.bst:
+    - ref: 0b99b39c9df884d4aec13bba45f03cdbab505769

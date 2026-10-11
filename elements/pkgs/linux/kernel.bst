@@ -22,7 +22,7 @@ build-depends:
 
 depends:
   - pkgs/linux/headers.bst
-  - pkgs/depmod.bst
+  - pkgs/kmod.bst
 
 environment:
   INSTALL_MOD_PATH: /buildstream-install
@@ -38,7 +38,7 @@ config:
   install-commands:
     - |
       mkdir -pv %{install-root}/usr
-      make DESTDIR=%{install-root}/usr modules_install
+      make modules_install INSTALL_MOD_PATH=%{install-root}/usr INSTALL_MOD_STRIP=1
     - |
       mkdir %{install-root}/boot
       cp linux-config %{install-root}/boot/config
