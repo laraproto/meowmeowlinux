@@ -1,8 +1,5 @@
 kind: meson
 
-(@):
-  - elements/bootstrap/use.yml
-
 sources:
   - kind: git_repo
     url: kernel:git/git.git
@@ -11,8 +8,7 @@ sources:
       - v*-*
 
 build-depends:
-  - bootstrap/stage1/rust.bst
-  - bootstrap/stage1/glibc.bst
+  - pkgs/rust.bst
   - groups/autotools.bst
   - pkgs/gettext.bst
   - pkgs/m4.bst

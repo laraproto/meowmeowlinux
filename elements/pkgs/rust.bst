@@ -1,33 +1,18 @@
 kind: manual
 
-(@):
-  - elements/bootstrap/use.yml
-
 sources:
-  - kind: tar
-    url: rust:rustc-1.99.0-src.tar.xz
-  - kind: local
-    path: files/rust-config.toml
+- kind: tar
+  url: rust:rust-1.99.0-x86_64-unknown-linux-gnu.tar.xz
 
 build-depends:
-  - bootstrap/stage1/glibc.bst
-  - bootstrap/stage1/git.bst
-  - pkgs/curl.bst
-  - groups/minimum.bst
-
-depends:
-  - pkgs/llvm.bst
-  - pkgs/python.bst
+- pkgs/grep.bst
+- pkgs/sed.bst
+- groups/minimum.bst
 
 config:
-  configure-commands:
-    - |
-      mv rust-config.toml config.toml
-      ./configure --enable-full-tools --set install.prefix=%{prefix} --set install.sysconfdir=%{sysconfdir}
-  build-commands:
-    - |
-      ./x.py build
   install-commands:
-    - |
-      export DESTDIR=%{install-root}
-      ./x.py install
+  - |
+    bash install.sh \
+      --prefix="%{prefix}" \
+      --destdir="%{install-root}" \
+      --disable-ldconfig
