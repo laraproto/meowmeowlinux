@@ -1,9 +1,5 @@
 kind: manual
 
-sources:
-  - kind: local
-    path: files/initrd.conf
-
 build-depends:
   - filename:
       - groups/initramfs.bst
