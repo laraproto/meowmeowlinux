@@ -26,6 +26,7 @@ depends:
 
 environment:
   INSTALL_MOD_PATH: /buildstream-install
+  MAXJOBS: "%{max-jobs}"
 
 config:
   configure-commands:
@@ -33,7 +34,7 @@ config:
       make mrproper
       cp linux-config .config
   build-commands:
-    - make
+    - make -j${MAXJOBS}
   install-commands:
     - |
       mkdir -pv %{install-root}/usr
@@ -46,3 +47,6 @@ config:
     - |
       mkdir -p %{install-root}/usr/share/doc/
       cp -r Documentation %{install-root}/usr/share/doc/linux
+
+environment-nocache:
+  - MAXJOBS

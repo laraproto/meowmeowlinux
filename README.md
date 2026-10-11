@@ -12,7 +12,6 @@ Freedesktop SDK gets really unhappy if you don't have `lzip` installed on your h
 
 Buildstream is required here, in addition buildstream has to have requests and dulwich installed in it's environment, install them with the following commands:
 ```sh
-pipx install git+https://github.com/systemd/mkosi.git
 pipx install buildstream
 pipx inject buildstream requests dulwich
 ```

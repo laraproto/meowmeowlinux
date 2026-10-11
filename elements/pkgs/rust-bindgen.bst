@@ -1,4 +1,4 @@
-kind: manual
+kind: cargo
 
 sources:
   - kind: git_repo
@@ -6,16 +6,17 @@ sources:
     track: v*.*.*
     exclude:
       - "*-*"
-  - kind: cargo2
+  - kind: cargo
     url: "cargo:"
-    git-mirrors:
-      https://github.com/: "github:"
 
 build-depends:
   - groups/autotools.bst
   - pkgs/rust.bst
 
-config:
-  build-commands:
-    - |
-      cargo build --release --bins --frozen
+variables:
+  cargo-install-flags: >-
+    %{cargo-install-global}
+    %{cargo-install-local}
+    --frozen
+    --path bindgen-cli
+    --root '%{install-root}%{prefix}'

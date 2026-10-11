@@ -50,4 +50,3 @@ config:
 environment:
   LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
   LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-

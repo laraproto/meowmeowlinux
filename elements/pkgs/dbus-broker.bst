@@ -9,7 +9,19 @@ sources:
 
 build-depends:
   - groups/autotools.bst
+  - pkgs/linux/headers.bst
+  - pkgs/python-docutils.bst
+  - pkgs/dbus.bst
   - pkgs/meson.bst
   - pkgs/pkgconf.bst
   - pkgs/rust.bst
-  - pkgs/rust
+  - pkgs/rust-bindgen.bst
+
+depends:
+  - pkgs/systemd.bst
+  - pkgs/libcdvar.bst
+  - pkgs/libaudit.bst
+  - pkgs/libcap-ng.bst
+  - pkgs/libcini.bst
+  - pkgs/libcshquote.bst
+  - pkgs/expat.bst
