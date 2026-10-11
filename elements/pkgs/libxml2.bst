@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
   - kind: tar
-    url: gnome-download:libxml2/2.15/libxml2-2.15.4.tar.xz
+    url: gnome-dl:libxml2/2.15/libxml2-2.15.4.tar.xz
 
 build-depends:
   - groups/autotools.bst
