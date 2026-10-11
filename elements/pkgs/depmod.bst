@@ -12,7 +12,7 @@ build-depends:
   - pkgs/scdoc.bst
 
 depends:
-  - pkgs/openssl.bst
+  - pkgs/openssl3.bst
   - pkgs/zstd.bst
   - pkgs/zlib.bst
   - pkgs/xz.bst

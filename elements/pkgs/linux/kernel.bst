@@ -17,7 +17,7 @@ build-depends:
   - pkgs/bison.bst
   - pkgs/bc.bst
   - pkgs/elfutils.bst
-  - pkgs/openssl.bst
+  - pkgs/openssl3.bst
   - pkgs/gzip.bst
 
 depends:
