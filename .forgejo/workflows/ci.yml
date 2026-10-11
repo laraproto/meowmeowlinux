@@ -56,6 +56,6 @@ jobs:
         run: |
           bst build groups/minimum.bst
 
-#      - name: Build Base Target
-#        run: |
-#          bst build targets/base.bst
+      - name: Build Base Target
+        run: |
+          bst build targets/base.bst
