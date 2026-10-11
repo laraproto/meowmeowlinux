@@ -16,6 +16,7 @@ build-depends:
 depends:
   - pkgs/libpsl.bst
   - pkgs/zstd.bst
+  - pkgs/zlib.bst
 
 variables:
   conf-local: --with-openssl

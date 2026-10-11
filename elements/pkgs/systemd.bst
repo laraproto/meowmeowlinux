@@ -34,6 +34,12 @@ depends:
   - pkgs/userdb.bst
   - pkgs/os-release.bst
   - pkgs/libffi.bst
+  - pkgs/kmod.bst
+  - pkgs/acl.bst
+  - pkgs/libidn2.bst
+  - pkgs/util-linux.bst
+  - pkgs/pcre2.bst
+  - pkgs/elfutils.bst
 
 variables:
   meson-local: >-

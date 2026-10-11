@@ -11,9 +11,8 @@ build-depends:
       location: /initrd
   - pkgs/findutils.bst
   - pkgs/cpio.bst
-
-depends:
   - groups/minimum.bst
+  - pkgs/zstd.bst
 
 config:
   configure-commands:
@@ -22,13 +21,24 @@ config:
       mkdir -pv proc
       mkdir -pv dev
       mkdir -pv run
-      mkdir -pv lib
-      mkdir -pv lib64
+      ln -sv usr/lib lib
+      ln -sv usr/lib lib64
+      ln -sv usr/bin bin
+      ln -sv usr/bin sbin
       mkdir -pv sysroot
   build-commands:
     - |
       cp -rav /initrd/usr usr
+    - |
+      # Trim the fat
+      rm -r usr/share/man
+      rm -r usr/share/doc
+      rm -r usr/include
+      rm -r usr/lib/locale
+    - |
+      ln -sv usr/bin/init init
   install-commands:
     - |
-      mkdir -pv boot
-      find . | cpio --create --verbose > boot/initramfs.img
+      mkdir -pv %{install-root}/boot
+      find . | cpio --create --verbose --format=newc > %{install-root}/boot/initramfs
+      zstd %{install-root}/boot/initramfs -18

@@ -14,5 +14,5 @@ build-depends:
 depends:
   - pkgs/zlib.bst
   - pkgs/zstd.bst
-  - pkgs/openssl.bst
+  - pkgs/openssl3.bst
   - pkgs/xz.bst

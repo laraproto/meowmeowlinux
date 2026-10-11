@@ -36,6 +36,7 @@ config:
     - make
   install-commands:
     - |
+      mkdir -pv %{install-root}/usr
       make DESTDIR=%{install-root}/usr modules_install
     - |
       mkdir %{install-root}/boot

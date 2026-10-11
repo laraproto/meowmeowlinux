@@ -10,6 +10,6 @@ build-depends:
 config:
   configure-commands:
     - |
-      mkdir -pv %{install-root}/usr/lib/os-release
+      mkdir -pv %{install-root}/usr/lib
       mv os-release %{install-root}/usr/lib/os-release
 
