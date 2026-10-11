@@ -39,9 +39,9 @@ config:
     - |
       mkdir -pv %{install-root}/usr
       make modules_install INSTALL_MOD_PATH=%{install-root}/usr INSTALL_MOD_STRIP=1
+      unlink %{install-root}/usr/lib/modules/$(make -s kernelrelease)/build
     - |
       mkdir %{install-root}/boot
-      cp linux-config %{install-root}/boot/config
       cp System.map %{install-root}/boot/System.map
       cp arch/x86/boot/bzImage %{install-root}/boot/vmlinuz
     - |
