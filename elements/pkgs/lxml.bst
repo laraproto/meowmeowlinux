@@ -7,6 +7,9 @@ sources:
 
 build-depends:
   - groups/python-module.bst
+  - pkgs/libxml2.bst
+  - pkgs/libxslt.bst
 
 depends:
   - pkgs/python.bst
+  - pkgs/cython.bst
