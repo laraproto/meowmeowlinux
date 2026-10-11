@@ -33,7 +33,6 @@ kitware: https://gitlab.kitware.com/
 coreboot: https://review.coreboot.org/
 debian: https://salsa.debian.org/
 pagure: https://pagure.io/
-poettering: https://git.0pointer.net/ # dumb http protocol
 hadrons: https://git.hadrons.org/git/
 bitmath: https://bitmath.org/git/ # dumb http protocol
 nettle: https://git.lysator.liu.se/nettle/

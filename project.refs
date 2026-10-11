@@ -2514,6 +2514,14 @@ projects:
     - ref: c87183a77d67f7d37e3d2d1b7eaac5e7c695e4f0
     pkgs/python-cmark-gfm.bst:
     - ref: 587a12bb54d95ac37241377e6ddc93ea0e45439b
+    pkgs/libaudit.bst:
+    - ref: 00659601cc23dc243bb0f451977636ff77fcf80f
+    pkgs/libcap-ng.bst:
+    - ref: c382c641ca5730442289c09d3c3d30cc2c8635a9
+    pkgs/dbus-broker.bst:
+    - ref: e5b413f573b2c158bff88370944d571379977b7e
+    pkgs/rust-bindgen.bst:
+    - ref: 73c69d681eec90b84ffba4f993b5fb2f19580781
     pkgs/util-macros.bst:
     - ref: 9ac269eba24f672d7d7b3574e4be5f333d13f04a7712303b1821b2a51ac82e8e
     pkgs/xorgproto.bst:
