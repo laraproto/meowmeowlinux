@@ -2780,3 +2780,7 @@ projects:
     - ref: 034f74456617e445a0379d345a362397f02ba1ad
     pkgs/libcshquote.bst:
     - ref: c4d0c851126c43eb52a1d7b0063429a79f7579d3
+    pkgs/kde/qt.bst:
+    - ref: 98ff4f44bac6ec3e1e62ee2a4316ae0e3d15badb015d753cc0268a20db52f165
+    pkgs/wayland.bst:
+    - ref: 87cc8a8728a923fc57938faa81ba0e74f34ecdc7

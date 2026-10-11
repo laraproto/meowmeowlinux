@@ -13,3 +13,4 @@ build-depends:
   - pkgs/python.bst
   - pkgs/libxml2.bst
   - pkgs/lxml.bst
+  - pkgs/pkgconf.bst
