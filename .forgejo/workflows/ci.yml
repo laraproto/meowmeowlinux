@@ -5,6 +5,38 @@ jobs:
     runs-on: docker
     
     steps:
+      - name: Setup Cache
+        run: |
+          mkdir -pv ~/.config
+          cat << EOF > ~/.config/buildstream.conf
+          artifacts:
+            override-project-caches: true
+            servers:
+              - url: https://meowcache.laratheprotogen.dev:11002
+                push: true
+                connection-config:
+                  keepalive-time: 60
+                  retry-limit: 4
+                  retry-delay: 500
+                  request-timeout: 300
+              auth:
+                access-token: ~/.config/buildstream.token
+
+          source-caches:
+            override-project-caches: true
+            servers:
+              - url: https://meowcache.laratheprotogen.dev:11002
+                push: true
+                connection-config:
+                  keepalive-time: 60
+                  retry-limit: 4
+                  retry-delay: 500
+                  request-timeout: 300
+                auth:
+                  access-token: ~/.config/buildstream.token
+          EOF
+          echo $BUILDSTREAM_TOKEN > ~/.config/buildstream.token
+
       - name: Install Buildstream
         run: |
           apt update -y
