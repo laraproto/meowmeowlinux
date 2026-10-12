@@ -8,6 +8,7 @@ build-depends:
   - groups/autotools.bst
   - pkgs/pkgconf.bst
   - pkgs/meson.bst
+  - pkgs/doxygen.bst
 
 depends:
   - pkgs/icu.bst

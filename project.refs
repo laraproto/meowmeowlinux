@@ -2976,3 +2976,5 @@ projects:
     - ref: 6730c20ab487c0b4dc5fb3fea918937085355bac
     pkgs/libfido2.bst:
     - ref: b974e7cf2ee7392134cc12c08b76a068cf250dd8
+    pkgs/doxygen.bst:
+    - ref: 8e760943e5d9581a444cf327f43a0b4d20d29482

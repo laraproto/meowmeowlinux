@@ -17,6 +17,7 @@ build-depends:
 
 depends:
   - pkgs/libxml2.bst
+  - pkgs/python.bst
 
 variables:
-  conf-local: --disable-static --without-python
+  conf-local: --disable-static --with-python
