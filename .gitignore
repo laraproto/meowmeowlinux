@@ -3,7 +3,7 @@
 
 # Temporary check-out location for buildstream elements
 result
-targets
+/targets
 
 # Python caches
 plugins/__pycache__

@@ -14,11 +14,13 @@ build-depends:
   - pkgs/findutils.bst
   - pkgs/gperf.bst
   - pkgs/python-jinja2.bst
-  - pkgs/python-pefile.bst
+  - pkgs/python-pefile.bst # Is also a runtime dependency
   - pkgs/python-elfutils.bst
   - pkgs/python.bst
   - pkgs/gettext.bst
   - pkgs/cmake.bst
+  - pkgs/git.bst
+  - pkgs/pkgconf.bst  
 
 depends:
   - pkgs/zstd.bst
@@ -40,6 +42,7 @@ depends:
   - pkgs/util-linux.bst
   - pkgs/pcre2.bst
   - pkgs/elfutils.bst
+  - pkgs/rsync.bst
 
 variables:
   meson-local: >-
@@ -47,3 +50,6 @@ variables:
     -D sbat-distro-summary="Meow Meow Linux"
     -D sbat-distro-url="https://git.hackclub.app/meowmeowlinux"
     -D sbat-distro-version="rolling"
+    -D repart=enabled
+    -D sysupdate=enabled
+    -D sysupdated=enabled

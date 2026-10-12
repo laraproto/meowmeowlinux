@@ -33,8 +33,9 @@ config:
       rm -r usr/lib/locale
     - |
       ln -sv usr/bin/init init
+      mv usr/lib/os-release usr/lib/initrd-release
   install-commands:
     - |
       mkdir -pv %{install-root}/boot
       find . | cpio --create --verbose --format=newc > %{install-root}/boot/initramfs
-      zstd %{install-root}/boot/initramfs -18
+      zstd %{install-root}/boot/initramfs -12

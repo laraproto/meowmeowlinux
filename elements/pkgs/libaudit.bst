@@ -13,13 +13,16 @@ build-depends:
   - pkgs/systemd.bst
   - pkgs/autoconf.bst
   - pkgs/automake.bst
-  - pkgs/libcap-ng.bst
   - pkgs/m4.bst
   - pkgs/diffutils.bst
   - pkgs/pkgconf.bst
   - pkgs/openssl3.bst
   - pkgs/libtool.bst
   - pkgs/findutils.bst
+  - pkgs/swig.bst
+
+depends:
+  - pkgs/libcap-ng.bst
 
 variables:
   conf-local: >-

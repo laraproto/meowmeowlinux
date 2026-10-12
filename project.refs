@@ -2790,3 +2790,12 @@ projects:
     - ref: 9aa92d0e2d9a78e9b6e8f79e36bdfb2b784f7e57
     pkgs/asciidoctor.bst:
     - ref: 0b99b39c9df884d4aec13bba45f03cdbab505769
+    pkgs/swig.bst:
+    - ref: 88649f559942c29a228fa783dd01581e217bcb20
+    pkgs/dosfstools.bst:
+    - ref: 697f7692c951173c1b732901e13f72bd3182d575
+    pkgs/erofs-utils.bst:
+    - ref: f36cadb5c563995ab3aa8572a60ed6b721b9557d
+    pkgs/mtools.bst:
+    - suffix: mtools/mtools-4.0.49.tar.gz
+      sha256sum: 10cd1111da87bf2400a380c1639a6cba8bfb937a24f9c51f5f88d393ae5f6f76
