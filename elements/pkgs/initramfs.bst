@@ -17,6 +17,7 @@ config:
       mkdir -pv proc
       mkdir -pv dev
       mkdir -pv run
+      mkdir -pv etc
       ln -sv usr/lib lib
       ln -sv usr/lib lib64
       ln -sv usr/bin bin
@@ -33,7 +34,9 @@ config:
       rm -r usr/lib/locale
     - |
       ln -sv usr/bin/init init
+    - |
       mv usr/lib/os-release usr/lib/initrd-release
+      ln -sv ../usr/lib/initrd-release etc/initrd-release
   install-commands:
     - |
       mkdir -pv %{install-root}/boot
