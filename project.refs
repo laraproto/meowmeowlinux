@@ -2994,3 +2994,21 @@ projects:
     - ref: 22244de5a79bd1d6d623c32e72bf1954b56235be
     pkgs/wayland-protocols.bst:
     - ref: ee78491a237eaff9389a0ccf8680521d074407d3
+    pkgs/spirv-headers.bst:
+    - ref: 496543121ce6419f23d6fa5d7194ba66c36212d2
+    pkgs/python-pyyaml.bst:
+    - ref: 49790e73684bebad1df05ef8d828fa12f685bffb
+    pkgs/libva.bst:
+    - ref: 710eb465c6277ee2cac3e6948767b01eebe7e77a
+    pkgs/glslang.bst:
+    - ref: e1b562a8bed273a02f30b59b66a5d499793cede5
+    pkgs/spirv-tools.bst:
+    - ref: ef96ed763b43b59b33b31b362f09a02b729fa1c9
+    pkgs/spirv-llvm-translator.bst:
+    - ref: e65dde28ce8f12ef7245914fa2850260328669e4
+    pkgs/mesa.bst:
+    - ref: 96cb43121031992b85767f9c1be8f3f48e22b1d2
+    pkgs/vulkan-headers.bst:
+    - ref: 6802bb4733b63ed5efd3adb308a6c885ef180ea1
+    pkgs/vulkan-loader.bst:
+    - ref: fa218055ff4948b159f31d43f800c808a13d51df

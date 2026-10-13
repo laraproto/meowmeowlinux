@@ -1,12 +1,19 @@
 kind: stack
 
 depends:
+  # Bare Base
+  - groups/minimum.bst
   - pkgs/systemd.bst
   - pkgs/dbus-broker.bst
-  - groups/minimum.bst
   - pkgs/alus.bst
+  - pkgs/live-uki.bst
+  
+  # Filesystems
   - pkgs/btrfs-progs.bst
   - pkgs/dosfstools.bst
   - pkgs/mtools.bst
   - pkgs/erofs-utils.bst
-  - pkgs/live-uki.bst
+
+  # Utils
+  - pkgs/openssh.bst
+  - pkgs/sudo.bst

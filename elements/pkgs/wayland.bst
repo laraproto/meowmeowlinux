@@ -8,9 +8,11 @@ sources:
 build-depends:
   - pkgs/meson.bst
   - groups/autotools.bst
-  - pkgs/libxml2.bst
   - pkgs/libffi.bst
   - pkgs/pkgconf.bst
+
+depends:
+  - pkgs/libxml2.bst
 
 variables:
   meson-local: -D documentation=false
