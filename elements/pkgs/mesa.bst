@@ -12,10 +12,10 @@ depends:
   - pkgs/libdrm.bst
   - pkgs/llvm.bst
   - pkgs/wayland-protocols.bst
-  - pkgs/glslang.bst
+  # - pkgs/glslang.bst
   - pkgs/libva.bst
   - pkgs/vulkan-loader.bst
-  - pkgs/spirv-llvm-translator.bst
+  # - pkgs/spirv-llvm-translator.bst
 
 variables:
   meson-local: >-
