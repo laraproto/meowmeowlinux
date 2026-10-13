@@ -9,6 +9,7 @@ build-depends:
 
 depends:
   - pkgs/linux-pam.bst
+  - pkgs/openssl3.bst
 
 variables:
   conf-local: >-

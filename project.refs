@@ -3012,3 +3012,5 @@ projects:
     - ref: 6802bb4733b63ed5efd3adb308a6c885ef180ea1
     pkgs/vulkan-loader.bst:
     - ref: fa218055ff4948b159f31d43f800c808a13d51df
+    pkgs/openssh.bst:
+    - ref: a9dc9565dffe8640f64d863cd29a32bc4a3dbdec0566a7fc44c5d6ee767d5f39
