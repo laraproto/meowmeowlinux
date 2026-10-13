@@ -2988,3 +2988,9 @@ projects:
     - ref: e984d448b8b17aab853369e6c203e53719f46de1
     pkgs/libgudev.bst:
     - ref: df7c9c9940160307aaeb31347f4776a46f8736a9
+    pkgs/libogg.bst:
+    - ref: be05b13e98b048f0b5a0f5fa8ce514d56db5f822
+    pkgs/opus.bst:
+    - ref: 22244de5a79bd1d6d623c32e72bf1954b56235be
+    pkgs/wayland-protocols.bst:
+    - ref: ee78491a237eaff9389a0ccf8680521d074407d3
