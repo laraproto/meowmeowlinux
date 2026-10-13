@@ -2978,3 +2978,13 @@ projects:
     - ref: b974e7cf2ee7392134cc12c08b76a068cf250dd8
     pkgs/doxygen.bst:
     - ref: 8e760943e5d9581a444cf327f43a0b4d20d29482
+    pkgs/cairo.bst:
+    - ref: 018b3424a10ecd37450360f21454ecf0f3007e17
+    pkgs/gstreamer.bst:
+    - ref: badd9563b2ac3117ea2a99348bbe46298d6992ec
+    pkgs/sudo.bst:
+    - ref: d1b48c651cec19fe37d1f0d3299d2283fb0f88e4
+    pkgs/libdrm.bst:
+    - ref: e984d448b8b17aab853369e6c203e53719f46de1
+    pkgs/libgudev.bst:
+    - ref: df7c9c9940160307aaeb31347f4776a46f8736a9

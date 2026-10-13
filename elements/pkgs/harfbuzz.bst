@@ -8,8 +8,8 @@ sources:
 build-depends:
   - groups/autotools.bst
   - pkgs/git.bst
-  - pkgs/gtk-doc.bst
   - pkgs/meson.bst
+  - pkgs/pkgconf.bst
 
 depends:
   - pkgs/freetype2.bst
@@ -21,3 +21,4 @@ depends:
 variables:
   meson-local: >-
     -D graphite2=enabled
+    -D docs=disabled

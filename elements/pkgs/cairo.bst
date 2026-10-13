@@ -1,8 +1,15 @@
 kind: meson
 
+sources:
+  - kind: git_repo
+    url: fdo-git:cairo/cairo
+    track: 1.*.*
+
 build-depends:
+  - groups/autotools.bst
+  - pkgs/meson.bst
   - pkgs/harfbuzz-stage1.bst
-  - pkgs/gtk-doc.bst
+  - pkgs/pkgconf.bst
 
 depends:
   - pkgs/libpng.bst
@@ -12,5 +19,4 @@ depends:
 
 variables:
   meson-local: >-
-    -D gtk_doc=true
     -D xlib-xcb=enabled # TODO: Unsure of deps. Waiting until things break.

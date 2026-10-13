@@ -10,6 +10,8 @@ build-depends:
   - pkgs/meson.bst
   - pkgs/pkgconf.bst
   - pkgs/libtool.bst
+  - pkgs/gettext.bst
+  - pkgs/glib.bst
 
 depends:
   - pkgs/python-parameterized.bst

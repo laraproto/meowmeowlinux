@@ -12,5 +12,5 @@ build-depends:
   - pkgs/m4.bst
   - pkgs/python.bst
   - pkgs/libxml2.bst
-  - pkgs/lxml.bst
+  # TODO - pkgs/lxml.bst
   - pkgs/pkgconf.bst
