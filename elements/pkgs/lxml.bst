@@ -6,7 +6,7 @@ sources:
     track: lxml-6.*.*
 
 build-depends:
-  - groups/python-module.bst
+  - groups/python.bst
   - pkgs/libxml2.bst
   - pkgs/libxslt.bst
   - groups/autotools.bst

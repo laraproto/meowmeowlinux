@@ -22,7 +22,7 @@ build-depends:
   - pkgs/findutils.bst
   - bootstrap/stage1/userdb.bst
   - pkgs/meson.bst
-  - pkgs/python-sphinx.bst
+  - pkgs/python/sphinx.bst
 
 variables:
   # Permissions appear broken inside of a buildstream sandbox

@@ -1,7 +1,7 @@
 kind: autotools
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 sources:
   - kind: tar

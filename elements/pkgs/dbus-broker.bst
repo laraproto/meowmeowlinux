@@ -10,7 +10,7 @@ sources:
 build-depends:
   - groups/autotools.bst
   - pkgs/linux/headers.bst
-  - pkgs/python-docutils.bst
+  - pkgs/python/docutils.bst
   - pkgs/dbus.bst
   - pkgs/meson.bst
   - pkgs/pkgconf.bst

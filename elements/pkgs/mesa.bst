@@ -8,7 +8,7 @@ sources:
 depends:
   - pkgs/libxcb.bst
   - pkgs/make.bst
-  - pkgs/python-pyyaml.bst
+  - pkgs/python/pyyaml.bst
   - pkgs/libdrm.bst
   - pkgs/llvm.bst
   - pkgs/wayland-protocols.bst

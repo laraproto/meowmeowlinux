@@ -222,9 +222,9 @@ projects:
     - ref: 12731092979c6d07f42da27da673a9f6c7b13586
     bootstrap/stage1/curl.bst:
     - ref: 01346829096c61b372692f6dc43ffa778c6caccd
-    bootstrap/stage1/python-build.bst:
+    bootstrap/python/build.bst:
     - ref: 89cccef40df9011f03bec18cf52c53d1096ed6ee
-    pkgs/python-build.bst:
+    pkgs/python/build.bst:
     - ref: 89cccef40df9011f03bec18cf52c53d1096ed6ee
     bootstrap/stage1/libpsl.bst:
     - ref: 93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be
@@ -235,25 +235,25 @@ projects:
     - ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
     bootstrap/stage1/meson.bst:
     - ref: 70598bb7825f0f804fb31ec2795de5e79e7692a0
-    bootstrap/stage1/python-pyproject-hooks.bst:
+    bootstrap/python/pyproject-hooks.bst:
     - ref: 184c9f56a87ede1276a5b33f5024204adb792cd2
-    bootstrap/stage1/python-installer.bst:
+    bootstrap/python/installer.bst:
     - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768
-    bootstrap/stage1/python-flit.bst:
+    bootstrap/python/flit.bst:
     - ref: 1c8141722066ffe1497e511982feeea0f091ddb6
-    bootstrap/stage1/python-packaging.bst:
+    bootstrap/python/packaging.bst:
     - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
-    bootstrap/stage1/python-setuptools.bst:
+    bootstrap/python/setuptools.bst:
     - ref: 72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87
-    pkgs/python-setuptools.bst:
+    pkgs/python/setuptools.bst:
     - ref: 72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87
-    pkgs/python-pyproject-hooks.bst:
+    pkgs/python/pyproject-hooks.bst:
     - ref: 184c9f56a87ede1276a5b33f5024204adb792cd2
-    pkgs/python-flit-core.bst:
+    pkgs/python/flit-core.bst:
     - ref: 1c8141722066ffe1497e511982feeea0f091ddb6
-    pkgs/python-packaging.bst:
+    pkgs/python/packaging.bst:
     - ref: 929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5
-    pkgs/python-installer.bst:
+    pkgs/python/installer.bst:
     - ref: 7ffa96f4ada5f38792e340ba7f9e1c43e0104768
     pkgs/diffutils.bst:
     - suffix: diffutils/diffutils-3.12.tar.xz
@@ -263,13 +263,13 @@ projects:
       sha256sum: fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8
     pkgs/jinja2.bst:
     - ref: 15206881c006c79667fe5154fe80c01c65410679
-    pkgs/python-jinja2.bst:
+    pkgs/python/jinja2.bst:
     - ref: 15206881c006c79667fe5154fe80c01c65410679
     pkgs/bzip2.bst:
     - ref: 6a8690fc8d26c815e798c588f796eabe9d684cf0
-    pkgs/python-markupsafe.bst:
+    pkgs/python/markupsafe.bst:
     - ref: ece26078ec168ebac69f02877238e68d4b376c91
-    pkgs/python-pefile.bst:
+    pkgs/python/pefile.bst:
     - ref: 4b3b1e2e568a88d4f1897d694d684f23d9e270c4
     pkgs/linux-pam.bst:
     - ref: 28fce1fd55b003fec90f34e5bc785e9439b216f2
@@ -279,7 +279,7 @@ projects:
     - ref: ebb370ca83af193212df4dcbadcc5d87bc0de2f0
     pkgs/xz.bst:
     - ref: d3e650e63c110e830fd5391e7f8b45df0b91d3da
-    pkgs/python-elfutils.bst:
+    pkgs/python/elfutils.bst:
     - ref: 52ce435186022bd6b32012a998931fe86c985ec8
     pkgs/libpsl.bst:
     - ref: 93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be
@@ -302,31 +302,31 @@ projects:
       sha256sum: 51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e
     pkgs/gtk-doc.bst:
     - ref: 1e7f700db7882b7e25e8957c7b8f5dede5b4b81a
-    pkgs/python-parameterized.bst:
+    pkgs/python/parameterized.bst:
     - ref: 8719c41604c41a0ee372511ea87d2ecbb3215f8d
-    pkgs/python-pygments.bst:
+    pkgs/python/pygments.bst:
     - ref: a43b45dcf081b6010c6ab4428f149f7f6d2499c4
-    pkgs/python-hatchling.bst:
+    pkgs/python/hatchling.bst:
     - ref: c4abc454f908bb4fc2a92452a82cb33dac14abf3
-    bootstrap/stage1/python-hatchling.bst:
+    bootstrap/python/hatchling.bst:
     - ref: c4abc454f908bb4fc2a92452a82cb33dac14abf3
-    pkgs/python-pathspec.bst:
+    pkgs/python/pathspec.bst:
     - ref: ecf71a99ca739479d450b9830f43416ea0c519c7
-    pkgs/python-trove-classifiers.bst:
+    pkgs/python/trove-classifiers.bst:
     - ref: bc832553ebe6114e7682f09bc59bda6552da37cd
-    pkgs/python-pluggy.bst:
+    pkgs/python/pluggy.bst:
     - ref: fd08ab5f811a9b2fa9124ae8cbbd393221151e2c
-    pkgs/python-tomlkit.bst:
+    pkgs/python/tomlkit.bst:
     - ref: 1bd7e3bc5bcc957d359a6c4d8e420163f32ac009
-    pkgs/python-poetry.bst:
+    pkgs/python/poetry.bst:
     - ref: 94b6e35b9091991887aa54feeb3771a86d3bd692
-    pkgs/python-calver.bst:
+    pkgs/python/calver.bst:
     - ref: 36c6977d6e2d9b9912c2afb83b4e36bb1289dbdd
-    pkgs/python-setuptools-scm.bst:
+    pkgs/python/setuptools-scm.bst:
     - ref: setuptools-scm-v10.3.4-0-gb27f5973c4e24cdbca08f8c003e431e220f52a40
-    pkgs/python-poetry-core.bst:
+    pkgs/python/poetry-core.bst:
     - ref: b52c25c451bbaed9f309d45fc6e6e35c704e55bf
-    pkgs/python-vcs-versioning.bst:
+    pkgs/python/vcs-versioning.bst:
     - ref: vcs-versioning-v2.5.0-0-gb27f5973c4e24cdbca08f8c003e431e220f52a40
     pkgs/llvm.bst:
     - ref: 85ac560262434c9ccfc0c183ec22d4138ed647fb
@@ -352,16 +352,16 @@ projects:
     pkgs/help2man.bst:
     - suffix: help2man/help2man-1.49.3.tar.xz
       sha256sum: 4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f
-    bootstrap/stage1/python-markupsafe.bst:
+    bootstrap/python/markupsafe.bst:
     - ref: ece26078ec168ebac69f02877238e68d4b376c91
-    bootstrap/stage1/python-jinja2.bst:
+    bootstrap/python/jinja2.bst:
     - ref: 15206881c006c79667fe5154fe80c01c65410679
     bootstrap/stage1/systemd.bst:
     - ref: 8cc40e0c5e9234bf45084751ac53b1fbfe70b492
     bootstrap/stage1/gperf.bst:
     - suffix: gperf/gperf-3.3.tar.gz
       sha256sum: fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8
-    bootstrap/stage1/python-pefile.bst:
+    bootstrap/python/pefile.bst:
     - ref: 4b3b1e2e568a88d4f1897d694d684f23d9e270c4
     bootstrap/stage1/libselinux.bst:
     - ref: 2233a23a4d4f1bf29054037babec13f30d038e65
@@ -1476,48 +1476,48 @@ projects:
     - ref: 07430deb9b97b751ec5ea5a7fc307f40bf042e0a
     pkgs/btrfs-progs.bst:
     - ref: 4ab0e80be9e3bb1db2e6038e6d4316d35fb7ba8b
-    pkgs/python-sphinx.bst:
+    pkgs/python/sphinx.bst:
     - ref: cc7c6f435ad37bb12264f8118c8461b230e6830c
     pkgs/e2fsprogs.bst:
     - ref: 7ee1d505ef3b37831215f490411f346fe57e9053
     pkgs/lzo.bst:
     - ref: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
-    pkgs/python-docutils.bst:
+    pkgs/python/docutils.bst:
     - ref: 746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e
-    pkgs/python-babel.bst:
+    pkgs/python/babel.bst:
     - ref: 56c63caf50b18b152541b5dcafd51f645d867074
     - ref: d5ee2abac64158c04884a722f8ef4830ea22b6c74aac20185be2838db8eda788
-    pkgs/python-snowball.bst:
+    pkgs/python/snowball.bst:
     - ref: cd195b51e948a902a4312f023f4a14392516a543
-    pkgs/python-imagesize.bst:
+    pkgs/python/imagesize.bst:
     - ref: cf87fc06d599c71b61564eca97873b7bc75ab49a
-    pkgs/python-roman-numerals.bst:
+    pkgs/python/roman-numerals.bst:
     - ref: 53c9c4eac63b91728fba3c26329163ee57654d21
-    pkgs/python-requests.bst:
+    pkgs/python/requests.bst:
     - ref: 6e83187b8feb273ed4c6cdab5efd8d54901dfab3
-    pkgs/python-urllib3.bst:
+    pkgs/python/urllib3.bst:
     - ref: b1d30ab61fe0db8f11092805e8c5ac43e091064a
-    pkgs/python-hatch-vcs.bst:
+    pkgs/python/hatch-vcs.bst:
     - ref: dfec2c06defdb4648eb66f6aadf7b57453d732cd
-    pkgs/python-idna.bst:
+    pkgs/python/idna.bst:
     - ref: d55e65e1a3b1ede7f556bc202738066f5597e249
-    pkgs/python-certifi.bst:
+    pkgs/python/certifi.bst:
     - ref: f4bc676bc101fe2235846e37044e8c693d6cbaf4
-    pkgs/python-alabaster.bst:
+    pkgs/python/alabaster.bst:
     - ref: fba58a43980385019ceb593f88ab8821e17840c0
-    pkgs/python-sphinxcontrib-applehelp.bst:
+    pkgs/python/sphinxcontrib-applehelp.bst:
     - ref: f4f9d900b238d03da601bf7c75cff5bcbcee6d7c
-    pkgs/python-sphinxcontrib-devhelp.bst:
+    pkgs/python/sphinxcontrib-devhelp.bst:
     - ref: 0177fb44f165305f27b34e69e6e7e5ed6f24d752
-    pkgs/python-sphinxcontrib-htmlhelp.bst:
+    pkgs/python/sphinxcontrib-htmlhelp.bst:
     - ref: f7f5d4ecf27fad97e2454fbeda94c6a105c994ff
-    pkgs/python-sphinxcontrib-serializinghtml.bst:
+    pkgs/python/sphinxcontrib-serializinghtml.bst:
     - ref: f0f3b15b2e6bb47570d605ebd5687643d7a85b9d
-    pkgs/python-sphinxcontrib-qthelp.bst:
+    pkgs/python/sphinxcontrib-qthelp.bst:
     - ref: 783caf58e9ba9cf0450746b7f65d4bc8229ccd8f
-    pkgs/python-sphinx-rtd-theme.bst:
+    pkgs/python/sphinx-rtd-theme.bst:
     - ref: 795de79c8b311592f5863a25307d85924bf52164
-    pkgs/python-sphinxcontrib-jquery.bst:
+    pkgs/python/sphinxcontrib-jquery.bst:
     - ref: f45993d5657e2afb96e4a730b9033673af7ab0ef
     pkgs/alus.bst:
     - ref: 02463ac20d5b28cfff37efc6f5e02726a7c85aef
@@ -2512,7 +2512,7 @@ projects:
     - ref: a018953688f1b10bddf91bff8747068f5f4746a4
     pkgs/xxhash.bst:
     - ref: c87183a77d67f7d37e3d2d1b7eaac5e7c695e4f0
-    pkgs/python-cmark-gfm.bst:
+    pkgs/python/cmark-gfm.bst:
     - ref: 587a12bb54d95ac37241377e6ddc93ea0e45439b
     pkgs/libaudit.bst:
     - ref: 00659601cc23dc243bb0f451977636ff77fcf80f
@@ -2996,7 +2996,7 @@ projects:
     - ref: ee78491a237eaff9389a0ccf8680521d074407d3
     pkgs/spirv-headers.bst:
     - ref: 496543121ce6419f23d6fa5d7194ba66c36212d2
-    pkgs/python-pyyaml.bst:
+    pkgs/python/pyyaml.bst:
     - ref: 49790e73684bebad1df05ef8d828fa12f685bffb
     pkgs/libva.bst:
     - ref: 710eb465c6277ee2cac3e6948767b01eebe7e77a

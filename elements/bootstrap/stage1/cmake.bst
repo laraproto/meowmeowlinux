@@ -1,7 +1,7 @@
 kind: cmake
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 build-depends:
   - bootstrap/stage1/fdo.bst:public-stacks/buildsystem-cmake.bst
@@ -16,7 +16,3 @@ sources:
   - kind: git_tag
     url: github:Kitware/CMake
     track: release
-
-environment:
-  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"

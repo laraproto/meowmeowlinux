@@ -1,7 +1,7 @@
 kind: pyproject
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 sources:
   - kind: git_repo
@@ -12,11 +12,11 @@ sources:
 
 depends:
   - bootstrap/stage1/python.bst
-  - bootstrap/stage1/python-build.bst
-  - bootstrap/stage1/python-pyproject-hooks.bst
-  - bootstrap/stage1/python-packaging.bst
-  - bootstrap/stage1/python-setuptools.bst
-  - bootstrap/stage1/python-installer.bst
+  - bootstrap/python/build.bst
+  - bootstrap/python/pyproject-hooks.bst
+  - bootstrap/python/packaging.bst
+  - bootstrap/python/setuptools.bst
+  - bootstrap/python/installer.bst
   - bootstrap/stage1/cmake.bst
   - bootstrap/stage1/ninja.bst
   - bootstrap/stage1/independent.bst

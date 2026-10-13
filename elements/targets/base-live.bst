@@ -22,7 +22,3 @@ config:
   build-commands:
     - |
       systemd-repart --definitions=repart.d %{install-root}/base-live.iso --el-torito=yes --empty=create --size=auto --split=true --offline=true --sector-size=512 --copy-source=/sysroot
-
-environment:
-  SYSTEMD_LOG_LEVEL: debug
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"

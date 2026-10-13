@@ -5,7 +5,7 @@ build-depends:
   - groups/minimum.bst
   - pkgs/initramfs.bst
   - pkgs/linux/kernel.bst
-  - pkgs/python-pefile.bst
+  - pkgs/python/pefile.bst
 
 config:
   install-commands:

@@ -1,7 +1,7 @@
 kind: meson
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 sources:
   - kind: git_repo
@@ -27,11 +27,4 @@ depends:
 
 variables:
   meson-local: -Dselinux=disabled
-
-environment:
-  ZLIB_LIBS: ""
-  ZLIB_CFLAGS: ""
-  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-
 

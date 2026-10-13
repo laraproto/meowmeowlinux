@@ -10,4 +10,4 @@ sources:
 
 build-depends:
   - groups/autotools.bst
-  - groups/python-module.bst
+  - groups/python.bst

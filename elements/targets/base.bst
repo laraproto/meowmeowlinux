@@ -7,6 +7,7 @@ depends:
   - pkgs/dbus-broker.bst
   - pkgs/alus.bst
   - pkgs/live-uki.bst
+  - pkgs/mesa.bst
   
   # Filesystems
   - pkgs/btrfs-progs.bst

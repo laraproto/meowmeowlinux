@@ -8,11 +8,11 @@ sources:
     - 1.*.*rc*
 
 build-depends:
-  - pkgs/python-build.bst
-  - pkgs/python-setuptools.bst
-  - pkgs/python-pyproject-hooks.bst 
-  - pkgs/python-packaging.bst 
-  - pkgs/python-installer.bst
+  - pkgs/python/build.bst
+  - pkgs/python/setuptools.bst
+  - pkgs/python/pyproject-hooks.bst 
+  - pkgs/python/packaging.bst 
+  - pkgs/python/installer.bst
 
 depends:
   - pkgs/python.bst

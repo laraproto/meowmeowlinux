@@ -46,7 +46,3 @@ config:
     - |
       mkdir -pv %{install-root}/usr/share/alus/
       mv -v hooks %{install-root}/usr/share/alus/hooks
-
-environment:
-  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"

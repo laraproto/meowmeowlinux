@@ -13,9 +13,9 @@ build-depends:
   - pkgs/diffutils.bst
   - pkgs/findutils.bst
   - pkgs/gperf.bst
-  - pkgs/python-jinja2.bst
-  - pkgs/python-pefile.bst # Is also a runtime dependency
-  - pkgs/python-elfutils.bst
+  - pkgs/python/jinja2.bst
+  - pkgs/python/pefile.bst # Is also a runtime dependency
+  - pkgs/python/elfutils.bst
   - pkgs/python.bst
   - pkgs/gettext.bst
   - pkgs/cmake.bst

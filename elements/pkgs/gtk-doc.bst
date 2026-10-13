@@ -14,7 +14,7 @@ build-depends:
   - pkgs/glib.bst
 
 depends:
-  - pkgs/python-parameterized.bst
-  - pkgs/python-pygments.bst
+  - pkgs/python/parameterized.bst
+  - pkgs/python/pygments.bst
   - pkgs/libxslt.bst
   - pkgs/itstool.bst

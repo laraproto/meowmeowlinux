@@ -1,0 +1,23 @@
+kind: pyproject
+
+(@):
+  - elements/bootstrap/common.yml
+
+sources:
+  - kind: git_repo
+    url: github:pypa/installer
+    track: "*.*.*"
+
+build-depends:
+  - bootstrap/stage1/independent.bst
+  - bootstrap/stage1/fdo.bst:components/python3-flit-core.bst
+  - bootstrap/stage1/fdo.bst:components/python3-installer.bst
+  - bootstrap/stage1/fdo.bst:components/python3-pyproject-hooks.bst
+  - bootstrap/stage1/fdo.bst:components/python3-packaging.bst
+  - bootstrap/python/build.bst
+
+depends:
+  - bootstrap/stage1/python.bst
+
+environment:
+  PYTHONPATH: "/usr/lib/python3.14/site-packages:/tools/lib/python3.14/site-packages"

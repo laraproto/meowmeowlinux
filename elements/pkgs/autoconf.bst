@@ -11,8 +11,8 @@ build-depends:
   - pkgs/sed.bst
   - pkgs/grep.bst
   - pkgs/gawk.bst
-  - pkgs/m4.bst
   - pkgs/make.bst
 
 depends:
   - pkgs/perl.bst
+  - pkgs/m4.bst

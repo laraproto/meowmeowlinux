@@ -1,7 +1,7 @@
 kind: manual
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 sources:
   - kind: git_repo
@@ -41,7 +41,3 @@ config:
   install-commands:
     - |
       make DESTDIR="%{install-root}" install
-
-environment:
-  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"

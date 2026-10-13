@@ -10,7 +10,7 @@ build-depends:
   - pkgs/automake.bst
   - pkgs/autoconf.bst
   - pkgs/m4.bst
-  - pkgs/python-cmark-gfm.bst
+  - pkgs/python/cmark-gfm.bst
 
 depends:
   - pkgs/acl.bst

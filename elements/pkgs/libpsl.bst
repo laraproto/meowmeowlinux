@@ -12,7 +12,7 @@ build-depends:
   - pkgs/gettext.bst
   - pkgs/glib.bst
   # TODO - pkgs/gtk-doc.bst
-  - pkgs/python-pygments.bst
+  - pkgs/python/pygments.bst
   - pkgs/pkgconf.bst
   - pkgs/python.bst
 

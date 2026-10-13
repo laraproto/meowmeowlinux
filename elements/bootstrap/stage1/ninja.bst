@@ -1,7 +1,7 @@
 kind: cmake
 
 (@):
-  - elements/bootstrap/stage1/common.yml
+  - elements/bootstrap/common.yml
 
 sources:
   - kind: git_repo
@@ -18,7 +18,3 @@ depends:
 variables:
   generator: "Unix Makefiles"
   cmake-local: "-DBUILD_TESTING=OFF"
-
-environment:
-  LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
-  LD_LIBRARY_PATH: "/tools/lib:/tools/lib64:/usr/lib"
