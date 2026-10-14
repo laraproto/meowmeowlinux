@@ -1,0 +1,9 @@
+{
+    "userName": "root",
+    "realName": "Superuser",
+    "uid": 0,
+    "gid": 0,
+    "disposition": "system",
+    "locked": false,
+    "homeDirectory": "/root"
+}

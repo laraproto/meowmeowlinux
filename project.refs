@@ -3014,3 +3014,7 @@ projects:
     - ref: fa218055ff4948b159f31d43f800c808a13d51df
     pkgs/openssh.bst:
     - ref: a9dc9565dffe8640f64d863cd29a32bc4a3dbdec0566a7fc44c5d6ee767d5f39
+    pkgs/systemd-stage1.bst:
+    - ref: 8cc40e0c5e9234bf45084751ac53b1fbfe70b492
+    pkgs/shadow.bst:
+    - ref: 7188fbf46f397ab40d2e77d6f0bb8ebbe479cc0c

@@ -1,0 +1,7 @@
+{
+    "userName": "systemd-network",
+    "uid": 25,
+    "gid": 25,
+    "disposition": "system",
+    "locked": true,
+}

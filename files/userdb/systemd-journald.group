@@ -1,0 +1,5 @@
+{
+    "groupName" : "systemd-journald",
+    "gid" : 11,
+    "disposition" : "system"
+}

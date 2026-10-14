@@ -6,3 +6,4 @@ depends:
   - pkgs/bash.bst
   - pkgs/ncurses.bst
   - pkgs/glibc.bst
+  - pkgs/kmod.bst

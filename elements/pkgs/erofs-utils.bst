@@ -12,14 +12,18 @@ build-depends:
   - pkgs/m4.bst
   - pkgs/findutils.bst
   - pkgs/pkgconf.bst
-  - pkgs/curl.bst
-  - pkgs/lz4.bst
   - pkgs/openssl3.bst
   - pkgs/zstd.bst
   - pkgs/zlib.bst
   - pkgs/xz.bst
   - pkgs/util-linux.bst
   - pkgs/libtool.bst
+
+depends:
+  - pkgs/curl.bst
+  - pkgs/lz4.bst
+  - pkgs/libunistring.bst
+  - pkgs/libidn2.bst
 
 variables:
   conf-local: >-

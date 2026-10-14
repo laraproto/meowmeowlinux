@@ -1,0 +1,10 @@
+[Unit]
+Description=Create temporary overlays (initramfs)
+AssertPathExists=/etc/initrd-release
+DefaultDependencies=no
+After=initrd-root-fs.target
+Wants=initrd-root-fs.target
+
+[Service]
+ExecStart=/usr/lib/create-temp-overlay.sh
+Type=Oneshot
