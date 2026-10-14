@@ -6,8 +6,3 @@ sources:
 
 build-depends:
   - groups/autotools.bst
-
-config:
-  build-commands:
-    - |
-      echo "Intentionally does not use a build command."

@@ -3021,6 +3021,8 @@ projects:
     pkgs/plymouth.bst:
     - ref: d15928a8e06c217aad0f2e3579df23fec93dc009
     pkgs/libx11.bst:
-    - ref: 081bf42ebab023aa92cfdb20c7af8c5ae13d13e88a5e22f90f4453ef80bbdde4
+    - ref: 69606f485c2c07c14ef64f75b7bb326d48587af33795d9ab3e607c0b5f94f11c
     pkgs/xtrans.bst:
     - ref: faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92
+    pkgs/xorg-util-macros.bst:
+    - ref: 67bd01d5f4713c9e9d57dc742504d06292dd9c4fb73041ea16fed034c56c622a
