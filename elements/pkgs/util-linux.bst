@@ -20,7 +20,6 @@ build-depends:
   - pkgs/tar.bst
   - pkgs/gzip.bst
   - pkgs/findutils.bst
-  - bootstrap/stage1/userdb.bst
   - pkgs/meson.bst
   - pkgs/python/sphinx.bst
 
