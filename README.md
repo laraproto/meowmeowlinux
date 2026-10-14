@@ -10,8 +10,8 @@ No.
 
 Freedesktop SDK gets really unhappy if you don't have `lzip` installed on your host system, so be sure to get that
 
-Buildstream is required here, in addition buildstream has to have requests and dulwich installed in it's environment, install them with the following commands:
+Buildstream is required here, in addition buildstream has to have requests, dulwich and tomlkit installed in it's environment, install them with the following commands:
 ```sh
 pipx install buildstream
-pipx inject buildstream requests dulwich
+pipx inject buildstream requests dulwich tomlkit
 ```

@@ -9,5 +9,6 @@ build-depends:
   - groups/autotools.bst
   - pkgs/linux/headers.bst
   - pkgs/glib.bst
+  - pkgs/systemd.bst
   - pkgs/meson.bst
   - pkgs/pkgconf.bst

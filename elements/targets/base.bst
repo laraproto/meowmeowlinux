@@ -4,12 +4,13 @@ depends:
   # Bare Base
   - groups/minimum.bst
   - pkgs/systemd.bst
+  - pkgs/dbus.bst
   - pkgs/dbus-broker.bst
   - pkgs/alus.bst
   - pkgs/uki.bst
   - pkgs/shadow.bst
   #- pkgs/mesa.bst
-  
+
   # Filesystems
   - pkgs/btrfs-progs.bst
   - pkgs/dosfstools.bst
