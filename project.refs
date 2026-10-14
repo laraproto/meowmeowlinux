@@ -3018,3 +3018,7 @@ projects:
     - ref: 8cc40e0c5e9234bf45084751ac53b1fbfe70b492
     pkgs/shadow.bst:
     - ref: 7188fbf46f397ab40d2e77d6f0bb8ebbe479cc0c
+    pkgs/libx11.bst:
+    - ref: 081bf42ebab023aa92cfdb20c7af8c5ae13d13e88a5e22f90f4453ef80bbdde4
+    pkgs/xtrans.bst:
+    - ref: faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92
