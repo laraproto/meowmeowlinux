@@ -3045,3 +3045,15 @@ projects:
     pkgs/alsa-lib.bst:
     - ref: f740db7f488255944ffd4428416ee3390a96742856916433df468c281436480e
     - ref: cf3d1c07e089a83c4ece2c20f05dd6a8aab7fcd108768c38811386880575492b
+    pkgs/libepoxy.bst:
+    - ref: 072cda4b59dd098bba8c2363a6247299db1fa89411dc221c8b81b8ee8192e623
+    pkgs/libtirpc.bst:
+    - ref: 8839959bfcc7a0f4c609d8e4f53f1c67ae33de23775ec35beb39ff15adf11920
+    pkgs/xwayland.bst:
+    - ref: 4eb6b98d678299a4b96138d886345b294130695760345ef84596225a8224078a
+    pkgs/duktape.bst:
+    - ref: 90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890
+    pkgs/polkit.bst:
+    - ref: 9e4894c969eecf26a3ba762f4f7a268aa0fb3e51
+    pkgs/gobject-inspection.bst:
+    - ref: 920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae
