@@ -9,7 +9,7 @@ depends:
   - pkgs/alus.bst
   - pkgs/uki.bst
   - pkgs/shadow.bst
-  #- pkgs/mesa.bst
+  - pkgs/mesa.bst
 
   # Filesystems
   - pkgs/btrfs-progs.bst
