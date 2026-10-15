@@ -6,8 +6,12 @@ sources:
 
 build-depends:
   - groups/autotools.bst
+  - pkgs/automake.bst
+  - pkgs/autoconf.bst
+  - pkgs/m4.bst
+  - pkgs/libtool.bst
   - pkgs/pkgconf.bst
+  - pkgs/util-macros.bst
 
 depends:
   - pkgs/libx11.bst
-  - pkgs/xorgproto.bst

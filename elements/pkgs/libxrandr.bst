@@ -11,4 +11,4 @@ build-depends:
 depends:
   - pkgs/libx11.bst
   - pkgs/libxrender.bst
-  - pkgs/libxent.bst
+  - pkgs/libxext.bst

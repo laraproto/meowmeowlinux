@@ -10,6 +10,7 @@ depends:
   - pkgs/uki.bst
   - pkgs/shadow.bst
   - pkgs/mesa.bst
+  - pkgs/tzdata.bst
 
   # Filesystems
   - pkgs/btrfs-progs.bst
@@ -22,3 +23,6 @@ depends:
   - pkgs/sudo.bst
   - pkgs/kmod.bst
   - pkgs/fastfetch.bst
+  - pkgs/man-db.bst
+  - pkgs/man-pages.bst
+  - pkgs/less.bst
