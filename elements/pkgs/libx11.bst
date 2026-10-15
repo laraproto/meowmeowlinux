@@ -6,13 +6,18 @@ sources:
 
 build-depends:
   - groups/autotools.bst
-  - pkgs/util-macros.bst
-  - pkgs/findutils.bst
-  - pkgs/diffutils.bst
-  - pkgs/perl.bst
+  - pkgs/automake.bst
+  - pkgs/autoconf.bst
+  - pkgs/m4.bst
+  - pkgs/libtool.bst
+  - pkgs/pkgconf.bst
 
 depends:
-  - pkgs/xorgproto.bst
   - pkgs/libxcb.bst
   - pkgs/xtrans.bst
-  - pkgs/glibc.bst
+
+config:
+  configure-commands:
+    (<):
+      # Broken.
+      - rm -v configure

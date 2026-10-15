@@ -8,3 +8,11 @@ sources:
 build-depends:
   - groups/autotools.bst
   - pkgs/meson.bst
+  - pkgs/systemd.bst
+  - pkgs/pkgconf.bst
+
+depends:
+  - pkgs/libpciaccess.bst
+
+variables:
+  meson-local: -D udev=true

@@ -20,3 +20,5 @@ depends:
   # Utils
   - pkgs/openssh.bst
   - pkgs/sudo.bst
+  - pkgs/kmod.bst
+  - pkgs/fastfetch.bst

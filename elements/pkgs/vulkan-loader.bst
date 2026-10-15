@@ -8,10 +8,14 @@ sources:
 build-depends:
   - pkgs/cmake.bst
   - groups/autotools.bst
+  - pkgs/git.bst
+  - pkgs/pkgconf.bst
 
 depends:
   - pkgs/libxcb.bst
   - pkgs/vulkan-headers.bst
+  - pkgs/libx11.bst
+  - pkgs/libxrandr.bst
   - pkgs/wayland.bst
 
 variables:

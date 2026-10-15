@@ -16,5 +16,5 @@ depends:
 variables:
   cmake-local: >-
     -D BUILD_SHARED_LIBS=ON
-    -D SPIRV-HEaders_SOURCE_DIR=/usr
+    -D SPIRV-Headers_SOURCE_DIR=/usr
     -D SPIRV_TOOLS_BUILD_STATIC=OFF

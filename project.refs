@@ -3026,3 +3026,22 @@ projects:
     - ref: faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92
     pkgs/xorg-util-macros.bst:
     - ref: 67bd01d5f4713c9e9d57dc742504d06292dd9c4fb73041ea16fed034c56c622a
+    pkgs/libxrandr.bst:
+    - ref: 72b922c2e765434e9e9f0960148070bd4504b288263e2868a4ccce1b7cf2767a
+    pkgs/libxrender.bst:
+    - ref: b832128da48b39c8d608224481743403ad1691bf4e554e4be9c174df171d1b97
+    pkgs/yyjson.bst:
+    - ref: 6447536015f3d600f3d65323b10976103b337ca7
+    pkgs/fastfetch.bst:
+    - ref: 17bb3fd2384bd814b421d73b8c8b8d08e06cfa26
+    pkgs/libxent.bst:
+    - ref: 6c643c7035cdacf67afd68f25d01b90ef889d546c9fcd7c0adf7c2cf91e3a32d
+    pkgs/python/mako.bst:
+    - ref: 6b833ae06fc8866b89ea7939e5d36dd71699cf05
+    pkgs/libpciaccess.bst:
+    - ref: 3c55aa86c82e54a4e3109786f0463530d53b36b6d1cfd14616454f985dd2aa43
+    pkgs/clang.bst:
+    - ref: 0d261d1ca552c95a8f007e061c787ac7132fbcbc
+    pkgs/alsa-lib.bst:
+    - ref: f740db7f488255944ffd4428416ee3390a96742856916433df468c281436480e
+    - ref: cf3d1c07e089a83c4ece2c20f05dd6a8aab7fcd108768c38811386880575492b

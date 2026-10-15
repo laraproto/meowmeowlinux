@@ -15,6 +15,9 @@ depends:
   - pkgs/wayland.bst
   - pkgs/openssl3.bst
   - pkgs/dbus-broker.bst
+  - pkgs/mesa.bst
+  - pkgs/wayland.bst
+  - pkgs/alsa-lib.bst
   # - pkgs/gstreamer.bst
 
 config:

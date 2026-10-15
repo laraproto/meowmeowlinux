@@ -7,12 +7,12 @@ sources:
 
 build-depends:
   - groups/autotools.bst
-  - pkgs/meson.bst
+  - pkgs/cmake.bst
 
 depends:
   - pkgs/spirv-tools.bst
 
 variables:
   cmake-local: >- 
-    -D ALLOW_EXTERNAL_SPRIV_TOOLS=ON
+    -D ALLOW_EXTERNAL_SPIRV_TOOLS=ON
     -D BUILD_SHARED_LIBS=ON
