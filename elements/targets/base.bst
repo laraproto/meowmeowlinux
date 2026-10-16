@@ -8,6 +8,7 @@ depends:
   - pkgs/dbus-broker.bst
   - pkgs/alus.bst
   - pkgs/uki.bst
+  - pkgs/linux/kernel.bst
   - pkgs/shadow.bst
   - pkgs/mesa.bst
   - pkgs/tzdata.bst
