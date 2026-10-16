@@ -3325,3 +3325,13 @@ projects:
     - ref: ccb34399dedf518baac209592518757f367430fe
     pkgs/tzdata.bst:
     - ref: 039ef27cc5f062a2055cb67435d6d71adbefd27d
+    pkgs/libndp.bst:
+    - ref: 2730638bf88984b09531813974f9bd14e1a50165
+    pkgs/slang.bst:
+    - ref: f9145054ae131973c61208ea82486d5dd10e3c5cdad23b7c4a0617743c8f5a18
+    pkgs/gpm.bst:
+    - ref: 9f52d8376b19faeb80382b98b90438efd566c616
+    pkgs/popt.bst:
+    - ref: 916e61045d268f7e37ade5ec047eb77e8299e6ad
+    pkgs/newt.bst:
+    - ref: 9b9e7e8936f51f83a7259c5f0a9b4ff909cbd39a
