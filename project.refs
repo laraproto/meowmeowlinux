@@ -3069,7 +3069,7 @@ projects:
     - ref: 90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890
     pkgs/polkit.bst:
     - ref: 9e4894c969eecf26a3ba762f4f7a268aa0fb3e51
-    pkgs/gobject-inspection.bst:
+    pkgs/gobject-introspection.bst:
     - ref: 920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae
     pkgs/man-db.bst:
     - ref: 349ce503a3594b91ad08229f83a0015fe4595ddc

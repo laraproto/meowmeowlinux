@@ -11,8 +11,8 @@ build-depends:
   - pkgs/pkgconf.bst
   - pkgs/flex.bst
   - pkgs/bison.bst
+  - pkgs/glib.bst
 
 depends:
   - pkgs/libxslt.bst
-  - pkgs/glib.bst
   - pkgs/python/setuptools.bst
