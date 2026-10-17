@@ -3335,3 +3335,22 @@ projects:
     - ref: 916e61045d268f7e37ade5ec047eb77e8299e6ad
     pkgs/newt.bst:
     - ref: 9b9e7e8936f51f83a7259c5f0a9b4ff909cbd39a
+    pkgs/ffmpeg.bst:
+    - ref: 8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e
+    pkgs/nasm.bst:
+    - ref: 4a56d66ed9626d5a3ded5414c9d8b7f1a48ce065
+    pkgs/libxkbcommon.bst:
+    - ref: d1442aaa6b635551182e83c3b55037f4c118c962
+    pkgs/xkeyboardconfig.bst:
+    - ref: b77041324f0109f77161ee43743fe04baa485866af8460d31e476ad3f7648fd5
+    pkgs/xcb-util.bst:
+    - ref: 3a157762578a2e4253a7cb40d2854a3444d5a9df
+    - ref: c617eee22ae5c285e79e81ec39ce96862fd3262f
+    pkgs/libxkbfile.bst:
+    - ref: 42e5dedd7fd3c7c73f3870a8751893c03c1afc69
+    pkgs/libfontenc.bst:
+    - ref: 780d1f6f192a331de7b298a96e23ebc44d2a884b
+    pkgs/libxfont.bst:
+    - ref: 975cc6526e892c6fad8fa49d0fef58565fbaa003
+    pkgs/xfontutil.bst:
+    - ref: 5c92c11482e017fa7210a71b6f44e40042816209

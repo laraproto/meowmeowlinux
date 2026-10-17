@@ -10,4 +10,7 @@ build-depends:
   - groups/autotools.bst
   - pkgs/kde/extra-cmake-modules.bst
   - pkgs/glib.bst
-  - pkgs/qt.bst
+  - pkgs/kde/qt.bst
+  
+variables:
+  cmake-local: -D PHONON_BUILD_QT5=OFF

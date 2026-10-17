@@ -11,10 +11,14 @@ build-depends:
   - pkgs/m4.bst
   - pkgs/libtool.bst
   - pkgs/pkgconf.bst
+  - pkgs/xtrans.bst
+  - pkgs/findutils.bst
+  - pkgs/diffutils.bst
+  # TODO: xslt & xmlto for docs
 
 depends:
   - pkgs/libxcb.bst
-  - pkgs/xtrans.bst
+  - pkgs/xorgproto.bst
 
 config:
   configure-commands:

@@ -1,4 +1,4 @@
-kind: manual
+kind: cmake
 
 sources:
   - kind: tar
@@ -18,15 +18,8 @@ depends:
   - pkgs/mesa.bst
   - pkgs/wayland.bst
   - pkgs/alsa-lib.bst
-  # - pkgs/gstreamer.bst
+  - pkgs/systemd.bst
 
-config:
-  configure-commands:
-    - |
-      ./configure -prefix %{prefix} -no-sbom -no-rpath -openssl-linked -dbus-linked -nomake examples
-  build-commands:
-    - |
-      ninja
-  install-commands:
-    - |
-      DESTDIR=%{install-root} ninja install
+variables:
+  cmake-local: >-
+    -D FEATURE_openssl_linked=ON
